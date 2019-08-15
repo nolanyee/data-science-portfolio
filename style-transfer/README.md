@@ -36,14 +36,14 @@ The program allows specification of the number of steps and learning rate for ea
 
 The gradient descent starts from the photo image rather than from random noise (as done in the paper). Therefore the larger the number of steps, the more stylized the image will become. However, processing time will also increase proportionally to the number of steps.
 
-### Results Discussion
+### Results and Discussion
 An example of a photograph stylized with four different paintings is shown below.
 
 <img src="images/Figure1.jpg" width="800">
 
 The algorithm represents style non-locally by using the Gram matrix of the layer output. Therefore local style changes depending context will not be considered in the final result. So in the first two paintings the style is relatively uniform throughout so the results reflect the style of the paintings fairly well. 
 
-However in the third painting, the sky is stylized differently than the plants and the path. The output image appears to be in a mix of these two styles spread throughout the entire image. This effect is even more extreme in the Chinese painting. The sky in Chinese paintings is almost blank, and rocks, trees, and buildings are all stylized differently. However, when all these styles are mixed and applied to the photo, it almost overlays Chinese landscapes on top of the photo. Instead of the sky being blank, the sky is filled with mountains and trees.
+However in the third painting, the sky is stylized differently than the plants and the path. The output image appears to be in a mix of these two styles spread throughout the entire image. This effect is even more extreme in the Chinese painting. The sky in Chinese paintings is almost blank; and rocks, trees, and buildings are all stylized differently. However, when all these styles are mixed and applied to the photo, it almost overlays Chinese landscapes on top of the photo. Instead of the sky being blank, the sky is filled with mountains and trees.
 
 These results show the limitations of this non-local style representation in style transfer.
 
