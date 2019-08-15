@@ -13,9 +13,11 @@ Below is a screenshot of the user interface for parameter setting.
 
 <img align="left" src="images/Screenshot.jpg" width="500">
 
+
 The file paths of the painting, photo, and output must be entered. If nothing else is changed, default parameter settings will be used. Press "OK" when finished. This will cause the program to start processing the images. When it is finished, it will display the results as follows.
 
 <img align="left" src="images/OutputScreenshot.png" width="1000">
+
 
 Once this window is closed, the output image will be saved automatically to the output file path.
 
