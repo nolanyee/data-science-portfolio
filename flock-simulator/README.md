@@ -12,3 +12,4 @@ Right-Click to start and stop the animation.
 
 Left-Click to chase the flock around the box.
 
+<img src="images/Flock2.jpg" width = "400">
