@@ -32,7 +32,7 @@ Content to style ratio is the ratio of weights of content loss and style loss. T
 
 The program allows specification of the number of steps and learning rate for each gradient descent stage. A smaller learning rate is recommended for the first stage to avoid random noise generation. If the learning rate is too high the result may be grey or noisy patches.
 
-<img src="images/Figure2.jpg" width="1000">
+<img src="images/Figure2.jpg" width="400">
 
 
 
