@@ -1,4 +1,5 @@
 # Movie Recommender Model
+*Skills: Python, Linear Algebra, Feature Extraction, Optimization, Visualization*
 
 In this project, a custom recommender model is developed and optimized using a 1 million movie rating dataset from MovieLens. The model is a weighted combination of collaborative filtering and content-based models. A combination of demographic data, movie genre, and latent factors extracted using non-negative matrix factorization are used to calculate custom similarity functions. 
 
