@@ -39,7 +39,7 @@ The gradient descent starts from the photo image rather than from random noise (
 ### Results Discussion
 An example of a photograph stylized with four different paintings is shown below.
 
-<img src="images/Figure1.jpg" width="500">
+<img src="images/Figure1.jpg" width="800">
 
 
 
