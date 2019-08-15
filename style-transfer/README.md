@@ -11,7 +11,7 @@ The gradient descent is split into a slow and a fast stage. The slow stage helps
 ### Usage
 Below is a screenshot of the user interface for parameter setting.
 
-<img align="left" src="images/Screenshot.jpg" width="100">
+<img align="left" src="images/Screenshot.jpg" width="500">
 
 
 
