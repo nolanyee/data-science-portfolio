@@ -4,7 +4,7 @@
 ### Overview
 This program simulates a flock of birds in flight (or perhaps a swarm of bees). The birds are trapped in the window and fly around. The user can act as a predator and chase the birds around the window.
 
-<img src="image/Flock1.jpg width = 400">
+<img src="image/Flock1.jpg" width = "400">
 
 ### Usage
 Right-Click to start and stop the animation.
