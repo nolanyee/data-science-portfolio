@@ -11,6 +11,7 @@ The gradient descent is split into a slow and a fast stage. The slow stage helps
 ### Usage
 Below is a screenshot of the user interface for parameter setting.
 
-![SettingsWindow](https://github.com/nolanyee/data-science-portfolio/tree/master/style-transfer/images/Figure2.jpg)
+<img align="left" src="https://github.com/nolanyee/data-science-portfolio/tree/master/style-transfer/images/Figure2.jpg" width=80>
+
 
 
