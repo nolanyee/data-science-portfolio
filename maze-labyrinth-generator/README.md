@@ -14,9 +14,7 @@ The mazes are solved using Dijkstra's algorithm.
 
 ### Usage
 A screenshot of the user interface is shown below.
-
 <img src="images/MazeFig1.png" width = "600">
-
 The user can specify the width and height of the grid (in terms of the number of cells). The branch parameter determines the maximum number of walls that can be deleted during maze generation. This parameter must be > 2, but does not need to be an integer. The loop parameter creates multiple paths to the target cell.
 
 If Grid is selected, the maze is divided into blocks of specified size, and a labyrinth is generated in each block using
