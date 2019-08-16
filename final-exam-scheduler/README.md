@@ -1,5 +1,5 @@
 # Final Exam Scheduler
-*Skills: Python, Algorithms*
+*Skills: Python, Algorithms, Monte-Carlo Simulation*
 
 ### Overview
 This program uses graph coloring theory to generate a final exam schedule from students' enrollment data. Each course is a node of a graph. For each student, the courses that the student is enrolled in are all connected to each other. Once all the student enrollment data is entered, the graph is complete. For example
