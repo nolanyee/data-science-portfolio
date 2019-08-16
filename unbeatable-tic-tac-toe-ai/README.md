@@ -14,11 +14,11 @@ The state of the game is represented by a similar vector, except that the user's
 
 The absolute value of the game state vector indicates which cells are occupied. 
 
-The X Occupancy score is defined as the dot product of a path vector with the game state vector, which indicates the occupancy of Xs in the path minus the occupancy of Os. The Total Occupancy score is defined as the dot product of the path vector with the absolute value of the game state vector, which indicates the total occupancy of the path. A score for each path is assigned based on the values of these two dot products according to the following table.
+The X Occupancy score is defined as the dot product of a path vector with the game state vector, which indicates the occupancy of Xs in the path minus the occupancy of Os. The Total Occupancy score is defined as the dot product of the path vector with the absolute value of the game state vector, which indicates the total occupancy of the path. A score for each path is assigned (using a dictionary with tuples as keys) based on the values of these two dot products according to the following table.
 
 |X Occupancy|Total Occupancy|Path Score|
 |-----------|---------------|----------|
-|     2     |       2       |    30    |  corresponds to 2 Xs and 1 empty
+|     2     |       2       |    30    | 
 |    -2     |       2       |    10    |
 |    -1     |       1       |     2    |
 |     0     |       1       |   1.5    |
