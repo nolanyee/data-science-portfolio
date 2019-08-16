@@ -54,6 +54,10 @@ The resulting AI is capable of winning in all but a few scenarios, for which a s
 ### Testing Unbeatability
 In order to test whether or not the AI is unbeatable, all possible games are simulated. The AI still follows the above algorithm, but the simulated user will iterate through all possible moves. 
 
+To perform the iteration, a custom iterator was created that takes in a list and returns a series of lists. The input list is the number of possible moves at each turn. The output lists are all the possible sequences of moves, where the number *i* in the list represents the *i*<sup>th</sup> possible move (available cell). 
+
+If the computer goes first, the available cells for the user to choose from are 8, 6, 4, 2 for the user's four turns respectively. If the user goes first, the available cells are 9, 7, 5, 3, 1 for the user's five turns respectively.
+
 
 
 
