@@ -5,7 +5,7 @@
 
 This program solves any solvable Sudoku puzzle and can generate random solvable puzzles. 
 
-Set operations are used to check for validity of entries and recalculate the possible valid values for each cell. An entry is valid if it is not in the union of values in the same row, column, and block. The possible values for a cell are the set difference between the set of integers 1-9 and the union of all numbers in the same row, column, and block. 
+Set operations are used to check for validity of entries and recalculate the available numbers (valid values) for each cell. An entry is valid if it is not in the union of values in the same row, column, and block. The possible values for a cell are the set difference between the set of integers 1-9 and the union of all numbers in the same row, column, and block. 
 
 A depth first search approach is used to solve the puzzle. Rather than just go through all values of every cell, the game tree is essentially trimmed by only evaluating valid values of the cell, as calculated using the set operations mentioned above. 
 
