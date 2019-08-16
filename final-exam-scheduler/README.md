@@ -13,3 +13,7 @@ There is also included a feature to generate random student enrollment data with
 At worst case the time complexity with respect to the courseload is expected to be O(n<sup>2</sup>) because a fully connected graph with n nodes has n(n-1)/2 connections. The worst case time complexity with respect to the total number of courses is also O(n<sup>2</sup>) because the algorithm has to cycle through all courses and all slots (which at worst case is equal to the number of courses if the entire graph is fully connected), and that would be n(n+1)/2 evaluations. The time complexity with respect to number of students is expected to be at worst O(n) because the graph connection process has to take place once for each student.
 
 By comparison, the results of the Monte Carlo simulation are shown below.
+
+<img src="images/Exams1.png" width="400">
+<img src="images/Exams2.png" width="400">
+<img src="images/Exams3.png" width="400">
