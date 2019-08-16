@@ -7,7 +7,7 @@ This program is a Tic-Tac-Toe AI that has 3 levels of difficulty. The Hard mode 
 
 First, the gameboard (a 3x3 matrix) is flattened to a 1D matrix of length 9. For each winning path, a vector is created with 1s where the path is, and 0s elsewhere. For example
 
-
+<img src"images/TicTacToeFig1" width="800">
 
 Each of the path vectors are stacked to form a path matrix __P__, whose entries are shown below.\
 1  1  1  0  0  0  0  0  0\
@@ -21,6 +21,7 @@ Each of the path vectors are stacked to form a path matrix __P__, whose entries 
 
 The state of the game is represented by a similar vector, except that the user's marker (O) is represented by -1 and the computer's (X) is represented by 1. For example
 
+<img src"images/TicTacToeFig2" width="800">
 
 The absolute value of the game state vector indicates which cells are occupied. 
 
@@ -63,6 +64,7 @@ If the computer goes first, the available cells for the user to choose from are 
 ### Exceptional Scenarios
 The trimmed game tree (due to the deterministic nature of the Hard mode algorithm) has only 1329 possible games. Based on the scoring and testing procedures defined above, testing shows the computer can lose 4 out of 1329 games. Theses four scenarios are in fact symmetry equivalent, as shown below. In each scenario the user has 2 opposite corners and the computer has the center cell. The scoring system will make the computer take another corner, which can result in a loss for the computer if the user takes the final corner.
 
+<img src"images/TicTacToeFig3" width="600">
 
 The score algorithm is therefore overridden in those specific scenarios to block the user from winning. Instead of the corner cell, the computer is forced to take an edge cell (the top middle cell). After this modification to the algorithm, testing showed that the user cannot win any games, meaning the AI is unbeatable. (It is not certain, however, whether the number of wins vs. ties is maximized or not).
 
