@@ -14,7 +14,7 @@ The state of the game is represented by a similar vector, except that the user's
 
 The absolute value of the game state vector indicates which cells are occupied. 
 
-The X Occupancy score is defined as the dot product of a path vector with the game state vector, which indicates the occupancy of Xs in the path minus the occupancy of Os. The Total Occupancy score is defined as the dot product of the path vector with the absolute value of the game state vector, which indicates the total occupancy of the path. A score for each path is assigned (using a dictionary with tuples as keys) based on the values of these two dot products according to the following table.
+The X Occupancy score is defined as the dot product of a path vector with the game state vector, which indicates the occupancy of Xs in the path minus the occupancy of Os. The Total Occupancy score is defined as the dot product of the path vector with the absolute value of the game state vector, which indicates the total occupancy of the path. A score for each path is assigned (using a dictionary with tuples as keys) based on the values of these two dot products according to the following table, which is based on heuristic reasoning.
 
 |X Occupancy|Total Occupancy|Path Score|
 |-----------|---------------|----------|
@@ -31,6 +31,6 @@ The X Occupancy score is defined as the dot product of a path vector with the ga
 
 The score of 30 is assigned to the tuple (2,2), which corresponds to the case where the computer has 2 Xs in a path. This is given the highest score because the computer is one move away from winning. The values (-2,2) corresponds to 2 Os in a path, which mean the computer is one move away from losing. It has the second highest score because the computer must block the user from winning. However, it is still lower than (2,2) because if the computer wins first it doesn't matter if the user is one move from winning. 
 
-
+The tuple (-1, 1) corresponds to one O and 2 empty cells in a path. The score is slightly higher than other cases because the computer has 2 cells in the path that can block the user and advance towards building another path of its own. The tuple (0,1) corresponds to one X and one O in the path. Placing an X here does not block the user since there is already an X in the path, and there is only one possible cell to occupy for the computer. The next tuple is (-1, 0), which
 
 
