@@ -7,7 +7,7 @@ This program is a Tic-Tac-Toe AI that has 3 levels of difficulty. The Hard mode 
 
 First, the gameboard (a 3x3 matrix) is flattened to a 1D matrix of length 9. For each winning path, a vector is created with 1s where the path is, and 0s elsewhere. For example
 
-<img src="images/TicTacToeFig1.png" width="800">
+<img src="images/TicTacToeFig1.png" width="600">
 
 Each of the path vectors are stacked to form a path matrix __P__, whose entries are shown below.\
 1  1  1  0  0  0  0  0  0\
@@ -21,7 +21,7 @@ Each of the path vectors are stacked to form a path matrix __P__, whose entries 
 
 The state of the game is represented by a similar vector, except that the user's marker (O) is represented by -1 and the computer's (X) is represented by 1. For example
 
-<img src="images/TicTacToeFig2.png" width="800">
+<img src="images/TicTacToeFig2.png" width="400">
 
 The absolute value of the game state vector indicates which cells are occupied. 
 
