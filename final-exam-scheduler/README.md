@@ -17,3 +17,5 @@ By comparison, the results of the Monte Carlo simulation are shown below.
 <img src="images/Exams1.png" width="700">
 <img src="images/Exams2.png" width="700">
 <img src="images/Exams3.png" width="700">
+
+The average time complexity appears to be O(n) for students and courseload, and O(log(n)) for total number of courses.
