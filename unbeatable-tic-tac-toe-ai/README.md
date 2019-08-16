@@ -47,12 +47,12 @@ The tuples with Total Occupancy of 3 correspond to paths that are completely occ
 
 The paths form a row vector __s__ of dimension 8. The total score fo each cell is given by the vector __c__=__P__<sup>T</sup>__s__<sup>T</sup>.
 
-This vector __c__ is calculated before the computer makes a move. The computer then chooses the cell with the highest score based on the vector __c__.
+This vector __c__ is calculated before the computer makes a move. The computer then chooses the cell with the highest score based on the vector __c__. If there is a tie, the computer always picks the first of equivalent cells in the vector. This is what leads to the deterministic nature of the "hard" mode AI. Because it never chooses the other equivalent cells, it trims the tree of possible games that can occur.
 
 The resulting AI is capable of winning in all but a few scenarios, for which a separate strategy is programmed.
 
 ### Testing Unbeatability
-In order to test whether or not the AI is unbeatable.
+In order to test whether or not the AI is unbeatable, all possible games are simulated. The AI still follows the above algorithm, but the simulated user will iterate through all possible moves. 
 
 
 
