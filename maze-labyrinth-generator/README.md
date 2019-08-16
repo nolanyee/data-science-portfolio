@@ -40,4 +40,4 @@ The labyrinth generator starts by creating a path from the start and end points.
 A perfect labyrinth is not always possible depending on the size of the grid and the starting and ending positions. Sometimes single cells or incomplete cycles will be left over. If they are adjacent to the path set ends they can be combined, otherwise they will be excluded from the labyrinth, creating an inaccessible space. 
 
 ### Grid Maze Generation
-
+This type of maze begins by dividing the grid into subgrids. A labyrinth is generated in the subgrid using depth first search. A layrinth is a single path that must cover all cells. Therefore all the possible single paths are explored and the algorithm stops when all the cells have been encorporated into the path. This is a much more time consuming algorithm than the one used above, but it may be more appropriate for smaller labyrinths, since the previous algorithm requires the use of 2x2 units. Then each grid block is unioned until the maze is complete.
