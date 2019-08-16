@@ -11,7 +11,7 @@ A depth first search approach is used to solve the puzzle. Rather than just go t
 
 In addition, to prevent going too far down futile paths, the criterion for moving to the next cell is that the set of valid values for all remaining cells is not empty. This is verified by recalculating the sets of valid values for cells in the same row, column, and block as the cell being entered (only these cells would be effected by setting the value of the particular cell). An example is provided below.
 
-<img src = "images/SudokuFigure1.png" width = "500">
+<img src = "images/SudokuFigure1.png" width = "750">
 
 For the target the valid values are 4 and 5. So branches for other numbers are effectively trimmed. Then for the number 5, the bottom left cell in the same block has no valid values, therefore that branch is also eliminated. The search can proceed using the remaining value of 4.
 
