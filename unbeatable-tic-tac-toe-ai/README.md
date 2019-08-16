@@ -21,7 +21,7 @@ Each of the path vectors are stacked to form a path matrix __P__, whose entries 
 
 The state of the game is represented by a similar vector, except that the user's marker (O) is represented by -1 and the computer's (X) is represented by 1. For example
 
-<img src="images/TicTacToeFig2.png" width="400">
+<img src="images/TicTacToeFig2.png" width="200">
 
 The absolute value of the game state vector indicates which cells are occupied. 
 
