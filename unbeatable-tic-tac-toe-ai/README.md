@@ -2,7 +2,7 @@
 # Unbeatable Tic-Tac-Toe AI
 *Skills: Python, Linear Algebra*
 
-### Overview
+### Strategy Overview
 This program is a Tic-Tac-Toe AI that has 3 levels of difficulty. The "hard" level is unbeatable. Rather than using the common minimax algorithm, this AI uses a custom deterministic algorithm based on linear algebra. 
 
 First, the gameboard (a 3x3 matrix) is flattened to a 1D matrix of length 9. For each winning path, a vector is created with 1s where the path is, and 0s elsewhere. For example
@@ -45,7 +45,17 @@ The tuple (1, 1) corresponds to one X and 2 empty cells in a path. This score is
 
 The tuples with Total Occupancy of 3 correspond to paths that are completely occupied, so they have a score of 0. The tuple (0, 2) corresponds to one X and one O in the path. Placing an X here does not block the user since there is already an X in the path, and there is only one possible cell to occupy for the computer. Since there is not much to gain with this path, the score is also 0.
 
-The paths form a row vector __s__ of dimension 8. The total score fo each cell is given by the vector __c__=__P__<sup>T</sup>__s__<sup>T</sup>
+The paths form a row vector __s__ of dimension 8. The total score fo each cell is given by the vector __c__=__P__<sup>T</sup>__s__<sup>T</sup>.
+
+This vector __c__ is calculated before the computer makes a move. The computer then chooses the cell with the highest score based on the vector __c__.
+
+The resulting AI is capable of winning in all but a few scenarios, for which a separate strategy is programmed.
+
+### Testing Unbeatability
+In order to test whether or not the AI is unbeatable.
+
+
+
 
 
 
