@@ -18,7 +18,7 @@ The X Occupancy score is defined as the dot product of a path vector with the ga
 
 |X Occupancy|Total Occupancy|Path Score|
 |-----------|---------------|----------|
-|     2     |       2       |    30    |
+|     2     |       2       |    30    |  corresponds to 2 Xs and 1 empty
 |    -2     |       2       |    10    |
 |    -1     |       1       |     2    |
 |     0     |       1       |   1.5    |
