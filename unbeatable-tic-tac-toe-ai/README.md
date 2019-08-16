@@ -29,6 +29,8 @@ The X Occupancy score is defined as the dot product of a path vector with the ga
 |    -3     |       3       |     0    |
 |     0     |       2       |     0    |
 
+The score of 30 is assigned to the tuple (2,2), which corresponds to the case where the computer has 2 Xs in a path. This is given the highest score because the computer is one move away from winning. The values (-2,2) corresponds to 2 Os in a path, which mean the computer is one move away from losing. It has the second highest score because the computer must block the user from winning. However, it is still lower than (2,2) because if the computer wins first it doesn't matter if the user is one move from winning. 
+
 
 
 
