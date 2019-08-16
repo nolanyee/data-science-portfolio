@@ -9,7 +9,7 @@ First, the gameboard (a 3x3 matrix) is flattened to a 1D matrix of length 9. For
 
 
 
-Each of the path vectors are stacked to form a path matrix __P__.\
+Each of the path vectors are stacked to form a path matrix __P__, whose entries are shown below.\
 1  1  1  0  0  0  0  0  0\
 0  0  0  1  1  1  0  0  0\
 0  0  0  0  0  0  1  1  1\
