@@ -45,7 +45,7 @@ The tuple (1, 1) corresponds to one X and 2 empty cells in a path. This score is
 
 The tuples with Total Occupancy of 3 correspond to paths that are completely occupied, so they have a score of 0. The tuple (0, 2) corresponds to one X and one O in the path. Placing an X here does not block the user since there is already an X in the path, and there is only one possible cell to occupy for the computer. Since there is not much to gain with this path, the score is also 0.
 
-The paths form a row vector __s__ of dimension 8. The total score fo each cell is given by the vector __c__=P<sup>T<\sup>s<sup>T<\sup>
+The paths form a row vector __s__ of dimension 8. The total score fo each cell is given by the vector __c__=P<sup>T</sup>s<sup>T</sup>
 
 
 
