@@ -33,6 +33,7 @@ The shortest solution path is calculated using Dijkstra's algorithm.
 ### Maze Generation
 The maze begins with each cell having all 4 walls. Each cells is a disjoint set. The union of a disjoint set produces a new set. Each set has walls that form its border. When two sets are unioned a wall is randomly selected from the union of the border walls of the two sets. If the cells neighboring the walls already have walls deleted, the probability of deleting the border wall is diminished. The decision to delete or not is made by a random number generator. If the number of deleted walls in a cell exceeds the sum of the random number and the branching parameter, the wall is not deleted and a new border wall is selected randomly. Random sets are unioned until there is only one set remaining.
 
+Loops in the maze are created by randomly deleting walls after the maze is generated.
 
 ### Labyrinth Generation
 The labyrinth generator starts by creating a path from the start and end points. This is the path set. The rest of the space is filled with 2x2 loops. The paths are treated as a set, but the loops are treated as circular sets (implemented as cycled lists). To union the sets, the program looks for 2 adjacent cells in each set that are adjacent to each other (form a 2x2 block). The cells in one set are rotated until the 2 adjacent cells are split, one at the end and one and the beginning. Then this cycled list is inserted between the two adjacent cells in the other set.
