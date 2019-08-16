@@ -9,15 +9,15 @@ First, the gameboard (a 3x3 matrix) is flattened to a 1D matrix of length 9. For
 
 
 
-Each of the path vectors are stacked to form a path matrix __P__.
-111000000
-000111000
-000000111
-100100100
-010010010
-001001001
-100010001
-001010100
+Each of the path vectors are stacked to form a path matrix __P__.\
+111000000\
+000111000\
+000000111\
+100100100\
+010010010\
+001001001\
+100010001\
+001010100\
 
 The state of the game is represented by a similar vector, except that the user's marker (O) is represented by -1 and the computer's (X) is represented by 1. For example
 
