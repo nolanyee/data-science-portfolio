@@ -20,4 +20,4 @@ By comparison, the results of the Monte Carlo simulation are shown below.
 <img src="images/Exams3.png" width="700">
 
 The average time complexity appears to be O(n) for students and courseload, and O(log(n)) for total number of courses.
-The results also show that
+The results also show that for students and courseload the number of time slots increases roughly linearly. However, with total number of courses, it appears to decrease as k+1/n (or some power thereof). This is because the more courses there are, the more sparse the graph will be. If the number of courses is large enough, the timeslots approaches the course load, as each student's enrollment is less likely to overlap with that of other students.
