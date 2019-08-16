@@ -58,7 +58,16 @@ To perform the iteration, a custom iterator was created that takes in a list and
 
 The iterator basically counts in a variable base number system, where the base of the each digit is the number in the input list. For example if the list was \[10,10,10\] the cooresponding numbers would be simply counting up from 0 to 999: 000, 001, 002, 003, ... 999, and output lists would be \[0,0,0\], \[0,0,1\]...\[9,9,9\]. However, if the input list is \[4,3,2\] then the counting would look like 000, 001, 010, 011, 020, 021, 100, 101, 110, 111, 120, 121, 200 ... 321 instead. 
 
-If the computer goes first, the available cells for the user to choose from are 8, 6, 4, 2 for the user's four turns respectively. If the user goes first, the available cells are 9, 7, 5, 3, 1 for the user's five turns respectively. These are the two possible input lists for the iterator. In each game the simulated user will move according to the output of the iterator. For example if the computer goes first and the iterator output is \[*i,j,k,l*\] then the user will take the *i*<sup>th</sup> empty cell on the first move, the *j*<sup>th</sup> on the second, the *k*<sup>th</sup> on the third, and the *l*<sup>th</sup> on the last move.
+If the computer goes first, the available cells for the user to choose from are 8, 6, 4, 2 for the user's four turns respectively. If the user goes first, the available cells are 9, 7, 5, 3, 1 for the user's five turns respectively. These are the two possible input lists for the iterator. In each game the simulated user will move according to the output of the iterator. For example if the computer goes first and the iterator output is \[*i, j, k, l*\] then the user will take the *i*<sup>th</sup> empty cell on the first move, the *j*<sup>th</sup> on the second, the *k*<sup>th</sup> on the third, and the *l*<sup>th</sup> on the last move.
+
+### Exceptional Scenarios
+The trimmed game tree (due to the deterministic nature of the "hard" mode algorithm) has only 1329 possible games. Based on the scoring and testing procedures defined above, testing shows the computer can lose 4 out of 1329 games. Theses four scenarios are in fact symmetry equivalent, as shown below. In each scenario the user has 2 opposite corners and the computer has the center cell. The scoring system will make the computer take another corner, which can result in a loss for the computer if the user takes the final corner.
+
+
+The score algorithm is therefore overridden in those specific scenarios to block the user from winning. Instead of the corner cell, the computer is forced to take an edge cell (the top middle cell). After this modification to the algorithm, testing showed that the user cannot win any games, meaning the AI is unbeatable. (It is not certain, however, whether the number of wins vs. ties is maximized or not).
+
+### Easy and Medium Modes
+
 
 
 
