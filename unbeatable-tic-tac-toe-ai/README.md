@@ -12,6 +12,7 @@ First, the gameboard (a 3x3 matrix) is flattened to a 1D matrix of length 9. For
 | | | |
 |-|-|-|
 | | | |
+|-|-|-|
 
 The state of the game is represented by a similar vector, except that the user's marker (O) is represented by -1 and the computer's (X) is represented by 1. 
 
