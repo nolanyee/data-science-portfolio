@@ -8,7 +8,7 @@ The difference between a maze and a labyrinth is that a labyrinth has only one p
 
 The maze generation algorithm uses a disjoint set data structure. 
 
-The program also includes a unique grid type maze, where each grid block is a labyrinth (this algorithm uses depth first search rather than circular lists to generate the mini labyrinths because they are small). Then the grid blocks are treated like disjoint sets and combined to form the overall maze.
+The program also includes a unique grid type maze, where each grid block is a labyrinth (this algorithm uses depth first search rather than circular lists to generate the mini labyrinths because the depth first search algorithm is capable of generating more variety for small labyrinths, which is important to make the maze look less repetitive). Then the grid blocks are treated like disjoint sets and combined to form the overall maze.
 
 The mazes are solved using Dijkstra's algorithm (each cell is treated as the node of a graph, and the edges are where the wall has been deleted).
 
