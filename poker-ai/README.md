@@ -59,6 +59,8 @@ The probabilities of all the different hands are arranged in order. Then the cum
 Another important probability is the pot probability (related to pot odds), *p<sub>pot</sub>*. The pot probability is defined as *gain / (gain+loss)*, which, as a conservative estimate, is calculated as *(pot - total previous bet) / (pot + current bet + current raise)*. This represents the reqired probability of having a losing hand to break even on average. The higher the pot probability, the higher probability of losing the player can tolerate. For a bet to be sensible, the probability of having a losing hand and unsuccessful bluff must be less than the pot probability.
 
 ### Probability of Folding
+The following are heuristic approximation models of player behavior. They are not necessarily theoretically rigorously provable, but are useful to describe the behavior generally.
+
 The probability of folding *p<sub>fold</sub>* is modeled as a logistic function. The computer will be sensible, having an initial probabilty of folding of 1/(1+e<sup>-*w*(*p<sub>lose</sub>* - *p<sub>pot</sub>*)</sup>), where *w* is a constant. 
 
 The player, however may not be sensible. To determine how reckless or conservative the user is, logistic regression is performed on the player's most recent 100 moves (or less if the game has not progressed that far). The x values are the *p<sub>pot</sub>* and the y values are 1 (fold) or 0 (not fold). This will approximate the user's probability of folding on average, *f<sub>user</sub>*(*p<sub>pot</sub>*). On average the probability of having a losing hand is 0.5. If the inflection of the logistic regression curve is less than 0.5, the player is agressive. If the inflection is much greater than 0.5, the player is conservative.
