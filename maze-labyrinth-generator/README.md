@@ -47,6 +47,10 @@ Loops in the maze are created by randomly deleting walls after the maze is gener
 The labyrinth generator starts by creating a path from the start and end points. This is the path set. The rest of the space is filled with 2x2 loops. The paths are treated as a set, but the loops are treated as circular sets (implemented as cycled lists). To union the sets, the program looks for 2 adjacent cells in each set that are adjacent to each other (form a 2x2 block). The cells in one set are rotated until the 2 adjacent cells are split, one at the end and one and the beginning. Then this cycled list is inserted between the two adjacent cells in the other set.
 <img src="images/MazeFig4.png" width = "600">
 
+<img src="images/MazeFig5.png" width = "600">
+<img src="images/MazeFig6.png" width = "600">
+<img src="images/MazeFig7.png" width = "600">
+
 A perfect labyrinth is not always possible depending on the size of the grid and the starting and ending positions. Sometimes single cells or incomplete cycles will be left over. If they are adjacent to the path set ends they can be combined, otherwise they will be excluded from the labyrinth, creating an inaccessible space. 
 
 Dead ends in the labyrinth can be created by building a wall randomly in the middle of the labyrinth, and then destroying a random wall to union the resulting two sets. This can create a maze that has some labyrinth characteristics, in that it requires walking through many of the cells to reach the end.
