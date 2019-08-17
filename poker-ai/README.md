@@ -66,6 +66,7 @@ The player, however may not be sensible. To determine how reckless or conservati
 By comparing the logistic regression results with the sensible logistic function of *f<sub>0</sub>*(*p<sub>pot</sub>*)=1/(1+e<sup>-*w*(0.5 - *p<sub>pot</sub>*)</sup>), the probability of bluffing and over-cautious folding can be estimated.
 
 <img src="images/PokerFig1.png" width="700">
+
 For the aggressive player, the probability of folding when it is appropriate to fold (when the player has a bad hand) is approximately *p*<sub>appropriate</sub> = *f*<sub>user</sub>, assuming that the aggressive player will not be overcautious and fold with a winning hand (*p<sub>cautious</sub>* = 0). The probability of the player bluffing (not folding when the player has a bad hand) is *p<sub>bluff</sub>* = *f<sub>0</sub>*-*f<sub>user</sub>*. And the probability of not folding when the player has a hand that is likely to beat the computer is *p<sub>beat</sub> = 1-*f<sub>user</sub>*.
 
 <img src="images/PokerFig2.png" width="700">
