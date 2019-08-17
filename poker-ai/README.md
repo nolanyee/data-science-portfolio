@@ -78,6 +78,8 @@ For the cautious player, the probability of folding when it is appropriate to fo
 ### Bayes' Theorem
 The goal of calculating the probability of folding is to use the player action combined with the pot probability to update the probability that the player will have a hand that beats the computer. Bayes' Theorem can be used to achieve this.
 
+As mentioned earlier, the sensible betting means having the pot probability be no smaller than the probability of losing (*p<sub>lose</sub>*). The limit of sensible behavior would be described by *p<sub>pot</sub>* = *p<sub>lose</sub>* = 1-*p<sub>win</sub>*. 
+
 <img src="images/PokerFig3.png" width="500">
 
 
