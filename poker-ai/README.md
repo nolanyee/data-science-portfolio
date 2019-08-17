@@ -35,10 +35,12 @@ __3 of a Kind__\
 For each suit and value, if the card is in the deck and there are at least 2 other cards of the same value but lower suit, the combinations are calculated as C<sup>*n*</sup><sub>2</sub>C<sup>*m*</sup><sub>2</sub> where *n* is the number of cards of the high value with lower suit that the high card, and *m* is the number of cards in the deck minus 3. Then the number of combinations of 4 of a kind and full house are subtracted.
 
 __2 Pair__\
-For each suit and value, if the card is in the deck and there is at least 1 other card of the same value but lower suit, the combinations are calculated as C<sup>*n*</sup><sub>1</sub> (where *n* is the number of cards of the high value with lower suit that the high card), times the product of the sum of C<sup>*m*</sup><sub>2</sub> (where *m* is the number of cards with the same value as the second pair) and the number of cards that have a different value than the pairs (the sum is over values lower than the high card).
+For each suit and value, if the card is in the deck and there is at least 1 other card of the same value but lower suit, the combinations are calculated as C<sup>*n*</sup><sub>1</sub> (where *n* is the number of cards of the high value with lower suit that the high card), times the sum of the product of C<sup>*m*</sup><sub>2</sub> (where *m* is the number of cards with the same value as the second pair) and the number of cards that have a different value than the pairs (the sum is over values lower than the high card).
 
 __1 Pair__\
-For each suit and value, if the card is in the deck and there is at least 1 other card of the same value but lower suit, the combinations are 
+For each suit and value, if the card is in the deck and there is at least 1 other card of the same value but lower suit, the combinations are C<sup>*n*</sup><sub>1</sub> (where *n* is the number of cards of the high value with lower suit that the high card) times the sum of the product of the number of cards of each of 3 values, for all combinations of 3 values that are not equal to the value of the pair.
+
+
 
 
 
