@@ -26,7 +26,15 @@ __No Pair__\
 For each suit and each value (excluding 2-5 since they cannot be the high card in no pair), if the card is in the deck, the number of each value lower than the high card is counted. The total combinations is the sum of the products of these counts for every combination of 4 cards out of the available cards lower than the high card. Then the combinations of straight, flush, and straight flush are subtracted.
 
 __Full House__\
-For each suit and each value, if the card is in the deck and there are at least 2 other cards of the same value, then the combinations of all posible pairs (C<sup>*n*</sup><sub>2</sub> where *n* is the number of cards with the same value) for all other values are summed. This is multiplied by the combinations of triplets (C<sup>*n*</sup><sub>2</sub> where *n* is the number of cards with the same value as the high card but a lower suit).
+For each suit and each value, if the card is in the deck and there are at least 2 other cards of the same value but a lower suit, then the combinations of all posible pairs (C<sup>*n*</sup><sub>2</sub> where *n* is the number of cards with the same value) for all other values are summed. This is multiplied by the combinations of triplets (C<sup>*n*</sup><sub>2</sub> where *n* is the number of cards with the same value as the high card but a lower suit).
+
+__4 of a Kind__\
+For spades only (since the high card in a 4 of a kind must be a spade) for each value, if all 4 suits are in the deck the count is 1, otherwise it is 0.
+
+__3 of a Kind__\
+For each suit and value, if the car is in the deck and there are at least 2 other cards of the same value but lower suit, the combinations are calculated as C<sup>*n*</sup><sub>2</sub>C<sup>*m*</sup><sub>2</sub> where *n* is the number of cards of the high value with lower suit that the high card, and *m* is the number of cards in the deck minus 3. Then the number of combinations of 4 of a kind and full house are subtracted.
+
+__2 Pair__\
 
 
 
