@@ -26,7 +26,7 @@ __No Pair__\
 For each suit and each value (excluding 2-5 since they cannot be the high card in no pair), if the card is in the deck, the number of each value lower than the high card is counted. The total combinations is the sum of the products of these counts for every combination of 4 cards out of the available cards lower than the high card. Then the combinations of straight, flush, and straight flush are subtracted.
 
 __Full House__\
-For each suit and each value, if the card is in the deck and there are at least 2 other cards of the same value, then the combinations of all posible pairs (C<sup>*n*</sup><sub>4</sub> where *n* is the number of cards with the same value) for all other values are summed. This is multiplied by the combinations of triplets (C<sup>*n*</sup><sub>4</sub> where *n* is the number of cards with the same value as the high card but a lower suit).
+For each suit and each value, if the card is in the deck and there are at least 2 other cards of the same value, then the combinations of all posible pairs (C<sup>*n*</sup><sub>2</sub> where *n* is the number of cards with the same value) for all other values are summed. This is multiplied by the combinations of triplets (C<sup>*n*</sup><sub>2</sub> where *n* is the number of cards with the same value as the high card but a lower suit).
 
 
 
