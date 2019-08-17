@@ -30,7 +30,7 @@ labyrinth path and the performing union on the resulting disjoint paths.
 The user may build or destroy walls in the maze or move the target. Use Alt+Left Click on two cells to destroy the wall between the cells, and Shift+Left Click on two cells to build a wall between the cells. The labyrinth start and end points are set by using Ctrl+Left Click and Ctrl+Right Click. Not all combinations of starting and ending points can yield a labyrinth. In these cases the path will be extended beyond the end or start point. Usually moving either point by 1 space will create a feasible labyrinth.
 
 Depending on the parameters and user actions, there may be multiple solutions to the maze.
-The shortest solution path is calculated using Dijkstra's algorithm.
+The shortest solution path is calculated using Dijkstra's algorithm, and can be shown by clicking the "Solution" button.
 
 ### Maze Generation
 The maze begins with each cell having all 4 walls. Each cells is a disjoint set. The union of a disjoint set produces a new set. Each set has walls that form its border. When two sets are unioned a wall is randomly selected from the union of the border walls of the two sets. If the cells neighboring the walls already have walls deleted, the probability of deleting the border wall is diminished. The decision to delete or not is made by a random number generator. If the number of deleted walls in a cell exceeds the sum of the random number and the branching parameter, the wall is not deleted and a new border wall is selected randomly. Random adjacent sets are unioned until there is only one set remaining.
