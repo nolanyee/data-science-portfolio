@@ -11,7 +11,7 @@ The player's cumulative probability of folding is generated using logistic regre
 ### Combinatorics
 The Poker AI stores a copy of the deck, which is called the computer deck. By card counting, it removes the cards that it has drawn and the cards that have been revealed during showdowns. The probability of the player having a hand higher than each hand, is then recalculated with this reduced computer deck. The AI then makes betting decisions based on these probabilities.
 
-The probability of each Poker hand is straight foward to determine analytically for a full deck, but for partial decks it becomes extremely difficult, especially when one must consider the ranking based on the high card. A consistent way of calculating the probability is by actually iterating through combinations, (combined with some theoretical simplifications). These methods are summarized below.
+The probability of each Poker hand is straightforward to determine analytically for a full deck, but for partial decks it becomes extremely difficult, especially when one must consider the ranking based on the high card. A consistent way of calculating the probability is by actually iterating through combinations, (combined with some theoretical simplifications). These methods are summarized below.
 
 __Straight Flush__\
 For each suit and each value (not including 2 and 3 since they cannot be the high card in a straight) the count is 1 if the card and the 4 preceeding cards are in the deck, and zero otherwise. 
