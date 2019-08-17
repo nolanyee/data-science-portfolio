@@ -12,6 +12,8 @@ The program also includes a unique grid type maze, where each grid block is a la
 
 The mazes are solved using Dijkstra's algorithm (each cell is treated as the node of a graph, and the edges are where the wall has been deleted).
 
+<img src="images/MazeFig2.png" width = "300">
+
 ### Usage
 A screenshot of the user interface is shown below.
 <img src="images/MazeFig1.png" width = "600">
@@ -32,18 +34,24 @@ The shortest solution path is calculated using Dijkstra's algorithm.
 
 ### Maze Generation
 The maze begins with each cell having all 4 walls. Each cells is a disjoint set. The union of a disjoint set produces a new set. Each set has walls that form its border. When two sets are unioned a wall is randomly selected from the union of the border walls of the two sets. If the cells neighboring the walls already have walls deleted, the probability of deleting the border wall is diminished. The decision to delete or not is made by a random number generator. If the number of deleted walls in a cell exceeds the sum of the random number and the branching parameter, the wall is not deleted and a new border wall is selected randomly. Random sets are unioned until there is only one set remaining.
-
+<img src="images/MazeFig3.png" width = "600">
 
 Typically more complex maze solutions are created when the branching parameter is close to 2.
-
+<img src="images/MazeFig12.png" width = "600">
+<img src="images/MazeFig13.png" width = "600">
 Loops in the maze are created by randomly deleting walls after the maze is generated.
-
+<img src="images/MazeFig10.png" width = "600">
 ### Labyrinth Generation
 The labyrinth generator starts by creating a path from the start and end points. This is the path set. The rest of the space is filled with 2x2 loops. The paths are treated as a set, but the loops are treated as circular sets (implemented as cycled lists). To union the sets, the program looks for 2 adjacent cells in each set that are adjacent to each other (form a 2x2 block). The cells in one set are rotated until the 2 adjacent cells are split, one at the end and one and the beginning. Then this cycled list is inserted between the two adjacent cells in the other set.
-
+<img src="images/MazeFig4.png" width = "600">
 A perfect labyrinth is not always possible depending on the size of the grid and the starting and ending positions. Sometimes single cells or incomplete cycles will be left over. If they are adjacent to the path set ends they can be combined, otherwise they will be excluded from the labyrinth, creating an inaccessible space. 
 
 Dead ends in the labyrinth can be created by building a wall randomly in the middle of the labyrinth, and then destroying a random wall to union the resulting two sets. This can create a maze that has some labyrinth characteristics, in that it requires walking through many of the cells to reach the end.
+<img src="images/MazeFig9.png" width = "600">
 
 ### Grid Maze Generation
-This type of maze begins by dividing the grid into subgrids. A labyrinth is generated in the subgrid using depth first search. A layrinth is a single path that must cover all cells. Therefore all the possible single paths are explored and the algorithm stops when all the cells have been encorporated into the path. This is a much more time consuming algorithm than the one used above, but it may be more appropriate for smaller labyrinths, since the previous algorithm requires the use of 2x2 units. Then each grid block is unioned until the maze is complete.
+This type of maze begins by dividing the grid into subgrids. A labyrinth is generated in the subgrid using depth first search. A layrinth is a single path that must cover all cells. Therefore all the possible single paths are explored and the algorithm stops when all the cells have been encorporated into the path. This is a much more time consuming algorithm than the one used above, but it may be more appropriate for smaller labyrinths, since the previous algorithm requires the use of 2x2 units. 
+<img src="images/MazeFig8.png" width = "600">
+
+Then each grid block is unioned until the maze is complete.
+<img src="images/MazeFig11.png" width = "600">
