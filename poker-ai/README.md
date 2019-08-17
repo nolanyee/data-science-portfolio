@@ -40,7 +40,7 @@ For each suit and value, if the card is in the deck and there is at least 1 othe
 __1 Pair__\
 For each suit and value, if the card is in the deck and there is at least 1 other card of the same value but lower suit, the combinations are C<sup>*n*</sup><sub>1</sub> (where *n* is the number of cards of the high value with lower suit that the high card) times the sum of the product of the number of cards of each of 3 values, for all combinations of 3 values that are not equal to the value of the pair.
 
-
+Once the combinations of all hands has been determined, the probability is determined by dividing by C<sup>*n*</sup><sub>5</sub> where *n* is the total number of cards in the deck.
 
 
 
