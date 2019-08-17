@@ -78,8 +78,7 @@ For the cautious player, the probability of folding when it is appropriate to fo
 ### Bayes' Theorem
 The goal of calculating the probability of folding is to use the player action combined with the pot probability to update the probability that the player will have a hand that beats the computer. Bayes' Theorem can be used to achieve this.
 
-
-
+<img src="images/PokerFig3.png" width="700">
 
 
 
