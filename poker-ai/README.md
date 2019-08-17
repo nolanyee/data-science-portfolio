@@ -56,7 +56,8 @@ The player, however may not be sensible. To determine how reckless or conservati
 
 By comparing the logistic regression results with the sensible logistic function of 1/(1+e<sup>-*w*(0.5 - *p<sub>pot</sub>*)</sup>), the probability of bluffing and over-cautious folding can be estimated.
 
-
+<img src="images/PokerFig1.png" width="700">
+<img src="images/PokerFig2.png" width="700">
 
 ### Bayes' Theorem
 
