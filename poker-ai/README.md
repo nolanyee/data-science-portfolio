@@ -61,7 +61,7 @@ Another important probability is the pot probability (related to pot odds), *p<s
 ### Probability of Folding
 The following are heuristic approximation models of player behavior. They are not necessarily theoretically rigorously provable, but are useful to describe the behavior generally. Note that the models are for folding vs. not folding. Calling and raising are not distinguished because they are accounted for in the pot probability (raising will lower the pot probability compared to just calling).
 
-The probability of folding *p<sub>fold</sub>* is modeled as a logistic function. The computer will be sensible, having an initial probabilty of folding of 1/(1+e<sup>-*w*(*p<sub>lose</sub>* - *p<sub>pot</sub>*)</sup>), where *w* is a constant. 
+The probability of folding *p<sub>fold</sub>* is modeled as a logistic function. The computer will be sensible, having an initial probabilty of folding of *p<sub>compfold</sub>*=1/(1+e<sup>-*w*(*p<sub>complose</sub>* - *p<sub>pot</sub>*)</sup>), where *w* is a constant. 
 
 The player, however may not be sensible. To determine how reckless or conservative the user is, logistic regression is performed on the player's most recent 100 moves (or less if the game has not progressed that far). The x values are the *p<sub>pot</sub>* and the y values are 1 (fold) or 0 (not fold). This will approximate the user's probability of folding on average, *f<sub>user</sub>*(*p<sub>pot</sub>*). On average the probability of having a losing hand is 0.5. If the inflection of the logistic regression curve is less than 0.5, the player is agressive. If the inflection is much greater than 0.5, the player is conservative.
 
@@ -88,7 +88,7 @@ For the case where the player does not fold (which is the only case where the co
 This posterior came with many approximations and assumptions, so it is not very certain. Instead of just assuming that the player will win if the posterior is greater than the probability of the computer's hand winning, the probability is calculated on a posterior distribution of the player's hands. The prior was a uniform distribution. Bayes' Theorem cannot really be used here to calculate the posterior because the conditional probabilities cannot be calculated (it would require calculating the probability of the above heuristic model being correct, which is not easily defined). Instead, a pseudo-posterior distribution will be assumed to be a beta distribution with a mean of *p<sub>win,post</sub>*. In other words Beta(*kp<sub>win,post</sub>*,*k*(1-*p<sub>win,post</sub>*)) where *k* is some constant that can be tuned. The constant represents the weight that the computer will put on the player's move given the player's history. The cumulative probability of the pseudo-posterior distribution is then used to determine the posterior probability of the player having the better hand, which will be called *p<sub>win,final</sub>*.
 
 ### Computer Behavior
-The computer can win if either it has the better hand or the player folds. This probability is *p<sub>compwin</sub>*=*p<sub>win,final</sub>* x *p<sub>fold</sub>* + (1-*p<sub>win,final</sub>*)
+The computer can win if either it has the better hand or the player folds. This probability is *p<sub>compwin</sub>*=*p<sub>win,final</sub>* x *p<sub>fold</sub>* + (1-*p<sub>win,final</sub>*). The probability of the computer folding, after all the above calculations, is *p<sub>compfold</sub>*=1/(1+e<sup>-*w*(*p<sub>win,final</sub>* - *p<sub>pot</sub>*)</sup>).
 
 
 
