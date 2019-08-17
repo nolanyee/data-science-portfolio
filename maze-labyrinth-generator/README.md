@@ -48,8 +48,8 @@ The labyrinth generator starts by creating a path from the start and end points.
 <img src="images/MazeFig4.png" width = "600">
 
 <img src="images/MazeFig5.png" width = "300">
-<img src="images/MazeFig6.png" width = "600">
-<img src="images/MazeFig7.png" width = "600">
+<img src="images/MazeFig6.png" width = "900">
+<img src="images/MazeFig7.png" width = "500">
 
 A perfect labyrinth is not always possible depending on the size of the grid and the starting and ending positions. Sometimes single cells or incomplete cycles will be left over. If they are adjacent to the path set ends they can be combined, otherwise they will be excluded from the labyrinth, creating an inaccessible space. 
 
