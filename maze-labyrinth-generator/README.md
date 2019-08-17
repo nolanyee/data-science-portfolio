@@ -46,7 +46,7 @@ Loops in the maze (alternate solutions) are created by randomly deleting walls a
 <img src="images/MazeFig10.png" width = "600">
 
 ### Labyrinth Generation
-The labyrinth generator starts by creating a path from the start and end points. This is the path set. The rest of the space is filled with 2x2 loops, which are circular sets. Then all the sets are unioned. The unioning process is different than the one used to generate the maze. Rather than just deleting a shared wall, the walls are rearranged to combined loops into one long loop, or combine a loop and a path into one long path.
+The labyrinth generator starts by creating a path from the start and end points. This is the path set. The rest of the space is filled with 2x2 loops, which are circular sets. Then all the sets are unioned. The unioning process is different than the one used to generate the maze. Rather than just deleting a shared wall, the walls are rearranged to combine loops into one long loop, or combine a loop and a path into one long path.
 
 <img src="images/MazeFig4.png" width = "600">
 
