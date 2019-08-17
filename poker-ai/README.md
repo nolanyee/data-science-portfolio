@@ -34,6 +34,7 @@ __Full House__\
 For each suit and each value, if the card is in the deck and there are at least 2 other cards of the same value but a lower suit, then the combinations of all posible pairs (C<sup>*n*</sup><sub>2</sub> where *n* is the number of cards with the same value) for all other values are summed. This is multiplied by the combinations of triplets (C<sup>*n*</sup><sub>2</sub> where *n* is the number of cards with the same value as the high card but a lower suit).
 
 __4 of a Kind__\
+<sup>Q</sup>&#9824;  <sup>Q</sup>&#9825;  <sup>Q</sup>&#9827;  <sup>Q</sup>&#x25CA;  <sup>2</sup>&#9827;\
 For spades only (since the high card in a 4 of a kind must be a spade) for each value, if all 4 suits are in the deck the count is 1, otherwise it is 0.
 
 __3 of a Kind__\
