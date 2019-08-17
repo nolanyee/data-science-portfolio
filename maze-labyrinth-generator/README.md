@@ -50,12 +50,17 @@ The labyrinth generator starts by creating a path from the start and end points.
 
 <img src="images/MazeFig4.png" width = "600">
 
-The paths (which are not cyclically connected) are treated as a set, but the loops are treated as circular sets (implemented as cycled lists). To union the sets, the program looks for 2 adjacent cells in each set that are adjacent to each other (form a 2x2 block). The walls in the center of this block are rearranged to join the two sets. 
+The paths (which are not cyclically connected) are treated as a set, but the loops are treated as circular sets (implemented as cycled lists). To union the sets, the program looks for 2 adjacent cells in each set that are adjacent to each other (forming a 2x2 block). The walls in the center of this block are rearranged to join the two sets. 
 <img src="images/MazeFig5.png" width = "300">
 
-The cells in one set are rotated until the 2 adjacent cells are split, one at the end and one and the beginning. Then this cycled list is inserted between the two adjacent cells in the other set.
+The mechanism behind the rearrangement is as follows. The above two loops are represented as cycled lists (the number in the figure below represent the order of items in the list). One set is rotated by cyclical permutation of the order of list items. This rotation is performed until the first and last item of the list are in the 2x2 region. Then the other list is split into 2 lists. The first list is reversed if necessary. Then the lists are combined into one list by inserting the first list between the two parts of the second list. Since both sets are circular, the final set is also circular. Walls are then placed where there are no connections (arrows). A wall is not placed between the first and last cells in the list.
+
 <img src="images/MazeFig6.png" width = "900">
+
+If the ends of the second list are already in the 2x2 area, the second list does not need to be split. 
 <img src="images/MazeFig7.png" width = "500">
+
+This union procedure works for two cyclical set or a cyclical set and an ordinary set (path), but not two paths. The procedure is similar to combine a cyclical set with a path except walls except that the resulting structure will not be circular.
 
 A perfect labyrinth is not always possible depending on the size of the grid and the starting and ending positions. Sometimes single cells or incomplete cycles will be left over. If they are adjacent to the path set ends they can be combined, otherwise they will be excluded from the labyrinth, creating an inaccessible space. 
 
