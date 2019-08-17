@@ -14,18 +14,20 @@ The Poker AI stores a copy of the deck, which is called the computer deck. By ca
 The probability of each Poker hand is straightforward to determine analytically for a full deck, but for partial decks it becomes extremely difficult, especially when one must consider the ranking based on the high card. A consistent way of calculating the probability is by actually iterating through combinations, (combined with some theoretical simplifications). These methods are summarized below.
 
 __Straight Flush__\
-For each suit and each value (not including 2 and 3 since they cannot be the high card in a straight) the count is 1 if the card and the 4 preceeding cards are in the deck, and zero otherwise. 
+For each suit and each value (not including 2 and 3 since they cannot be the high card in a straight), if the card is in the deck, the count is 1 if the card and the 4 preceeding cards are in the deck, and zero otherwise. 
 
 __Flush__\
-For each suit and each value (excluding 2-5, since they cannot be the high card of a flush) the number *n* of cards of the same suit below the high card value is calculated, then the combinations are C<sup>*n*</sup><sub>4</sub>. Finally, the number of associated straight flushes (calculated above) must be subtracted.
+For each suit and each value (excluding 2-5, since they cannot be the high card of a flush), if the card is in the deck, the number *n* of cards of the same suit below the high card value is calculated, then the combinations are C<sup>*n*</sup><sub>4</sub>. Finally, the number of associated straight flushes (calculated above) must be subtracted.
 
 __Straight__\
-For each suit and each value (not including 2 and 3 since they cannot be the high card in a straight) the count is zero if there are not at least 1 of the five values required. Otherwise, the number of cards of each required value (high card's value and the 4 preceeding numbers) are multiplied together to give the number of combinations. Then the number of associated straight flushes is subtracted once again.
+For each suit and each value (not including 2 and 3 since they cannot be the high card in a straight), if the card is in the deck, the count is zero if there are not at least 1 of the five values required. Otherwise, the number of cards of each required value (high card's value and the 4 preceeding numbers) are multiplied together to give the number of combinations. Then the number of associated straight flushes is subtracted once again.
 
 __No Pair__\
-For each suit and each value (excluding 2-5 since they cannot be the high card in no pair) the number of each value lower than the high card is counted. The total combinations is the sum of the products of these counts for every combination of 4 cards out of the available cards lower than the high card. Then the combinations of straight, flush, and straight flush are subtracted.
+For each suit and each value (excluding 2-5 since they cannot be the high card in no pair), if the card is in the deck, the number of each value lower than the high card is counted. The total combinations is the sum of the products of these counts for every combination of 4 cards out of the available cards lower than the high card. Then the combinations of straight, flush, and straight flush are subtracted.
 
 __Full House__\
+For each suit and each value, if the card is in the deck and there are at least 2 other cards of the same value, then the combinations of all posible pairs (C<sup>*n*</sup><sub>4</sub> where *n* is the number of cards with the same value) for all other values are summed. This is multiplied by the combinations of triplets (C<sup>*n*</sup><sub>4</sub> where *n* is the number of cards with the same value as the high card but a lower suit).
+
 
 
 
