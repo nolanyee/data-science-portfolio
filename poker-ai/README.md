@@ -38,12 +38,15 @@ __4 of a Kind__\
 For spades only (since the high card in a 4 of a kind must be a spade) for each value, if all 4 suits are in the deck the count is 1, otherwise it is 0.
 
 __3 of a Kind__\
+<sup>7</sup>&#9825; <sup>7</sup>&#9824; <sup>7</sup>&#9827;  <sup>A</sup>&#x25CA;  <sup>2</sup>&#9827;\
 For each suit and value, if the card is in the deck and there are at least 2 other cards of the same value but lower suit, the combinations are calculated as C<sup>*n*</sup><sub>2</sub>C<sup>*m*</sup><sub>2</sub> where *n* is the number of cards of the high value with lower suit that the high card, and *m* is the number of cards in the deck minus 3. Then the number of combinations of 4 of a kind and full house are subtracted.
 
 __2 Pair__\
+<sup>5</sup>&#9824; <sup>5</sup>&#9827;  <sup>A</sup>&#x25CA; <sup>A</sup>&#9825;  <sup>K</sup>&#9827;\
 For each suit and value, if the card is in the deck and there is at least 1 other card of the same value but lower suit, the combinations are calculated as C<sup>*n*</sup><sub>1</sub> (where *n* is the number of cards of the high value with lower suit that the high card), times the sum of the product of C<sup>*m*</sup><sub>2</sub> (where *m* is the number of cards with the same value as the second pair) and the number of cards that have a different value than the pairs (the sum is over values lower than the high card).
 
 __1 Pair__\
+<sup>4</sup>&#9827;  <sup>4</sup>&#x25CA; <sup>3</sup>&#9825;  <sup>Q</sup>&#9827; <sup>5</sup>&#9824; \
 For each suit and value, if the card is in the deck and there is at least 1 other card of the same value but lower suit, the combinations are C<sup>*n*</sup><sub>1</sub> (where *n* is the number of cards of the high value with lower suit that the high card) times the sum of the product of the number of cards of each of 3 values, for all combinations of 3 values that are not equal to the value of the pair.
 
 
