@@ -52,7 +52,7 @@ Another important probability is the pot probability (related to pot odds), *p<s
 ### Probability of Folding
 The probability of folding *p<sub>fold</sub>* is modeled as a logistic function. The computer will be sensible, having an initial probabilty of folding of 1/(1+e<sup>-*w*(*p<sub>lose</sub>* - *p<sub>pot</sub>*)</sup>), where *w* is a constant. 
 
-The player, however may not be sensible. To determine how reckless or conservative the user is, logistic regression is performed on the player's most recent 100 moves (or less if the game has not progressed that far). The x values are the *p<sub>pot</sub>* and the y values are 1 (fold) or 0 (not fold). This will approximate the user's probability of folding. On average the probability of having a losing hand is 0.5. If the inflection of the logistic regression curve is less than 0.5, the player is agressive. If the inflection is much greater than 0.5, the player is conservative.
+The player, however may not be sensible. To determine how reckless or conservative the user is, logistic regression is performed on the player's most recent 100 moves (or less if the game has not progressed that far). The x values are the *p<sub>pot</sub>* and the y values are 1 (fold) or 0 (not fold). This will approximate the user's probability of folding *on average*. On average the probability of having a losing hand is 0.5. If the inflection of the logistic regression curve is less than 0.5, the player is agressive. If the inflection is much greater than 0.5, the player is conservative.
 
 
 
