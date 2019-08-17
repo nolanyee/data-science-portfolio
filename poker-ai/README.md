@@ -18,7 +18,7 @@ __Straight Flush__\
 For each suit and each value (not including 2 and 3 since they cannot be the high card in a straight), if the card is in the deck, the count is 1 if the card and the 4 preceeding cards are in the deck, and zero otherwise. 
 
 __Flush__\
-<sup>2</sup>:white heart:  <sup>K</sup>:hearts:  <sup>4</sup>:hearts:  <sup>7</sup>:hearts:  <sup>9</sup>:hearts:\
+<sup>2</sup>:white hearts:  <sup>K</sup>:hearts:  <sup>4</sup>:hearts:  <sup>7</sup>:hearts:  <sup>9</sup>:hearts:\
 For each suit and each value (excluding 2-5, since they cannot be the high card of a flush), if the card is in the deck, the number *n* of cards of the same suit below the high card value is calculated, then the combinations are C<sup>*n*</sup><sub>4</sub>. Finally, the number of associated straight flushes (calculated above) must be subtracted.
 
 __Straight__\
