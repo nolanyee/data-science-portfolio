@@ -53,7 +53,7 @@ For each suit and value, if the card is in the deck and there is at least 1 othe
 ### Probability of Losing Hand
 Once the combinations of all hands has been determined, the probability is determined by dividing by C<sup>*n*</sup><sub>5</sub> where *n* is the total number of cards in the deck.
 
-The probabilities of all the different hands are arranged in order. Then the cumulative sum is used to calculated the probability of the user having a higher or lower hand than the computer. The probability of having a losing hand will be denoted as *p<sub>lose</sub>*.
+The probabilities of all the different hands are arranged in order. Then the cumulative sum is used to calculated the probability of the user having a higher or lower hand than the computer. The probability of having a losing hand will be denoted as *p<sub>lose</sub>*. Note that this is calculated assuming nothing is known about the opponent's hand, in other words the probability density distribution is uniform for the opponent.
 
 ### Pot Probability
 Another important probability is the pot probability (related to pot odds), *p<sub>pot</sub>*. The pot probability is defined as *gain / (gain+loss)*, which, as a conservative estimate, is calculated as *(pot - total previous bet) / (pot + current bet + current raise)*. This represents the reqired probability of having a losing hand to break even on average. The higher the pot probability, the higher probability of losing the player can tolerate. For a bet to be sensible, the probability of having a losing hand and unsuccessful bluff must be less than the pot probability.
