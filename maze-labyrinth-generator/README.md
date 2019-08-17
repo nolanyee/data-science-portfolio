@@ -12,7 +12,7 @@ The program also includes a unique grid type maze, where each grid block is a la
 
 The mazes are solved using Dijkstra's algorithm (each cell is treated as the node of a graph, and the edges are where the wall has been deleted).
 
-<img src="images/MazeFig2.png" width = "300">
+<img src="images/MazeFig2.png" width = "200">
 
 ### Usage
 A screenshot of the user interface is shown below.
@@ -47,7 +47,7 @@ Loops in the maze are created by randomly deleting walls after the maze is gener
 The labyrinth generator starts by creating a path from the start and end points. This is the path set. The rest of the space is filled with 2x2 loops. The paths are treated as a set, but the loops are treated as circular sets (implemented as cycled lists). To union the sets, the program looks for 2 adjacent cells in each set that are adjacent to each other (form a 2x2 block). The cells in one set are rotated until the 2 adjacent cells are split, one at the end and one and the beginning. Then this cycled list is inserted between the two adjacent cells in the other set.
 <img src="images/MazeFig4.png" width = "600">
 
-<img src="images/MazeFig5.png" width = "600">
+<img src="images/MazeFig5.png" width = "300">
 <img src="images/MazeFig6.png" width = "600">
 <img src="images/MazeFig7.png" width = "600">
 
@@ -61,4 +61,4 @@ This type of maze begins by dividing the grid into subgrids. A labyrinth is gene
 <img src="images/MazeFig8.png" width = "600">
 
 Then each grid block is unioned until the maze is complete.
-<img src="images/MazeFig11.png" width = "600">
+<img src="images/MazeFig11.png" width = "800">
