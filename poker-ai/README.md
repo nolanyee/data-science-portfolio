@@ -76,6 +76,8 @@ For the aggressive player, the probability of folding when it is appropriate to 
 For the cautious player, the probability of folding when it is appropriate to fold is *p<sub>appropriate</sub>* = *f<sub>0</sub>*. The probability of folding when the player has a good hand is *p<sub>cautious</sub>* =*f<sub>user</sub>*-*f<sub>0</sub>*. And the probability of not folding when the player has a good hand is *p<sub>no fold</sub>*=*p<sub>beat</sub>* assuming the player is too cautious to ever bluff (*p<sub>bluff</sub>* = 0).
 
 ### Bayes' Theorem
+The goal of calculating the probability of folding is to use the player action combined with the pot probability to update the probability that the player will have a hand that beats the computer. Bayes' Theorem can be used to achieve this.
+
 
 
 
