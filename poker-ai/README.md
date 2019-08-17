@@ -17,10 +17,10 @@ __Straight Flush__\
 For each suit and each value (not including 2 and 3 since they cannot be the high card in a straight) the count is 1 if the card and the 4 preceeding cards are in the deck, and zero otherwise. 
 
 __Flush__\
-For each suit and each value (excluding 2-5, since they cannot be the high card of a flush) the number *n* of cards of the same suit below the high card value is calculated, then the combinations are C<sup>*n*</sup><sub>4</sub>. Finally, the number of straight flushes (calculated above) must be subtracted.
+For each suit and each value (excluding 2-5, since they cannot be the high card of a flush) the number *n* of cards of the same suit below the high card value is calculated, then the combinations are C<sup>*n*</sup><sub>4</sub>. Finally, the number of associated straight flushes (calculated above) must be subtracted.
 
 __Straight__\
-
+For each suit and each value (not including 2 and 3 since they cannot be the high card in a straight) the count is zero if there are not at least 1 of the five values required. Otherwise, the number of cards of each required value (high card's value and the 4 preceeding numbers) are multiplied together to give the number of combinations. Then the number of associated straight flushes is subtracted once again.
 
 
 
