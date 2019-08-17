@@ -22,7 +22,7 @@ __Flush__\
 For each suit and each value (excluding 2-5, since they cannot be the high card of a flush), if the card is in the deck, the number *n* of cards of the same suit below the high card value is calculated, then the combinations are C<sup>*n*</sup><sub>4</sub>. Finally, the number of associated straight flushes (calculated above) must be subtracted.
 
 __Straight__\
-<sup>3</sup>&#9824;  <sup>4</sup>&#9825;  <sup>5</sup>&#x2662;  <sup>6</sup>&#9825;  <sup>7</sup>&#9827;\
+<sup>3</sup>&#9824;  <sup>4</sup>&#9825;  <sup>5</sup>&#x2727;  <sup>6</sup>&#9825;  <sup>7</sup>&#9827;\
 For each suit and each value (not including 2 and 3 since they cannot be the high card in a straight), if the card is in the deck, the count is zero if there are not at least 1 of the five values required. Otherwise, the number of cards of each required value (high card's value and the 4 preceeding numbers) are multiplied together to give the number of combinations. Then the number of associated straight flushes is subtracted once again.
 
 __No Pair__\
