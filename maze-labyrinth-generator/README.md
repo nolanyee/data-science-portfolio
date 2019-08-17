@@ -69,6 +69,8 @@ Dead ends in the labyrinth can be created by building a wall randomly in the mid
 
 ### Grid Maze Generation
 This type of maze begins by dividing the grid into subgrids. A labyrinth is generated in the subgrid using depth first search. A layrinth is a single path that must cover all cells. Therefore all the possible single paths are explored and the algorithm stops when all the cells have been encorporated into the path. This is a much more time consuming algorithm than the one used above, but it may be more appropriate for smaller labyrinths, since the previous algorithm requires the use of 2x2 units. 
+
+The following is an example of a tree of possible paths, starting from the top left corner of the grid.
 <img src="images/MazeFig8.png" width = "600">
 
 Then each grid block is unioned until the maze is complete.
