@@ -73,6 +73,8 @@ For the aggressive player, the probability of folding when it is appropriate to 
 
 <img src="images/PokerFig2.png" width="700">
 
+For the cautious player, the probability of folding when it is appropriate to fold is *p<sub>appropriate</sub>* = *f<sub>0</sub>*. The probability of folding when the player has a good hand is *p<sub>cautious</sub>* =*f<sub>user</sub>*-*f<sub>0</sub>*. And the probability of not folding when the player has a good hand is *p<sub>no fold</sub>=*p<sub>beat</sub>* assuming the player is too cautious to ever bluff (*p<sub>bluff</sub>* = 0).
+
 ### Bayes' Theorem
 
 
