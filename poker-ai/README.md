@@ -22,6 +22,10 @@ For each suit and each value (excluding 2-5, since they cannot be the high card 
 __Straight__\
 For each suit and each value (not including 2 and 3 since they cannot be the high card in a straight) the count is zero if there are not at least 1 of the five values required. Otherwise, the number of cards of each required value (high card's value and the 4 preceeding numbers) are multiplied together to give the number of combinations. Then the number of associated straight flushes is subtracted once again.
 
+__No Pair__\
+For each suit and each value (excluding 2-5 since they cannot be the high card in no pair) the number of each value lower than the high card is counted. The total combinations is the sum of the products of these counts for every combination of 4 cards out of the available cards lower than the high card. Then the combinations of straight, flush, and straight flush are subtracted.
+
+__Full House__\
 
 
 
