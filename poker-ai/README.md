@@ -22,13 +22,15 @@ __Flush__\
 For each suit and each value (excluding 2-5, since they cannot be the high card of a flush), if the card is in the deck, the number *n* of cards of the same suit below the high card value is calculated, then the combinations are C<sup>*n*</sup><sub>4</sub>. Finally, the number of associated straight flushes (calculated above) must be subtracted.
 
 __Straight__\
-<sup>3</sup>&#9824;  <sup>4</sup>&#9825;  <sup>5</sup>&#9824;  <sup>6</sup>&#9825;  <sup>7</sup>&#9827;
+<sup>3</sup>&#9824;  <sup>4</sup>&#9825;  <sup>5</sup>&#9824;  <sup>6</sup>&#9825;  <sup>7</sup>&#9827;\
 For each suit and each value (not including 2 and 3 since they cannot be the high card in a straight), if the card is in the deck, the count is zero if there are not at least 1 of the five values required. Otherwise, the number of cards of each required value (high card's value and the 4 preceeding numbers) are multiplied together to give the number of combinations. Then the number of associated straight flushes is subtracted once again.
 
 __No Pair__\
+<sup>2</sup>&#9824;  <sup>4</sup>&#9825;  <sup>8</sup>&#9824;  <sup>Q</sup>&#9825;  <sup>J</sup>&#9827;\
 For each suit and each value (excluding 2-5 since they cannot be the high card in no pair), if the card is in the deck, the number of each value lower than the high card is counted. The total combinations is the sum of the products of these counts for every combination of 4 cards out of the available cards lower than the high card. Then the combinations of straight, flush, and straight flush are subtracted.
 
 __Full House__\
+<sup>J</sup>&#9824;  <sup>J</sup>&#9825;  <sup>J</sup>&#9827;  <sup>5</sup>&#9825;  <sup>5</sup>&#9827;\
 For each suit and each value, if the card is in the deck and there are at least 2 other cards of the same value but a lower suit, then the combinations of all posible pairs (C<sup>*n*</sup><sub>2</sub> where *n* is the number of cards with the same value) for all other values are summed. This is multiplied by the combinations of triplets (C<sup>*n*</sup><sub>2</sub> where *n* is the number of cards with the same value as the high card but a lower suit).
 
 __4 of a Kind__\
