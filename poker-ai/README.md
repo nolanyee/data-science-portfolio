@@ -46,7 +46,7 @@ Once the combinations of all hands has been determined, the probability is deter
 
 The probabilities of all the different hands are arranged in order. Then the cumulative sum is used to calculated the probability of the user having a higher or lower hand than the computer.
 
-Another important probability is the pot probability (related to pot odds). The pot probability is defined as *gain/(gain+loss)*, which in this case is equal to *(pot - total bet)/(pot + bet + raise)*.
+Another important probability is the pot probability (related to pot odds). The pot probability is defined as *gain / (gain+loss)*, which, as a conservative estimate, is calculated as *(pot - total previous bet) / (pot + current bet + current raise)*. For a bet to be sensible, the probability of having a losing hand and unsuccessful bluff must be less than the pot probability. 
 
 
 
