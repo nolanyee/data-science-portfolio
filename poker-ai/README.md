@@ -13,7 +13,8 @@ The Poker AI stores a copy of the deck, which is called the computer deck. By ca
 
 The probability of each Poker hand is straight foward to determine analytically for a full deck, but for partial decks it becomes extremely difficult, especially when one must consider the ranking based on the high card. A consistent way of calculating the probability is by actually iterating through combinations, (combined with some theoretical simplifications). These methods are summarized below.
 
-Straight Flush\For each suit and each value (not including 2 and 3 since they cannot be the high card in a straight) the count is 1 if the card and the 4 preceeding cards are in the deck, and zero otherwise. 
+Straight Flush\
+For each suit and each value (not including 2 and 3 since they cannot be the high card in a straight) the count is 1 if the card and the 4 preceeding cards are in the deck, and zero otherwise. 
 
 
 
