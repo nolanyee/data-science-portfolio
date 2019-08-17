@@ -33,21 +33,27 @@ Depending on the parameters and user actions, there may be multiple solutions to
 The shortest solution path is calculated using Dijkstra's algorithm.
 
 ### Maze Generation
-The maze begins with each cell having all 4 walls. Each cells is a disjoint set. The union of a disjoint set produces a new set. Each set has walls that form its border. When two sets are unioned a wall is randomly selected from the union of the border walls of the two sets. If the cells neighboring the walls already have walls deleted, the probability of deleting the border wall is diminished. The decision to delete or not is made by a random number generator. If the number of deleted walls in a cell exceeds the sum of the random number and the branching parameter, the wall is not deleted and a new border wall is selected randomly. Random sets are unioned until there is only one set remaining.
+The maze begins with each cell having all 4 walls. Each cells is a disjoint set. The union of a disjoint set produces a new set. Each set has walls that form its border. When two sets are unioned a wall is randomly selected from the union of the border walls of the two sets. If the cells neighboring the walls already have walls deleted, the probability of deleting the border wall is diminished. The decision to delete or not is made by a random number generator. If the number of deleted walls in a cell exceeds the sum of the random number and the branching parameter, the wall is not deleted and a new border wall is selected randomly. Random adjacent sets are unioned until there is only one set remaining.
+
+The following is an example of this process. the blue and red regions are sets that are unioned.
 <img src="images/MazeFig3.png" width = "600">
 
 Typically more complex maze solutions are created when the branching parameter is close to 2.
 <img src="images/MazeFig12.png" width = "600">
 <img src="images/MazeFig13.png" width = "600">
 
-Loops in the maze are created by randomly deleting walls after the maze is generated.
+Loops in the maze (alternate solutions) are created by randomly deleting walls after the maze is generated.
 <img src="images/MazeFig10.png" width = "600">
 
 ### Labyrinth Generation
-The labyrinth generator starts by creating a path from the start and end points. This is the path set. The rest of the space is filled with 2x2 loops. The paths are treated as a set, but the loops are treated as circular sets (implemented as cycled lists). To union the sets, the program looks for 2 adjacent cells in each set that are adjacent to each other (form a 2x2 block). The cells in one set are rotated until the 2 adjacent cells are split, one at the end and one and the beginning. Then this cycled list is inserted between the two adjacent cells in the other set.
+The labyrinth generator starts by creating a path from the start and end points. This is the path set. The rest of the space is filled with 2x2 loops, which are circular sets. Then all the sets are unioned. The unioning process is different than the one used to generate the maze. Rather than just deleting a shared wall, the walls are rearranged to combined loops into one long loop, or combine a loop and a path into one long path.
+
 <img src="images/MazeFig4.png" width = "600">
 
+The paths (which are not cyclically connected) are treated as a set, but the loops are treated as circular sets (implemented as cycled lists). To union the sets, the program looks for 2 adjacent cells in each set that are adjacent to each other (form a 2x2 block). The walls in the center of this block are rearranged to join the two sets. 
 <img src="images/MazeFig5.png" width = "300">
+
+The cells in one set are rotated until the 2 adjacent cells are split, one at the end and one and the beginning. Then this cycled list is inserted between the two adjacent cells in the other set.
 <img src="images/MazeFig6.png" width = "900">
 <img src="images/MazeFig7.png" width = "500">
 
