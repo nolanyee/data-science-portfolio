@@ -166,4 +166,84 @@ __Techniques__
 
 Exclusion nodes most often are used as modifiers to enforce mutual exclusivity of different nodes. As a trivial example, if you know your acquaintance has a child named Elizabeth, and that she only has one child, then in the past she was pregnant with a girl.
 
+<img src="images/BayesFig1.png" width="500">
 
+Inversion nodes can also be used as modifiers.
+
+<img src="images/BayesFig2.png" width="500">
+
+Additional parent nodes, called ‘other’ nodes, can be used to allow for a node to be true even if the other parents are false.
+
+<img src="images/BayesFig3.png" width="800">
+
+__Examples__
+
+Due to having only 5 different types of nodes. Not all Bayesian networks can be replicated with this application.
+However, many simpler ones can be replicated. For example these two networks are equivalent
+
+<img src="images/BayesFig4.png" width="800">
+
+<img src="images/BayesFig5.png" width="700">
+
+As a second example, the Asia network is translated as
+
+<img src="images/BayesFig6.png" width="900">
+
+<img src="images/BayesFig7.png" width="900">
+
+<img src="images/BayesFig8.png" width="900">
+
+__Bayesian Mode Example__
+
+In this example, an extra peak in a particle size histogram is observed. Different possible causes are remedied. After being fixed if the problem persists, these nodes are set to False while the extra peak node is still True. For the nodes that did decrease the frequency of extra peak observations (but not completely eliminate them), they are set to True while the extra peak node is True (the observed effect after these causes were remedied (made False) demonstrated that these nodes were True at the time the ineffective nodes were tested). The state of the evidence after testing the nodes that made no difference is used to update the network. Once updated, the potential mechanisms of the observed problem are narrowed down.
+
+<img src="images/BayesFig9.png" width="900">
+
+<img src="images/BayesFig10.png" width="900">
+
+<img src="images/BayesFig11.png" width="900">
+
+__Investigation Mode Examples__
+
+Under Bayesian mode updating this network would result in a contradictory evidence error.
+
+<img src="images/BayesFig12.png" width="900">
+
+Under Investigation mode, with ‘Use All Evidence’ unchecked the root is optimized to match the closest child. Since the evidence are not considered contradictory unless the probability of observing the evidence is less than 10% (this may be altered in the code).
+
+<img src="images/BayesFig13.png" width="900">
+
+If ‘Use All Evidence’ is checked, the root is optimized to reduce the total sum of squares from all evidence nodes. In this case, the result is the same. However, it also optimizes the weights based on all evidence nodes, even if they are not flagged as contradictory. This results in the following.
+
+<img src="images/BayesFig14.png" width="900">
+
+To match the evidence, the green lines indicate that the weight should be increased. The red lines indicate the weight should be decreased.
+
+The next generic example shows the difference in behavior of Investigation mode for different types of nodes.
+The ‘Use All Evidence’ is unchecked, root optimization is done for the closest evidence descendant only, which is node H, while treating other evidence as fixed. Since node A is fixed at 1, none of the roots have any effect on node H’s theoretical probability, which is always 1. Therefore the root probability is not changed. However, when ‘Use All Evidence’ is checked, the gradient descent is done to optimize the theoretical probability of both A and H simultaneously, and their probabilities are treated as variables instead of fixed values. Thus all the roots become 0, because if A were not 1, then the other roots must be 0 to ensure H is 0.  
+
+<img src="images/BayesFig15.png" width="900">
+
+If node F is changed to interaction and the evidence is changed, under constrained mode the line colors don’t change because weights are restricted to between 0 and 1. However, if not constrained, the paths related to the contradiction become blue. Recall that blue represents weights above 1. In this case, since all the roots are 0, the blue actually represents weights of positive infinity.  In this case it means that one or more of the blue edges must be deleted to resolve the contradiction, or an ‘other’ node must be added to a main node somewhere (node D).
+
+<img src="images/BayesFig16.png" width="900">
+
+If F is set as an exclusion node, the results are more interesting. If constrained, the three different results are observed. For cases where the weights are all balanced, the gradient starts out as 0. However, the gradient descent algorithm takes the first step in a random direction to move off a maximum or a saddle point. In this case it results in different edges being flagged for deletion. In order to make the exclusion node true, only one of the parents is allowed to be true. The link to the other one is marked red. However, since E and G are equivalent, either linkage could be valid, thus the random alternation. Rarely, the third case will occur, where gradient descent decreases both edges roughly equally. The edges from C to D to F are still black because no change in weight between 0 and 1 can make a probability of 0 into a 1.
+
+<img src="images/BayesFig17.png" width="900">
+
+If ‘constrained’ is unchecked, the results are a mix of all possible scenarios. The blue lines indicate the cases where A and B are disconnected from C (allowing C to be 1), if C is disconnected from D or a new ‘other’ parent is added to D. If an other parent is added to D that causes D to be True, then both connections from E and G to F must be broken (hence the red lines). If D is still False, either the connection between E and F or G and F is also broken to make F have only one parent that is True. The final alternative is that the connection between F and H is broken or another parent is added to H. The results are convoluted in this case because the exclusion node is used as parent nodes rather than modifiers. Typically exclusion nodes should be used as modifiers and should not have children.
+
+<img src="images/BayesFig18.png" width="900">
+
+In the next case, F is an inversion node. In order for H to be true, F must be true, so connections between F and E, A, and G must be broken. Alternatively the connection between F and H can be broken or a new parent added to H.
+
+<img src="images/BayesFig19.png" width="900">
+
+In the next case, F is an inverted interaction node. In order for H to be true, F must be true, so connections between F and H must be broken. Note that connections between A, E, and G may be broken as well. The reason why there is no color is because all the associated probabilities and weights are 1, which means the gradient is near 0 (very flat) over a large range. If the magnitude of the initial randomization is increased above 0.5, these edges would become colored. Which paths are red or blue would be change every time the network is updated (see on the right).
+
+<img src="images/BayesFig20.png" width="900">
+
+
+
+<img src="images/BayesFig21.png" width="900">
