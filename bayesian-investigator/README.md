@@ -12,9 +12,16 @@ __Notation__\
 *p*(*e* , *T*) = probability that the node of interest is T and the evidence is correct\
 *p*(*T<sub>i</sub>*) = probability that the *i*<sup>th</sup> parent node is T\
 *w<sub>i</sub>* =  weight of parent node
+*P<sub>i</sub>* = state (T or F) of *i*<sup>th</sup> parent node
  
 __Simplifications__
 1. Binary nodes only (T or F)
 2. Only five types of nodes
 3. 	The effect of any parent node *i* is related to the weighted probability that the parent is T,
 either *p*(*T<sub>i</sub>*)*w<sub>i</sub>* or 1-*p*(*T<sub>i</sub>*)*w<sub>i</sub>*.
+
+__Consequences of the Simplifications__\
+Let *p*(*T*) be the probability that the node of interest is true. The definition of the node types is such that the marginal probability is a polynomial of the products of weights and probabilities that parents are T\
+*p*(*T*)=*f*(*p*(*T<sub>1</sub>*)*w<sub>1</sub>*,...*p*(*T<sub>n</sub>*)*w<sub>n</sub>*)\
+and the conditional probability of a node being true (given the state of the parents P_i) is a function of the weights\
+p(T|P_1⋯P_n )=f(w_1,⋯,w_n )
