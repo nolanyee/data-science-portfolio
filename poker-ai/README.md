@@ -85,6 +85,8 @@ For the case where the player does not fold (which is the only case where the co
 
 <img src="images/PokerFig3.png" width="500">
 
+Note that if the player is determined to be conservative, then no matter how conservative the player is, the computer will always assume the player has a good hand if the player calls or raises. This perhaps is a bit conservative on the computer's end, but it avoids taking too much risk.
+
 This posterior came with many approximations and assumptions, so it is not very certain. Instead of just assuming that the player will win if the posterior is greater than the probability of the computer's hand winning, the probability is calculated on a posterior distribution of the player's hands. The prior was a uniform distribution. Bayes' Theorem cannot really be used here to calculate the posterior because the conditional probabilities cannot be calculated (it would require calculating the probability of the above heuristic model being correct, which is not easily defined). Instead, a pseudo-posterior distribution will be assumed to be a beta distribution with a mean of *p<sub>win,post</sub>*. In other words Beta(*kp<sub>win,post</sub>*,*k*(1-*p<sub>win,post</sub>*)) where *k* is some constant that can be tuned. The constant represents the weight that the computer will put on the player's move given the player's history. The cumulative probability of the pseudo-posterior distribution is then used to determine the posterior probability of the player having the better hand, which will be called *p<sub>win,final</sub>*.
 
 ### Computer Behavior
