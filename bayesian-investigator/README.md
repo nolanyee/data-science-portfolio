@@ -43,10 +43,10 @@ If the parents are independent, the probability is dependent on the weighted pro
 <img src="images/BayesEq1.png" width="500">
 
 using the inclusion-exclusion principle.
+                               
+The conditional probability if all the parents are false is 0, and if at least one of the parents is true the conditional probability is
 
 <img src="images/BayesEq2.png" width="250">
-                                         
-The conditional probability if all the parents are false is 0, and if at least one of the parents is true the conditional probability is
 
 __Interaction Node__
 
