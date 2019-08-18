@@ -106,7 +106,7 @@ __Bayesian Inference__
 
 For inference, the network must be able to update based on evidence. This can be done using Bayes’ Theorem.
 
-<img src="images/BayesEq12.png" width="200">
+<img src="images/BayesEq12.png" width="150">
 
 *p*(*e*) is obtained by unsetting all the evidence (calculating the prior network) and then setting the evidence one node at a time in order of inheritance (meaning children always go after parents). Before each node is set, the probability is collected and after all nodes have been set the product of all probabilities is taken. Then any exponents are removed to prevent any common ancestor effects which may occur if evidence nodes are siblings or cousins. *p*(*e* , *T*) is calculated the same way except the node of interest is included in the calculation. This process is repeated for all the non-evidence nodes. Memoization is used to prevent repeat calculations.
 
