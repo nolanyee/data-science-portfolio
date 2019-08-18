@@ -6,6 +6,9 @@ This prototype application is intended to facilitate construction of Bayesian ne
 
 <img src="images/BayesFig7.png" width="700">
 
+### Motivation
+Often times in settings such as an analytical laboratory or manufacturing environment troubleshooting complex issues is required. Troubleshooting is aided by the construction of diagrams. Fishbone diagrams are popular, but in complex cases they do not adequately represent the causal connections between different events, and they rely on the user's reasoning abilities to deduce causality. Causal diagrams based on graphs are much more flexible. Such graphs can be analyzed by constructing a corresponding Bayesian network. However, these networks require the input of many conditional probability tables. Often these probabilities are not known and there is not enough data collected to learn them, as troubleshooting usually seeks to solve the problem with a minimum number of experiments. It is desirable to have a simpler version of a Bayesian network that has a limited number on node types with defined conditional probability patterns that the user can choose from. In addition, since even the structure of the networks may just be hypothetical, it is beneficial to have software that can hint at which connections might be incorrect in the case of contradictory evidence.
+
 ### Theoretical Background
 
 __Notation__
