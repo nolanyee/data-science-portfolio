@@ -88,7 +88,17 @@ For the case where the player does not fold (which is the only case where the co
 This posterior came with many approximations and assumptions, so it is not very certain. Instead of just assuming that the player will win if the posterior is greater than the probability of the computer's hand winning, the probability is calculated on a posterior distribution of the player's hands. The prior was a uniform distribution. Bayes' Theorem cannot really be used here to calculate the posterior because the conditional probabilities cannot be calculated (it would require calculating the probability of the above heuristic model being correct, which is not easily defined). Instead, a pseudo-posterior distribution will be assumed to be a beta distribution with a mean of *p<sub>win,post</sub>*. In other words Beta(*kp<sub>win,post</sub>*,*k*(1-*p<sub>win,post</sub>*)) where *k* is some constant that can be tuned. The constant represents the weight that the computer will put on the player's move given the player's history. The cumulative probability of the pseudo-posterior distribution is then used to determine the posterior probability of the player having the better hand, which will be called *p<sub>win,final</sub>*.
 
 ### Computer Behavior
-The computer can win if either it has the better hand or the player folds. This probability is *p<sub>compwin</sub>*=*p<sub>win,final</sub>* x *p<sub>fold</sub>* + (1-*p<sub>win,final</sub>*). The probability of the computer folding, after all the above calculations, is *p<sub>compfold</sub>*=1/(1+e<sup>-*w*(*p<sub>win,final</sub>* - *p<sub>pot</sub>*)</sup>).
+The probability of the computer folding, after all the above calculations, is *p<sub>compfold</sub>*=1/(1+e<sup>-*w*(*p<sub>win,final</sub>* - *p<sub>pot</sub>*)</sup>). However, the computer will not consider folding unless its odds are not good.
+
+The computer can win if either it has the better hand or the player folds. This probability is *p<sub>compwin</sub>*=*p<sub>win,final</sub>* x *p<sub>fold</sub>* + (1-*p<sub>win,final</sub>*). So even if the player's hand is better, if the player is conservative and has a high chance of folding, the computer may raise. If the probability of losing (1-*p<sub>compwin</sub>*) is less than the pot probability, the computer considers raising. If (1-*p<sub>compwin</sub>*) is more than the pot probability then the computer will always fold unless the player calls, then the computer will call, since it doesn't lose anything. 
+
+In the case where the computer considers raising, to prevent the computer from constantly raising, the raises are random, but occur according to a raise frequency calculated as 1/(1+e<sup>-(x-0.75)</sup>) where x is the fraction of revealed computer hands that beat the player's hand. This ensures that the computer does not bluff too much if it has a history of showdowns that ended unfavorably. This way the player will not be tempted to keep calling the computer's bluff.
+
+The above behavior is overridden depending on the ratio of pot probability and (1-*p<sub>compwin</sub>*). If the ratio is greater than some threshold (6 is used in this program), then the computer will raise $10. If the ratio is greater than 2 and less than 6, the computer will raise $5. These raises occur with a different raise frequency, that is only limited by the amount of money the player and computer has left (the computer will keep raising until someone runs out of money).
+
+In all cases, if the computer does not raise, it will decide whether to call or fold randomly based on the frequency *p<sub>compfold</sub>*.
+
+
 
 
 
