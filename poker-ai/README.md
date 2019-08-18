@@ -98,6 +98,6 @@ The above behavior is overridden depending on the ratio of pot probability and (
 
 In all cases, if the computer does not raise, it will decide whether to call or fold randomly based on the frequency *p<sub>compfold</sub>*. However, if the player calls, the computer will always call, since there is nothing to lose.
 
-
+The default computer behavior may seem somewhat aggressive to some. The behavior can be tweaked by altering the various thresholds and constants described above.
 
 
