@@ -56,7 +56,8 @@ Once the combinations of all hands have been determined, the probability is dete
 The probabilities of all the different hands are arranged in order. Then the cumulative sum (which will be referred to as the rank of the hand) is the probability of the user having a lower hand than the computer. The probability of the user having a winning hand will be denoted as *p<sub>win</sub>* or *p<sub>complose</sub>*. Note that this is calculated assuming nothing is known about the opponent's hand, in other words the probability density distribution is uniform for the opponent (the opponent is equally likely to have any hand).
 
 ### Pot Probability
-Another important probability is the pot probability (related to pot odds), *p<sub>pot</sub>*. The pot probability is defined as *gain / (gain+loss)*, which, as a conservative estimate, is calculated as *(pot - total previous bet) / (pot + current bet + current raise)*. This represents the reqired probability of having a losing hand to break even on average. The higher the pot probability, the higher probability of losing the player can tolerate. For a bet to be sensible, the probability of having a losing hand (and unsuccessful bluff if applicable) must be less than the pot probability.
+Another important probability is the pot probability (related to pot odds), *p<sub>pot</sub>*. The pot probability is defined as\
+*gain / (gain+loss)*, which, as a conservative estimate, is calculated as *(pot - total previous bet) / (pot + current bet + current raise)*. This represents the reqired probability of having a losing hand to break even on average. The higher the pot probability, the higher probability of losing the player can tolerate. For a bet to be sensible, the probability of having a losing hand (and unsuccessful bluff if applicable) must be less than the pot probability.
 
 ### Probability of Folding
 The following are heuristic approximation models of player behavior. They are not necessarily theoretically rigorously provable, but are useful to describe the behavior generally. Note that the models are for folding vs. not folding. Calling and raising are not distinguished because they are accounted for in the pot probability (raising will lower the pot probability compared to just calling).
@@ -78,7 +79,8 @@ Therefore, if the player folds, the player's hand must have been somewhere below
 
 <img src="images/PokerFig2.png" width="700">
 
-If the player does not fold, the player's hand must be in the region above the threshold *p<sub>fold</sub>* (once again assuming uniform distribution). The probability that the computer's hand is in that same region is 1-*p<sub>fold</sub>*. And the probability of the computer's hand being lower in that region is (1-*p<sub>fold</sub>*)/2. The probability of the computer's hand being below the threshold is *p<sub>fold</sub>* and the probability of the computer's hand being below the player's hand in this case is 1. Then overall *p*( win | no fold ) = *p<sub>fold</sub>* x 1 + (1-*p<sub>fold</sub>*)/2 = (1+*p<sub>fold</sub>*)/2.
+If the player does not fold, the player's hand must be in the region above the threshold *p<sub>fold</sub>* (once again assuming uniform distribution). The probability that the computer's hand is in that same region is 1-*p<sub>fold</sub>*. And the probability of the computer's hand being lower in that region is (1-*p<sub>fold</sub>*)/2. The probability of the computer's hand being below the threshold is *p<sub>fold</sub>* and the probability of the computer's hand being below the player's hand in this case is 1. \
+Then overall *p*( win | no fold ) = *p<sub>fold</sub>* x 1 + (1-*p<sub>fold</sub>*)/2 = (1+*p<sub>fold</sub>*)/2.
 
 <img src="images/PokerFig3.png" width="700">
 
