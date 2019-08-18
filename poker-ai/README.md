@@ -50,7 +50,7 @@ __1 Pair__\
 For each suit and value, if the card is in the deck and there is at least 1 other card of the same value but lower suit, the combinations are C<sup>*n*</sup><sub>1</sub> (where *n* is the number of cards of the high value with lower suit that the high card) times the sum of the product of the number of cards of each of 3 values, for all combinations of 3 values that are not equal to the value of the pair.
 
 
-### Probability of Losing Hand
+### Probability of a Losing Hand
 Once the combinations of all hands have been determined, the probability is determined by dividing by C<sup>*n*</sup><sub>5</sub> where *n* is the total number of cards in the deck.
 
 The probabilities of all the different hands are arranged in order. Then the cumulative sum is used to calculate the probability of the user having a higher hand than the computer. The probability of the user having a winning hand will be denoted as *p<sub>win</sub>* or *p<sub>complose</sub>*. Note that this is calculated assuming nothing is known about the opponent's hand, in other words the probability density distribution is uniform for the opponent.
@@ -65,18 +65,10 @@ The probability of folding *p<sub>fold</sub>* is modeled as a logistic function.
 
 The player, however may not be sensible. To determine how reckless or conservative the user is, logistic regression is performed on the player's most recent 100 moves (or less if the game has not progressed that far). The x values are the *p<sub>pot</sub>* and the y values are 1 (fold) or 0 (not fold). This will approximate the user's probability of folding on average, *f<sub>user</sub>*(*p<sub>pot</sub>*). On average the probability of having a losing hand is 0.5. If the inflection of the logistic regression curve is less than 0.5, the player is aggressive. If the inflection is much greater than 0.5, the player is conservative.
 
-By comparing the logistic regression results with the sensible logistic function of *f<sub>0</sub>*(*p<sub>pot</sub>*)=1/(1+e<sup>-*w*(0.5 - *p<sub>pot</sub>*)</sup>), the probability of bluffing and over-cautious folding can be estimated.
-
 <img src="images/PokerFig1.png" width="700">
 
-For the aggressive player, the probability of folding when it is appropriate to fold (when the player has a bad hand) is approximately *p<sub>appropriate</sub>* = *f<sub>user</sub>*, assuming that the aggressive player will not be overcautious and fold with a winning hand (*p<sub>cautious</sub>* = 0). The probability of the player bluffing (not folding when the player has a bad hand) is *p<sub>bluff</sub>* = *f<sub>0</sub>*-*f<sub>user</sub>*. And the probability of not folding when the player has a hand that is likely to beat the computer is *p<sub>beat</sub>* = 1-*f<sub>user</sub>*.
-
-<img src="images/PokerFig2.png" width="700">
-
-For the cautious player, the probability of folding when it is appropriate to fold is *p<sub>appropriate</sub>* = *f<sub>0</sub>*. The probability of folding when the player has a good hand is *p<sub>cautious</sub>* =*f<sub>user</sub>*-*f<sub>0</sub>*. And the probability of not folding when the player has a good hand is *p<sub>no fold</sub>*=*p<sub>beat</sub>* assuming the player is too cautious to ever bluff (*p<sub>bluff</sub>* = 0).
-
-### Bayes' Theorem
-The goal of calculating the probability of folding is to use the player action combined with the pot probability to update the probability that the player will have a hand that beats the computer. Bayes' Theorem can be used to achieve this.
+### Conditional Probability
+The goal of calculating the probability of folding is to use the player action combined with the pot probability to update the probability that the player will have a hand that beats the computer. The desired value is *p(player win*|*fold)*. Bayes' Theorem cannot be used to achieve this because it wou.
 
 As mentioned earlier, the sensible betting means having the pot probability be no smaller than the probability of losing (*p<sub>lose</sub>*). The limit of sensible behavior would be described by *p<sub>pot</sub>* = *p<sub>lose</sub>* = 1-*p<sub>win</sub>*. The prior probability for the player winning, given the pot odds, is therefore *p<sub>win,prior</sub>* = 1-*p<sub>pot</sub>*. And the probability of having a losing hand is 1-*p<sub>win,prior</sub>*=*p<sub>pot</sub>* (Once again, *p<sub>win</sub>* refers to the probability of winning assuming a uniform distribution for the opponent).
 
