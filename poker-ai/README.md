@@ -68,7 +68,7 @@ The player, however may not be sensible. To determine how reckless or conservati
 <img src="images/PokerFig1.png" width="700">
 
 ### Conditional Probability
-The goal of calculating the probability of folding is to use the player action combined with the pot probability to update the probability that the player will have a hand that beats the computer. The desired value is *p(player win*|*fold)*. Bayes' Theorem cannot be used to achieve this because it wou.
+The goal of calculating the probability of folding is to use the player action combined with the pot probability to update the probability that the player will have a hand that beats the computer. The desired value is *p*( win | fold ) for the player, assuming a uniform distribution for the computer. Bayes' Theorem cannot be used to achieve this because it wou.
 
 As mentioned earlier, the sensible betting means having the pot probability be no smaller than the probability of losing (*p<sub>lose</sub>*). The limit of sensible behavior would be described by *p<sub>pot</sub>* = *p<sub>lose</sub>* = 1-*p<sub>win</sub>*. The prior probability for the player winning, given the pot odds, is therefore *p<sub>win,prior</sub>* = 1-*p<sub>pot</sub>*. And the probability of having a losing hand is 1-*p<sub>win,prior</sub>*=*p<sub>pot</sub>* (Once again, *p<sub>win</sub>* refers to the probability of winning assuming a uniform distribution for the opponent).
 
