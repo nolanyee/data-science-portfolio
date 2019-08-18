@@ -65,7 +65,7 @@ The probability of folding *p<sub>fold</sub>* is modeled as a logistic function.
 
 The player, however may not be sensible. To determine how reckless or conservative the user is, logistic regression is performed on the player's most recent 100 moves (or less if the game has not progressed that far). The x values are the *p<sub>pot</sub>* and the y values are 1 (fold) or 0 (not fold). This will approximate the user's probability of folding on average, *f<sub>user</sub>*(*p<sub>pot</sub>*). On average the probability of having a losing hand is 0.5. If the inflection of the logistic regression curve is less than 0.5, the player is aggressive. If the inflection is much greater than 0.5, the player is conservative.
 
-<img src="images/PokerFig1.pn" width="700">
+<img src="images/PokerFig1.png" width="700">
 
 ### Conditional Probability
 The goal of calculating the probability of folding is to use the player action combined with the pot probability to update the probability that the player will have a hand that beats the computer. The desired value is *p*( win | no fold ) for the player, assuming a uniform distribution for the computer.
@@ -76,11 +76,11 @@ However, if instead we assume that the player's decision to fold or not fold is 
 
 Therefore, if the player folds, the player's hand must have been somewhere below the threshold *p<sub>fold</sub>*. Without additional information, it is assumed that in these regions the player's hand is uniformaly distributed. Then, if the computer's hand is also uniformly distributed, the probability that the computer's hand is in the same region as the player's is simply *p<sub>fold</sub>*. Then the probability that the computer's hand is less than the player's hand is *p<sub>fold</sub>*/2 (either one is equally likely to be higher). This therefore is *p*( win | fold ). This value is not that useful, since the computer doesn't need to decide anything if the the player folds.
 
-<img src="images/PokerFig2.pn" width="700">
+<img src="images/PokerFig2.png" width="700">
 
 If the player does not fold, the player's hand must be in the region above the threshold *p<sub>fold</sub>* (once again assuming uniform distribution). The probability that the computer's hand is in that same region is 1-*p<sub>fold</sub>*. And the probability of the computer's hand being lower in that region is (1-*p<sub>fold</sub>*)/2. The probability of the computer's hand being below the threshold is *p<sub>fold</sub>* and the probability of the computer's hand being below the player's hand in this case is 1. Then overall *p*( win | no fold ) = *p<sub>fold</sub>* x 1 + (1-*p<sub>fold</sub>*)/2 = (1+*p<sub>fold</sub>*)/2.
 
-<img src="images/PokerFig3.pn" width="700">
+<img src="images/PokerFig3.png" width="700">
 
 This result came with many approximations and assumptions, so it is not very certain. Instead of just assuming that the player will win if the *p*( win | no fold ) is greater than the probability of the computer's hand winning, the probability is calculated on a posterior distribution of the player's hands. The prior was a uniform distribution. Bayes' Theorem cannot really be used here to calculate the posterior because the conditional probabilities cannot be calculated (it would require calculating the probability of the above heuristic model being correct, which is not easily defined). Instead, a pseudo-posterior distribution will be assumed to be a beta distribution with a mean of *p<sub>win,post</sub>*. In other words Beta(*kp<sub>win,post</sub>*,*k*(1-*p<sub>win,post</sub>*)) where *k* is some constant that can be tuned. The constant represents the weight that the computer will put on the player's move given the player's history. The cumulative probability of the pseudo-posterior distribution is then used to determine the posterior probability of the player having the better hand, which will be called *p<sub>win,final</sub>*.
 
