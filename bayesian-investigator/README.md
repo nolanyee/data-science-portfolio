@@ -238,7 +238,7 @@ If F is set as an exclusion node, the results are more interesting. If constrain
 
 If ‘constrained’ is unchecked, the results are a mix of all possible scenarios. The blue lines indicate the cases where A and B are disconnected from C (allowing C to be 1), if C is disconnected from D or a new ‘other’ parent is added to D. If an other parent is added to D that causes D to be True, then both connections from E and G to F must be broken (hence the red lines). If D is still False, either the connection between E and F or G and F is also broken to make F have only one parent that is True. The final alternative is that the connection between F and H is broken or another parent is added to H. The results are convoluted in this case because the exclusion node is used as parent nodes rather than modifiers. Typically exclusion nodes should be used as modifiers and should not have children.
 
-<img src="images/BayesFig19.png" width="500">
+<img src="images/BayesFig19.png" width="400">
 
 In the next case, F is an inversion node. In order for H to be true, F must be true, so connections between F and E, A, and G must be broken. Alternatively the connection between F and H can be broken or a new parent added to H.
 
