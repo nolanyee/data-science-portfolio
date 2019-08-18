@@ -45,11 +45,11 @@ __Interaction Node__\
 Interaction nodes have a probability of being T if all parents are T. If any parent is F, the probability of T is 0.
 If the parents are independent, the probability is dependent on *p*(*T<sub>i</sub>*)*w<sub>i</sub>* as
 
-<img src="images/BayesEq3.png" width="200">
+<img src="images/BayesEq3.png" width="150">
 
 If any parent is false, the conditional probability is 0, if all parents are true, the conditional probability is
 
-<img src="images/BayesEq4.png" width="220">
+<img src="images/BayesEq4.png" width="180">
 
 
 
