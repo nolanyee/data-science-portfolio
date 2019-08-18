@@ -6,7 +6,8 @@ This prototype application is intended to facilitate construction of Bayesian ne
 
 ### Theoretical Background
 
-__Notation__\
+__Notation__
+
 *p*(*T*) = probability that node of interest is T (true)\
 *p*(*e*) = probability of the evidence (nodes set by the user)\
 *p*(*T* | *e*) = probability that the node of interest is T given the evidence\
@@ -28,7 +29,8 @@ and the conditional probability of a node being true (given the state of the par
 *p*(*T* | *P<sub>1</sub>* ...*P<sub>n</sub>* )=*f*(*w<sub>1</sub>*,...,*w<sub>n</sub>* )
 This makes it easier to calculate the probabilities and it means that a network may be constructed without entering the full joint distribution information at each node, which is not always easily derived. 
 
-__Main Node__\
+__Main Node__
+
 Main nodes have a probability of being T if at least 1 parent is T. If all parents F, probability of T is 0.
 
 If the parents are independent, the probability is dependent on the weighted probability of the parents *p*(*T<sub>i</sub>*)*w<sub>i</sub>* as the sum of combinations of the different parents containing from 1 to *n* parents.
@@ -41,7 +43,8 @@ using the inclusion-exclusion principle.
                                          
 The conditional probability if all the parents are false is 0, and if at least one of the parents is true the conditional probability is
 
-__Interaction Node__\
+__Interaction Node__
+
 Interaction nodes have a probability of being T if all parents are T. If any parent is F, the probability of T is 0.
 If the parents are independent, the probability is dependent on *p*(*T<sub>i</sub>*)*w<sub>i</sub>* as
 
@@ -51,7 +54,8 @@ If any parent is false, the conditional probability is 0, if all parents are tru
 
 <img src="images/BayesEq4.png" width="170">
 
-__Exclusion Node__\
+__Exclusion Node__
+
 Exclusion nodes have a probability of being T if 1 parent is T, otherwise the probability is
 
 <img src="images/BayesEq5.png" width="500">
@@ -66,7 +70,8 @@ If the all the weights are not 1, then this node is partially exclusive, meaning
 
 <img src="images/BayesEq7.png" width="200">
 
-__Inverted Node__\
+__Inverted Node__
+
 Inverse nodes have probability 1 of being T if at least 1 parent is F, and otherwise
 
 <img src="images/BayesEq8.png" width="160">
@@ -75,7 +80,8 @@ The conditional probability is 1 if at least one parent is F, otherwise
 
 <img src="images/BayesEq9.png" width="180">
 
-__Inverted Interaction Node__\
+__Inverted Interaction Node__
+
 Inverse interaction nodes have probability 1 of being T if all parents are F, and otherwise
 
 <img src="images/BayesEq10.png" width="500">
@@ -86,7 +92,7 @@ The conditional probability is 1 if all parents are F, otherwise it is
 
 <img src="images/BayesEq11.png" width="200">
 
-__Common Ancestors__\
+__Common Ancestors__
 
 The above equations apply only if the parents are completely independent. It is possible for some parents to be dependent if they share a common ancestor. 
 
@@ -96,7 +102,7 @@ In the case of shared ancestors, if the above expressions are used, when fully e
 
 Note that the expressions will contain weights corresponding to itself (the effects of its parents on itself) and the weights of all its ancestors. Therefore the list of weights in any child node’s equation is always longer than that of its ancestors. So the order of inheritance is just the nodes sorted by the number of different weights in the equations.
 
-__Bayesian Inference__\
+__Bayesian Inference__
 
 For inference, the network must be able to update based on evidence. This can be done using Bayes’ Theorem.
 
@@ -104,7 +110,7 @@ For inference, the network must be able to update based on evidence. This can be
 
 *p*(*e*) is obtained by unsetting all the evidence (calculating the prior network) and then setting the evidence one node at a time in order of inheritance (meaning children always go after parents). Before each node is set, the probability is collected and after all nodes have been set the product of all probabilities is taken. Then any exponents are removed to prevent any common ancestor effects which may occur if evidence nodes are siblings or cousins. *p*(*e* , *T*) is calculated the same way except the node of interest is included in the calculation. This process is repeated for all the non-evidence nodes. Memoization is used to prevent repeat calculations.
 
-__Investigating Contradictory Evidence__\
+__Investigating Contradictory Evidence__
 
 Since the joint distributions contain many simplifications (cases where probabilities are 0 or 1) there can be amplification of problems when contradictory evidence is entered. The calculation of conditional probability of a node being true given evidence may often result in division by 0. Since the intended use of the program is to explore different possible network structures, it is likely that contradictions will occur.
 
@@ -112,11 +118,11 @@ As an alternative, probabilities can propagated forward from the evidence (i.e. 
 
 In addition, gradient descent on the weights can determine which weights need to be increased or decreased. If the weights are not restricted to between 0 and 1, negative weights can indicate that the type of node should be switched from Main to Inverted or vice versa. Weights greater than 1 indicate that another parent should be added (typically called ‘other’ representing an unknown cause).
 
-__Auxiliary Nodes__\
+__Auxiliary Nodes__
 
 If a node is set as auxiliary, the weights of edges between the node and its parents are set to 1 and the symbols for the weights in the associated equations are replaced by 1. This results in no updating of the weight during gradient descent. Typically modifying nodes can be set as auxiliary to significantly decrease calculation times because the symbol does not need to be tracked throughout the calculation. There is no danger of double counting the weight because 1n=1 for any n. Such nodes are always expected to have a direct link with the parents (weights are all 1). For example an inverted node that represents the negation of a parent will always have a direct link to the parent. Likewise exclusion, interaction, and inverted interaction nodes typically have direct links to parents. If only Bayesian mode will be used, then all nodes with weights of 1 on the edges from their parents can be set as auxiliary to achieve minimum calculation time.
 
-__Graphical User Interface__\
+__Graphical User Interface__
 
 The program uses a Tk based GUI. Instructions for creating networks are as follows:
 
