@@ -4,6 +4,8 @@
 ### Overview
 This prototype application is intended to facilitate construction of Bayesian networks and serve as a simpler version of a Bayesian network in cases where the joint probabilities for each node are mostly unknown and there is not enough data to learn them. It is also able to show paths and nodes in the network that are suspect when contradictory evidence is given.
 
+<img src="images/BayesFig7.png" width="700">
+
 ### Theoretical Background
 
 __Notation__
