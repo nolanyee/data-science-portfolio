@@ -75,4 +75,15 @@ The conditional probability is 1 if at least one parent is F, otherwise
 
 <img src="images/BayesEq9.png" width="180">
 
+__Inverted Interaction Node__\
+Inverse interaction nodes have probability 1 of being T if all parents are F, and otherwise
+
+<img src="images/BayesEq10.png" width="500">
+
+using the inclusion exclusion principle.
+
+The conditional probability is 1 if all parents are F, otherwise it is
+
+<img src="images/BayesEq11.png" width="200">
+
 
