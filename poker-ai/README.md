@@ -96,7 +96,7 @@ In the case where the computer considers raising, to prevent the computer from c
 
 The above behavior is overridden depending on the ratio of pot probability and (1-*p<sub>compwin</sub>*). If the ratio is greater than some threshold (6 is used in this program), then the computer will raise $10. If the ratio is greater than 2 and less than 6, the computer will raise $5. These raises occur with a different raise frequency, that is only limited by the amount of money the player and computer has left (the computer will keep raising until someone runs out of money).
 
-In all cases, if the computer does not raise, it will decide whether to call or fold randomly based on the frequency *p<sub>compfold</sub>*.
+In all cases, if the computer does not raise, it will decide whether to call or fold randomly based on the frequency *p<sub>compfold</sub>*. However, if the player calls, the computer will always call, since there is nothing to lose.
 
 
 
