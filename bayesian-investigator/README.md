@@ -11,7 +11,7 @@ __Notation__\
 *p*(*T* | *e*) = probability that the node of interest is T given the evidence\
 *p*(*e* , *T*) = probability that the node of interest is T and the evidence is correct\
 *p*(*T<sub>i</sub>*) = probability that the *i*<sup>th</sup> parent node is T\
-*w<sub>i</sub>* =  weight of parent node
+*w<sub>i</sub>* =  weight of parent node\
 *P<sub>i</sub>* = state (T or F) of *i*<sup>th</sup> parent node
  
 __Simplifications__
