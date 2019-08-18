@@ -143,7 +143,7 @@ Black = Main\
 Blue = Interaction\
 Green = Exclusion\
 Red = Inverted\
-Magenta = Inverted Interaction\
+Magenta = Inverted Interaction
 
 If a node is set as evidence (by checking the True or False box) the label is bold.
 
