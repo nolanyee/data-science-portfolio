@@ -15,7 +15,7 @@ The probability of each Poker hand is straightforward to determine analytically 
 
 __Straight Flush__\
 <sup>5</sup>&#9824;  <sup>6</sup>&#9824;  <sup>7</sup>&#9824;  <sup>8</sup>&#9824;  <sup>9</sup>&#9824;\
-For each suit and each value (not including 2 and 3 since they cannot be the high card in a straight), if the card is in the deck, the count is 1 if the card and the 4 preceeding cards are in the deck, and zero otherwise. 
+For each suit and each value (not including 2 and 3 since they cannot be the high card in a straight), if the card is in the deck, the count is 1 if the 4 preceeding cards are also in the deck, and zero otherwise. 
 
 __Flush__\
 <sup>2</sup>&#9825;  <sup>K</sup>&#9825;  <sup>4</sup>&#9825;  <sup>7</sup>&#9825;  <sup>9</sup>&#9825;\
