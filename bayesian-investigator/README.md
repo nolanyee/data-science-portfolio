@@ -31,7 +31,7 @@ __Consequences of the Simplifications__\
 Let *p*(*T*) be the probability that the node of interest is true. The definition of the node types is such that the marginal probability is a polynomial of the products of weights and probabilities that parents are T\
 *p*(*T*)=*f*(*p*(*T<sub>1</sub>*)*w<sub>1</sub>*,...*p*(*T<sub>n</sub>*)*w<sub>n</sub>*)\
 and the conditional probability of a node being true (given the state of the parents *P<sub>i</sub>*) is a function of the weights\
-*p*(*T* | *P<sub>1</sub>* ...*P<sub>n</sub>* )=*f*(*w<sub>1</sub>*,...,*w<sub>n</sub>* )
+*p*(*T* | *P<sub>1</sub>* ...*P<sub>n</sub>* )=*f*(*w<sub>1</sub>*,...,*w<sub>n</sub>* )\
 This makes it easier to calculate the probabilities and it means that a network may be constructed without entering the full joint distribution information at each node, which is not always easily derived. 
 
 __Main Node__
