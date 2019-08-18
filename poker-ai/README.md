@@ -103,5 +103,3 @@ In all cases, if the computer does not raise, it will decide whether to call or 
 
 
 
-
-
