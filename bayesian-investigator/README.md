@@ -49,8 +49,21 @@ If the parents are independent, the probability is dependent on *p*(*T<sub>i</su
 
 If any parent is false, the conditional probability is 0, if all parents are true, the conditional probability is
 
-<img src="images/BayesEq4.png" width="180">
+<img src="images/BayesEq4.png" width="170">
 
+__Exclusion Node__\
+Exclusion nodes have a probability of being T if 1 parent is T, otherwise the probability is
 
+<img src="images/BayesEq5.png" width="500">
+
+using the inclusion-exclusion principle.
+
+If all parents are false the conditional probability is 0. Otherwise, it is
+
+<img src="images/BayesEq6.png" width="250">
+
+If the all the weights are not 1, then this node is partially exclusive, meaning if more than one is true, the probability will decrease, but not all the way down to 0. If all the weights are 1, then
+
+<img src="images/BayesEq7.png" width="200">
 
 
