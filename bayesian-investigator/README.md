@@ -66,4 +66,13 @@ If the all the weights are not 1, then this node is partially exclusive, meaning
 
 <img src="images/BayesEq7.png" width="200">
 
+__Inverted Node__\
+Inverse nodes have probability 1 of being T if at least 1 parent is F, and otherwise
+
+<img src="images/BayesEq8.png" width="160">
+
+The conditional probability is 1 if at least one parent is F, otherwise
+
+<img src="images/BayesEq9.png" width="180">
+
 
