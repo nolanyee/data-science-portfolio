@@ -31,10 +31,14 @@ This makes it easier to calculate the probabilities and it means that a network 
 __Main Node__\
 Main nodes have a probability of being T if at least 1 parent is T. If all parents F, probability of T is 0.
 
-If the parents are independent, the probability is dependent on the weighted probability of the parents 〖p(T)〗_i w_i as the sum of combinations of the different parents containing from 1 to n parents.
+If the parents are independent, the probability is dependent on the weighted probability of the parents *p*(*T<sub>i</sub>*)*w<sub>i</sub>* as the sum of combinations of the different parents containing from 1 to *n* parents.
+
+<img src="images/BayesEq1.png width="500">
 
 using the inclusion-exclusion principle.
 
+<img src="images/BayesEq2.png width="250">
+                                         
 The conditional probability if all the parents are false is 0, and if at least one of the parents is true the conditional probability is
 
 
