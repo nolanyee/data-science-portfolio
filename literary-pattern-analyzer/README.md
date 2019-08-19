@@ -22,4 +22,14 @@ Then a list of pairs (either lists or tuples with 2 elements) of starting word n
 
 As examples, the scraping and pre-processing procedure is built into this application for Homer's Iliad and biblical books, primarily due the the relatively straightforward structure of their websites.
 
+### Generalizing Tokens
+The token list (referred to as the global variable 'book') is lemmatized and stemmed, generating the token lists 'lemmatizedbook' and 'stemmedbook'. A custom list of stop words and punctuation is defined within in the program. Tokens in the stop word and punctuation lists are ignnored in the next steps. 
+
+Using WordNet, all the words that are synonymous with each other are grouped. (If any word in the text that is a lemma in any synset of another word, the two words are grouped). The name of the group is the word in the group that most frequently occurs in the text. A copy of the lemmatized book is created with each word replaced by the name of it's group. If the word is a stop word or punctuation, it is replaced by "." The resulting book is called 'ideabook'. Another book is similarly created with synonyms and antonyms grouped together. This is referred to as 'ideabook2'.
+
+All these books represent varying levels of generalization for comparing different parts of the text. Using the original book provides the strictest comparison, since words will not match unless they are exactly the same. Using idea book 2 provides the loosest comparison, as any word that is a synonym or antonym will match.
+
+### Measuring Similarity
+
+
 
