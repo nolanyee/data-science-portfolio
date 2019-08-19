@@ -45,12 +45,14 @@ The first step in applying this method is to remove any words that are not in bo
 
 There may also duplicate words in the list, in which case a new number is assigned rather than assigning the same number. For example the vector for "the dog bit the cat" would be \[1,2,3,4,5\].
 
-However, one text may contain a different numbers of these words than the other. In this case the shorter list is extended to match the longer list. First, each element of the shorter list is assigned the closest element of the longer list. Then empty spaces are filled in with copies of the closest item in the shorter list. For example,
+However, one text may contain a different numbers of these words than the other. In this case the shorter list is extended to match the longer list. First, each element of the shorter list is assigned the closest element of the longer list. Then empty spaces are filled in with copies of the closest item in the shorter list. For example, if the two texts are
 
-Text 1: __The dog__ bit __the__ cat on __the__ lawn\
-Text 2: A __dog__ ate __the__ food\
-*v<sub>1</sub>*=\[1,2,4,7\]
-*v<sub>1</sub>*=\[?,2,4,?\]
+Text 1: __The dog__ bit __the__ cat on __the__ green lawn\
+Text 2: A __dog__ quickly ate __the__ food\
+
+Then for text 1 the numbers are straightfowardly assigned. However for the second text the two occurences of the shared words are assigned to the closest number in the longer list. So in text 1 the word "the" appears in positions 1, 4 and 7, so in text 2 the word "the", which appears in position 5, is assigned the closest corresponding number 4.
+*v<sub>1</sub>*=\[1,2,4,7\]\
+*v<sub>1</sub>*=\[_,2,4,_\]\
 
 
 
