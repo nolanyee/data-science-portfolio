@@ -39,7 +39,18 @@ Where A and B are the lists being compared and S are the stop words. Note that o
 For word order similarity, the program uses the formula proposed by Y. Li, Z. Bandard, D. McLean, J. O'Shea. *A Method for Measuring Sentence Similarity and its Application to Conversational Agents.* Intelligent Systems Group, Department of Computing and Mathematics,
 Manchester Metropolitan University.
 
-For one of the texts the words are numbered consecutively. This vector of numbers is *v<sub>1</sub>*. For the second text's vector *v<sub>2</sub>*, the entries are determined by looking up the number corresponding the word in the first text. For example if the first text is "John ate shark" and the second text is "shark ate John" then *v<sub>1</sub>*=\[1,2,3\] and *v<sub>2</sub>*=\[3,2,1\].
+For one of the texts the words are numbered consecutively. This vector of numbers is *v<sub>1</sub>*. For the second text's vector *v<sub>2</sub>*, the entries are determined by looking up the number corresponding the word in the first text. For example if the first text is "John ate shark" and the second text is "shark ate John" then *v<sub>1</sub>*=\[1,2,3\] and *v<sub>2</sub>*=\[3,2,1\]. However, this method only works it the two texts share the same words and are the same length, which is hardly ever the case.
+
+The first step in applying this method is to remove any words that are not in both texts. This yields two texts with the same words. The position vector, however, will still use the word position from the original text. For example for the two texts "the dog bit a cat" and "he bought the dog food", *v<sub>1</sub>*=\[1,2\] and *v<sub>2</sub>*=\[3,4\].
+
+There may also duplicate words in the list, in which case the same number is assigned rather than assigning a new number. For example the vector for "the dog bit the cat" would be \[1,2,3,1,4\].
+
+However, one text may contain a different numbers of these words than the other. In this case the shorter list is extended to match the longer list. First, each element of the shorter list is assigned the closest element of the longer list. Then empty spaces are filled in with copies of the closest item in the shorter list. For example
+
+
+
+
+
 
 
 
