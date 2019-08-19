@@ -43,9 +43,14 @@ For one of the texts the words are numbered consecutively. This vector of number
 
 The first step in applying this method is to remove any words that are not in both texts. This yields two texts with the same words. The position vector, however, will still use the word position from the original text. For example for the two texts "the dog bit a cat" and "he bought the dog food", *v<sub>1</sub>*=\[1,2\] and *v<sub>2</sub>*=\[3,4\].
 
-There may also duplicate words in the list, in which case the same number is assigned rather than assigning a new number. For example the vector for "the dog bit the cat" would be \[1,2,3,1,4\].
+There may also duplicate words in the list, in which case a new number is assigned rather than assigning the same number. For example the vector for "the dog bit the cat" would be \[1,2,3,4,5\].
 
-However, one text may contain a different numbers of these words than the other. In this case the shorter list is extended to match the longer list. First, each element of the shorter list is assigned the closest element of the longer list. Then empty spaces are filled in with copies of the closest item in the shorter list. For example
+However, one text may contain a different numbers of these words than the other. In this case the shorter list is extended to match the longer list. First, each element of the shorter list is assigned the closest element of the longer list. Then empty spaces are filled in with copies of the closest item in the shorter list. For example, for the two texts "the dog bit the cat" and "dog ate the food" alignment is as follows
+
+Text 1: The dog bit the cat\
+Text 2: dog dog ate the the
+
+
 
 
 
