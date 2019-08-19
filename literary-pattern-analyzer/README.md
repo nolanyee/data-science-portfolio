@@ -48,7 +48,7 @@ There may also duplicate words in the list, in which case a new number is assign
 However, one text may contain a different numbers of these words than the other. In this case the shorter list is extended to match the longer list. First, each element of the shorter list is assigned the closest element of the longer list. Then empty spaces are filled in with copies of the closest item in the shorter list. For example, for the two texts "the dog bit the cat on the lawn" and "dog ate the food" alignment is as follows
 
 Text 1: __The dog__ bit __the__ cat on __the__ lawn\
-Text 2: __dog dog__ ate __the__ ... .. __the__ ....\
+Text 2: __dog dog__ ate __the__ --- -- __the__ ----\
 
 
 
