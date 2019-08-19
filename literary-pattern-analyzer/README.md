@@ -36,7 +36,8 @@ Jaccard similarity is used to compare two lists of words in terms of content.
 
 Where A and B are the lists being compared and S are the stop words. Note that only punctuation is treated as stop words, since in the idea books all stop words are replaced by periods. Therefore in the lemmatized book and stemmed book, the non-punctuation stop words are still included in the comparison.
 
-For word order similarity, the formula proposed by Li
+For word order similarity, the program uses the formula proposed by Y. Li, Z. Bandard, D. McLean, J. O'Shea. *A Method for Measuring Sentence Similarity and its Application to Conversational Agents.* Intelligent Systems Group, Department of Computing and Mathematics,
+Manchester Metropolitan University.
 
 
 
