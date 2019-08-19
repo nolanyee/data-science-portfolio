@@ -30,6 +30,6 @@ Using WordNet, all the words that are synonymous with each other are grouped. (I
 All these books represent varying levels of generalization for comparing different parts of the text. Using the original book provides the strictest comparison, since words will not match unless they are exactly the same. Using idea book 2 provides the loosest comparison, as any word that is a synonym or antonym will match.
 
 ### Measuring Similarity
-
+Jaccard similarity is used to compare two lists of words in terms of content. 
 
 
