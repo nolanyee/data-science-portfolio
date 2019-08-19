@@ -32,4 +32,9 @@ All these books represent varying levels of generalization for comparing differe
 ### Measuring Similarity
 Jaccard similarity is used to compare two lists of words in terms of content. 
 
+<img src="images/LiteraryFig1.png" width = "200">
+
+
+
+
 
