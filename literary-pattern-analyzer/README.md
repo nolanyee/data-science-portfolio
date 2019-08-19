@@ -1,5 +1,5 @@
 # Literary Pattern Analyzer
-*Skills: Python, Natural language Processing, Visualization*
+*Skills: Python, Natural Language Processing, Visualization*
 
 ### Overview
 This program consists of tools for use in identifying structural patterns in text:
@@ -34,7 +34,9 @@ Jaccard similarity is used to compare two lists of words in terms of content.
 
 <img src="images/LiteraryFig1.png" width = "200">
 
+Where A and B are the lists being compared and S are the stop words. Note that only punctuation is treated as stop words, since in the idea books all stop words are replaced by periods. Therefore in the lemmatized book and stemmed book, the non-punctuation stop words are still included in the comparison.
 
+For word order similarity, the formula proposed by Li
 
 
 
