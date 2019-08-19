@@ -45,10 +45,10 @@ The first step in applying this method is to remove any words that are not in bo
 
 There may also duplicate words in the list, in which case a new number is assigned rather than assigning the same number. For example the vector for "the dog bit the cat" would be \[1,2,3,4,5\].
 
-However, one text may contain a different numbers of these words than the other. In this case the shorter list is extended to match the longer list. First, each element of the shorter list is assigned the closest element of the longer list. Then empty spaces are filled in with copies of the closest item in the shorter list. For example, for the two texts "the dog bit the cat on the lawn" and "dog ate the food" alignment is as follows
+However, one text may contain a different numbers of these words than the other. In this case the shorter list is extended to match the longer list. First, each element of the shorter list is assigned the closest element of the longer list. Then empty spaces are filled in with copies of the closest item in the shorter list. For example, for the two texts "the dog bit the cat on the lawn" and "a dog ate the food" alignment is as follows
 
 Text 1: __The dog__ bit __the__ cat on __the__ lawn\
-Text 2: __dog dog__ ate __the__ --- -- __the__ ----\
+Text 2: A __dog__ ate __the__ --- -- __the__ ----\
 
 
 
