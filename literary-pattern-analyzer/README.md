@@ -47,9 +47,11 @@ There may also duplicate words in the list, in which case a new number is assign
 
 However, one text may contain a different numbers of these words than the other. In this case the shorter vector is extended to match the longer one. First, each element of the shorter list is paired with the closest element of the longer list corresponding to the same word. 
 
+<img src="images/LiteraryFig2.png" width = "600">
 
 Then empty spaces in the shorter vector are filled in with copies of the closest index corresponding to the same word.
 
+<img src="images/LiteraryFig3.png" width = "600">
 
 
 
