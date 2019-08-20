@@ -43,9 +43,9 @@ From the example above it is clear that the Harmonic Sum Spectrum has a maximum 
 
 Then making a slight approximation the final contribution from the *j*<sup>th</sup> undertone is obtained.
 
-<img src="images/MusicFig7.png" width ="300">
+<img src="images/MusicFig7.png" width ="250">
 
 The sum of contributions from all undertones is
 
-<img src="images/MusicFig7.png" width ="200">
+<img src="images/MusicFig7.png" width ="250">
 
