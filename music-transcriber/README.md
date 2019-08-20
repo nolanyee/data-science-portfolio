@@ -23,6 +23,6 @@ Pitch is directly related to the main frequency of a sound wave. Music audio dat
 
 It would seem that once the spectra are obtained, the pitches can be determined. Unfortunately, music is not that simple. When most instruments play a note, there is a base frequency that corresponds to pitch. However, there are also harmonics, which correspond to frequencies that are integer multiples of the base frequency.
 
-<img src="images/MusicFig2.png" width ="900">
+<img src="images/MusicFig2.png" width ="600">
 
 
