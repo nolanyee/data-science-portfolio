@@ -16,6 +16,7 @@ Save these plots if so desired. Then after closing the two windows, the score wi
 <img src="images/MusicFig24.png" width ="800">
 
 ## Technical Details
+
 ### Pitch Detection
 Pitch is directly related to the main frequency of a sound wave. Music audio data is a mixture of sound waves at different frequencies. It can be considered a linear combination of sine and cosine waves of different frequencies, where the sine and cosine components form a basis in terms of which any time shift in the wave can be expressed. To convert the waveform (intensity vs. time) into a spectrum (amplitude vs. frequency), the coefficients of all the different sine and cosine components must be determined. This is done with fast Fourier Transform. The user can specify the range of frequencies for which the coefficients are calculated. Since pitch changes over time, Fourier Transform is performed on a small window, which is moved along the data. The user can specify the window and step size.
 
@@ -57,7 +58,12 @@ To reduce some of the noise from these calculations, some filtering is done on t
 
 Finally, the corrected base frequencies are converted to pitch using the following formula.
 
-<img src="images/MusicFig10.png" width ="400">
+<img src="images/MusicFig10.png" width ="300">
+
+The epsilon term is a user defined pitch correction term, expressed in terms of half-tones.
+
+### Note Detection
+
 
 
 
