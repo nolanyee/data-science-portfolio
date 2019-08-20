@@ -82,12 +82,11 @@ The user can choose which words to analyze in which book. Alternatively the user
 ### Arc Plot
 The arc plot is used for identifying parallelism. It plots the similarity of every verse with every other verse. The darker arcs represent high similarity. The plot would be too dense if all arcs are shown, so there is a threshold similarity below which arcs will not be displayed. The color is then rescaled to achieve more contrast. The alpha parameter is the weight of word order in overall similarity. The window parameter allows comparisons of multiple verses at a time rather than just one.
 
-A single repetition has a single arc as a signature:
+Below are the theoretical signature and actual arc plot for a single repetition:\
 <img src="images/LiteraryFig17.png" width ="200">
-In an actual text it looks like:
 <img src="images/LiteraryFig8.png" width ="700">
 
-Multiple repetition
+The theoretical signature and actual arc plot for multiple repetition is as follows:\
 <img src="images/LiteraryFig15.png" width ="200">
 <img src="images/LiteraryFig10.png" width ="700">
 
