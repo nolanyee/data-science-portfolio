@@ -63,7 +63,10 @@ The total similarity is defined as a weighted product of the content and order s
 
 __Total Similarity = Jaccard Similarity x (Content Similarity)<sup>&#x03B1;</sup>__
 
-If one verse is longer than the other, it is not clear which part of the shorter verse should be compared to which part of the longer one. In other words, there are multiple possible indexes that can be applied to the shorter verse. On one extreme the shorter verse index can start at 1. But on the other extreme the index can be shifted to end at the same number as the longer verse. To resolve this ambiguity, order similarity is calculated for all indices between these extremes and the maximum similarity is taken as the final order similarity value.
+Verses can be of arbitrary length, and comparing two verses of different length often results in lower similarity. This is not desirable for parallelism detection. Therefore only a segment of the longer verse, equal in length to the shorter verse, should be taken for comparison. However, it is uncertain which part of the longer verse is most similar to the shorter one. To resolve this ambiguity, similarity is calculated for all possible segments of the longer verse, and the maximum similarity is taken as the final order similarity value.
+
+
+
 
 
 
