@@ -25,7 +25,7 @@ It would seem that once the spectra are obtained, the pitches can be determined.
 
 <img src="images/MusicFig2.png" width ="600">
 
-Each instrument has a different proportion of each of the harmonics. In many cases the base frequency has a lower amplitude than the harmonics. Complicating things even further, some instruments have different harmonic signatures depending on how loudly they are played. In order to determine the actual frequency accurately, deconvolution would have to be done using the harmonic signatures of all relevant instruments and volumes as basis functions. This data, however, was not available for this project, so a major simplification was needed. The harmonic signature was assumed to be uniform for up to a certain number *n* of harmonics (this is the maximum number of harmonics, which can be set by the user).
+Each instrument has a different proportion of each of the harmonics for each pitch. In many cases the base frequency has a lower amplitude than the harmonics. Complicating things even further, some instruments have different harmonic signatures depending on how loudly they are played. In order to determine the actual frequency accurately, deconvolution would have to be done using the harmonic signatures of all relevant instruments and volumes as basis functions. This data, however, was not available for this project, so a major simplification was needed. The harmonic signature was assumed to be uniform for up to a certain number *n* of harmonics (this is the maximum number of harmonics, which can be set by the user).
 
 <img src="images/MusicFig4.png" width ="800">
 
@@ -48,4 +48,6 @@ Then making a slight approximation the final contribution from the *j*<sup>th</s
 After correction for the contributions from all undertones, the new Harmonic Sum Spectrum is
 
 <img src="images/MusicFig8.png" width ="200">
+
+The above approximations allow the program to determine pitch without the used of massive libraries of instrument harmonic signatures. However, because of the approximations, there will inevitably be errors in pitch detection. The most common error is the octave error, where the pitch is detected as being the first harmonic or first undertone rather than the base pitch.
 
