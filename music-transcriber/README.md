@@ -45,7 +45,7 @@ Then making a slight approximation the final contribution from the *j*<sup>th</s
 
 <img src="images/MusicFig7.png" width ="250">
 
-The sum of contributions from all undertones is
+After correction for the contributions from all undertones, the new Harmonic Sum Spectrum is
 
 <img src="images/MusicFig8.png" width ="200">
 
