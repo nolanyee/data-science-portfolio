@@ -7,13 +7,13 @@ This program is a rudimentary music transcriber. It uses fast Fourier transform 
 ### Usage
 The graphical user interface is shown below.
 
-<img src="images/MusicFig9.png" width ="500">
+<img src="images/MusicFig9.png" width ="700">
 
 To transcribe an audio file, enter the file path in the settings window. Parameters can be adjusted if necessary. The parameters are explained in following sections. Choose and output format (Treble, Bass, or Treble+Bass). Then press OK to start transcription. A chromagram and note plot will be shown. 
-
+<img src="images/MusicFig23.png" width ="900">
 
 Save these if so desired. Then after closing the two windows, the score will display.
-
+<img src="images/MusicFig24.png" width ="800">
 
 # Technical Details
 
