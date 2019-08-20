@@ -76,6 +76,12 @@ The user can choose which words to analyze in which book. Alternatively the user
 ### Arc Plot
 The arc plot is used for identifying parallelism. It plots the similarity of every verse with every other verse. The darker arcs represent high similarity. The plot would be too dense if all arcs are shown, so there is a threshold similarity below which arcs will not be displayed. The color is then rescaled to achieve more contrast. The alpha parameter is the weight of word order in overall similarity. The window parameter allows comparisons of multiple verses at a time rather than just one.
 
+The arc plot can hint at parallelism (e.g. ABCDABCD).
+
+
+It can also hint at chiastic structure (e.g. ABCDEDCBA).
+
+
 ### Topic Plot
 Latent topics are calculated using Latent Dirichlet Allocation. This analysis is performed over each segment of a book. The book can be specified, as with the other plots. The window parameter indicates how wide of a segment the analysis is performed over (i.e the size of the moving window). The generalize parameter is used to control the number of topics (higher value results in fewer topics). Based on the nature of the algorithm, the topics are not always reproducible unless the number of passes is increased, but that would increase calculation time.
 
