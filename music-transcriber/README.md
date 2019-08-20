@@ -131,6 +131,7 @@ Once this tempo is chosen, the channels are split into treble and bass channels,
 ### Beat Alignment
 After tempo determination, the closest matching valid note is assigned to each note based on its duration. The lengths of the notes are then adjusted to align with the beats. This is done using an alignment score. For every note whose start aligns with a beat, points are added to the score. More points are added for notes that align with the down beat, or that correspond to half or quarter measures. Fewer points are added for notes that align with shorter duration subdivisions.
 
-<img src="images/MusicFig22.png" width ="500">
+<img src="images/MusicFig22.png" width ="900">
 
+The use can set the maximum allowable adjustment for note durations, and the minumum score improvement required to make an adjustment.
 
