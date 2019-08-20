@@ -29,11 +29,11 @@ Each instrument has a different proportion of each of the harmonics. In many cas
 
 <img src="images/MusicFig4.png" width ="800">
 
-With this simplification, deconvolution can be done using the Harmonic Sum Spectrum. This spectrum is defined as
+With this simplification, deconvolution can be done using the Harmonic Sum Spectrum. This spectrum is defined as follows, where *f(v)* is the Fourier Transform spectrum.
 
 <img src="images/MusicFig5.png" width ="150">
 
-Visually it is the sum of spectra that are scaled by integer factors.
+Visually it is the sum of spectra that are scaled by one over an integer.
 
 <img src="images/MusicFig3.png" width ="600">
 
