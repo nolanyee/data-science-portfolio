@@ -122,7 +122,15 @@ Finally the ends of notes from different channels are aligned with the latest no
 
 <img src="images/MusicFig21.png" width ="500">
 
-Next, the tempo is determined. 
 
+### Tempo Detection
+Next, the tempo is determined. Since the tempo may vary within a piece, the user can set the number of subdivisions the audio file will be split into for tempo determination. The program will scan through different tempos using all channels. For each tempo, the duration of all valid notes are calculated (1/32, 1/16, 3/32, 1/8, 3/16, 1/4, 3/8, 1/2, 3/4, 1, 1.5). The durations of all notes after alignment is compared with the closest valid note duration. The comparison may be biased against dotted notes using the even note duration bias setting. A loss function is calculated as the sum of squared differences between the valid note duration and the actual note duration. Additional loss penalties are added for very short notes (e.g 1/32), and dotted notes (e.g. 3/32, 3/16). The tempo that minimizes the loss is chosen.
+
+Once this tempo is chosen, the channels are split into treble and bass channels, and the scanning is done again on both sets of channels together. Rather than scanning the entire tempo range, only a range centered on the previously determined tempo is evaluated. The window for this evaluation range can be set by the user. 
+
+### Beat Alignment
+After tempo determination, the closest matching valid note is assigned to each note based on its duration. The lengths of the notes are then adjusted to align with the beats. This is done using an alignment score. For every note whose start aligns with a beat, points are added to the score. More points are added for notes that align with the down beat, or that correspond to half or quarter measures. Fewer points are added for notes that align with shorter duration subdivisions.
+
+<img src="images/MusicFig22.png" width ="500">
 
 
