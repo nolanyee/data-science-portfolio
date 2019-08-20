@@ -116,7 +116,7 @@ Then note starts are aligned. The user can set the window within which note star
 
 Then note ends are aligned with the closest start of any note in any channel, if the time between the note end and other note's start within a user defined window.
 
-<img src="images/MusicFig20.png" width ="500">
+
 
 Finally the ends of notes from different channels are aligned with the latest note end before a note start.
 
