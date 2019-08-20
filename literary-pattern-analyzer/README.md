@@ -8,7 +8,6 @@ This program consists of tools for use in identifying structural patterns in tex
 3. Parallelism Arc Plot, which shows the strength of parallelism between text segments
 4. Topic Plot, which uses Latent Dirichlet Allocation to show changes in topic within a text
 
-<img src="images/LiteraryFig5.png" width ="900">
 
 ### Motivation
 Today when many read literature, they primarily focus on semantic meaning or the more familiar semantic literary devices such as similes, metaphor, hyperbole, personification etc. However, ancient texts often contain structural devices such as repetition and parallism which are more difficult for today's readers to recognize (possibly because these devices require a stronger long term memory that is associated with the distant past when oral tradition was more dominant). The tools in this program can be used to help detect intentional or rhetorical repetition, identify changes in topic or emphasis, and identify literary devices such as lists of textual units with similar structure, and pairs of parallel or anti-parallel (chiastic) sequences of textual units, which are commonly used in ancient texts.
