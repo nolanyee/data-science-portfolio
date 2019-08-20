@@ -65,9 +65,11 @@ The fuction above is used to bin amplitudes by their pitch. Multiple signals pla
 The result of this process is called a chromagram. This is what is displayed in the plot windows before the score is output.
 
 ### Note Detection
-From the chromagram, the transcription step size can be set (as number of chromagram points). This defines wider segments used for note detection and rhythm analysis. The chromagram results within each segment are summed in order to reduce noise.
+From the chromagram, the transcription step size can be set (as number of chromagram points). This defines wider segments used for note detection and rhythm analysis. The chromagram (binned Harmonic Sum Spectrum) results within each segment are summed in order to reduce noise.
 
 <img src="images/MusicFig11.png" width ="800">
+
+This creates a lower resolution smoothed chromagram, which helps in the note detection steps.
 
 
 
