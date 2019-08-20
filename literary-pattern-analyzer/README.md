@@ -45,11 +45,11 @@ The first step in applying this method is to remove any words that are not in bo
 
 There may also duplicate words in the list, in which case a new number is assigned rather than assigning the same number. For example the vector for "the dog bit the cat" would be \[1,2,3,4,5\].
 
-However, one text may contain a different numbers of these words than the other. In this case the shorter vector is extended to match the longer one. First, each element of the shorter list is paired with the closest element of the longer list corresponding to the same word. 
+However, one text may contain a different numbers of these words than the other. In this case the shorter vector is extended to match the longer one. To achieve this, the vector *v<sub>2</sub>* starts out empty. First, in this empty vector the index of each element of the shorter list is placed in the position with the closest matching entry on the longer vector corresponding to the same word. 
 
 <img src="images/LiteraryFig2.png" width = "600">
 
-Then empty spaces in the shorter vector are filled in with copies of the closest index corresponding to the same word.
+Then the remaining entries are filled in with copies of the closest index corresponding to the same word.
 
 <img src="images/LiteraryFig3.png" width = "600">
 
