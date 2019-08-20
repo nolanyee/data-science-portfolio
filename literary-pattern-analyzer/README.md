@@ -70,35 +70,39 @@ Verses can be of arbitrary length, and comparing two verses of different length 
 ### Lexical Dispersion Plot
 This plot is similar to the nltk Lexical dispersion plot except that the x-axis is in verses, and the length of the bars represents the frequency of the word in the verse. The user can choose which book to analyze, and also how many of the highest frequency words to display. Alternatively the user can specify a list of specific words to be displayed.
 
-<img src="images/LiteraryFig6.png" width ="900">
+<img src="images/LiteraryFig6.png" width ="800">
 
 ### Word Intentionality Plot
 Word intentionality (i.e. word density) is defined here as the probability of observing a certain frequency of a word (or higher frequency) by chance, given the overall frequency in the text. It is a similar concept to td-idf except it is calculated using the binomial distribution. The instance of a word is considered a "success" and any other word is considered "failure." The frequency of the word in the text is the probability of a success. The number of trials is the number of words in a verse. Then binomial distribution is used to calculate the probability given the above parameters.
 
 The user can choose which words to analyze in which book. Alternatively the user can choose a book and any words occurring more than a threshold number of times in that book will be analyzed. The window parameter can be used to analyze the density over a larger window (many verses instead of just one). This can reduce noise.
 
-<img src="images/LiteraryFig8.png" width ="900">
+<img src="images/LiteraryFig8.png" width ="800">
 
 ### Arc Plot
 The arc plot is used for identifying parallelism. It plots the similarity of every verse with every other verse. The darker arcs represent high similarity. The plot would be too dense if all arcs are shown, so there is a threshold similarity below which arcs will not be displayed. The color is then rescaled to achieve more contrast. The alpha parameter is the weight of word order in overall similarity. The window parameter allows comparisons of multiple verses at a time rather than just one.
 
 A single repetition
-<img src="images/LiteraryFig8.png" width ="900">
+<img src="images/LiteraryFig17.png" width ="400">
+<img src="images/LiteraryFig8.png" width ="700">
 
 Multiple repetition
-<img src="images/LiteraryFig10.png" width ="900">
+<img src="images/LiteraryFig15.png" width ="400">
+<img src="images/LiteraryFig10.png" width ="700">
 
 
 The arc plot can hint at parallelism (e.g. ABCDABCD).
-<img src="images/LiteraryFig11.png" width ="900">
+<img src="images/LiteraryFig14.png" width ="400">
+<img src="images/LiteraryFig11.png" width ="700">
 
 It can also hint at chiastic structure (e.g. ABCDEDCBA).
-<img src="images/LiteraryFig12.png" width ="900">
+<img src="images/LiteraryFig16.png" width ="400">
+<img src="images/LiteraryFig12.png" width ="700">
 
 ### Topic Plot
 Latent topics are calculated using Latent Dirichlet Allocation. This analysis is performed over each segment of a book. The book can be specified, as with the other plots. The window parameter indicates how wide of a segment the analysis is performed over (i.e the size of the moving window). The generalize parameter is used to control the number of topics (higher value results in fewer topics). Based on the nature of the algorithm, the topics are not always reproducible unless the number of passes is increased, but that would increase calculation time.
 
-<img src="images/LiteraryFig13.png" width ="900">
+<img src="images/LiteraryFig13.png" width ="800">
 
 
 
