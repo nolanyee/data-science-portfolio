@@ -85,7 +85,7 @@ The algorithm also matches the position of maxima in the signal and negative sec
 
 Finally the threshold for note detection can be set. There is an absolute threshold as well as a relative threshold. The absolute threshold prevents detecting noise as notes. The relative threshold (expressed in fraction of maximum intensity across all channels) ensures only the loudest notes are detected.
 
-Once the signal goes above the threshold, note start and end time detection is activated. The note start is defined as the first maximum in the negative second derivative after the threshold is crossed. The note end is defined differently depending on situation. Take this first example:
+Once the signal goes above the threshold, note start and end time detection is activated. The note start is defined as the first maximum in the negative second derivative after the threshold is crossed. The note end is defined differently depending on situation. Take this first example (the green circle is a note start, and the red circle is a note end):
 
 <img src="images/MusicFig14.png" width ="500">
 
@@ -104,6 +104,13 @@ In this cases, if there is another negative second derivative maximum that corre
 If the last negative second derivative maximum corresponds to a signal maximum, the note is ended, a new note is started, and that new note is ended when the signal falls below the threshold.
 
 <img src="images/MusicFig17.png" width ="500">
+
+### Rhythm Alignment
+The algorithm above will result in misalignment of many notes because it is unlikely that the maxima will fall in the exact same position for all relevant channels. Therefore note alignment must be performed. The first step is to exclude short notes (the threshold note duration for exclusion can be set by the user).
+
+
+<img src="images/MusicFig18.png" width ="500">
+
 
 
 
