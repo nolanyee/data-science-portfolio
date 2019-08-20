@@ -30,6 +30,8 @@ Using WordNet, all the words that are synonymous with each other are grouped. (I
 All these books represent varying levels of generalization for comparing different parts of the text. Using the original book provides the strictest comparison, since words will not match unless they are exactly the same. Using idea book 2 provides the loosest comparison, as any word that is a synonym or antonym will match.
 
 ### Measuring Similarity
+To detect parallelism, it is necessary to compare one verse or line with another. Comparison will be done based on content (shared words) and word order using similarity measures defined below.
+
 Jaccard similarity is used to compare two lists of words in terms of content. 
 
 <img src="images/LiteraryFig1.png" width = "200">
@@ -54,6 +56,16 @@ Then the remaining entries are filled in with copies of the closest index corres
 <img src="images/LiteraryFig3.png" width = "600">
 
 Once the two vectors have been calculated, the order similarity is given by
+
+<img src="images/LiteraryFig4.png" width = "200">
+
+The total similarity is defined as a weighted product of the content and order similarity.
+
+Total Similarity = Jaccard Similarity x (Content Similarity)<sup>&#x03B1;</sup>
+
+If one verse is longer than the other, it is not clear which part of the shorter verse should be compared to which part of the longer one. In other words, there are multiple possible indexes that can be applied to the shorter verse. On one extreme the shorter verse index can start at 1. But on the other extreme the index can be shifted to end at the same number as the longer verse. To resolve this ambiguity, order similarity is calculated for all indices between these extremes and the maximum similarity is taken as the final order similarity value.
+
+
 
 
 
