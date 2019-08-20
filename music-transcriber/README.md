@@ -17,9 +17,12 @@ Save these plots if so desired. Then after closing the two windows, the score wi
 
 ## Technical Details
 ### Pitch Detection
-Pitch is directly related to the main frequency of a sound wave. Music audio data is a mixture of sound waves at different frequencies. It can be considered a linear combination of sine and cosine waves of different frequencies, where the sine and cosine components form a basis in terms of which any time shift in the wave can be expressed. To convert the waveform (intensity vs. time) into amplitude vs. frequency, the coefficients of all the different sine and cosine components must be determined. This is done with fast Fourier Transform. Since pitch changes over time, the audio data is split into small time segments. Fourier Transform is performed on each segment.
+Pitch is directly related to the main frequency of a sound wave. Music audio data is a mixture of sound waves at different frequencies. It can be considered a linear combination of sine and cosine waves of different frequencies, where the sine and cosine components form a basis in terms of which any time shift in the wave can be expressed. To convert the waveform (intensity vs. time) into a spectrum (amplitude vs. frequency), the coefficients of all the different sine and cosine components must be determined. This is done with fast Fourier Transform. Since pitch changes over time, the audio data is split into small time segments. Fourier Transform is performed on each segment.
 
 <img src="images/MusicFig1.png" width ="900">
 
+It would seem that once the spectra are obtained, the pitches can be determined. Unfortunately, music is not that simple. When most instruments play a note, there is a base frequency that corresponds to pitch. However, there are also harmonics, which correspond to frequencies that are integer multiples of the base frequency.
+
+<img src="images/MusicFig2.png" width ="900">
 
 
