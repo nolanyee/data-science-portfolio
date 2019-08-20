@@ -61,7 +61,7 @@ Once the two vectors have been calculated, the order similarity is given by
 
 The total similarity is defined as a weighted product of the content and order similarity.
 
-Total Similarity = Jaccard Similarity x (Content Similarity)<sup>&#x03B1;</sup>
+__Total Similarity = Jaccard Similarity x (Content Similarity)<sup>&#x03B1;</sup>__
 
 If one verse is longer than the other, it is not clear which part of the shorter verse should be compared to which part of the longer one. In other words, there are multiple possible indexes that can be applied to the shorter verse. On one extreme the shorter verse index can start at 1. But on the other extreme the index can be shifted to end at the same number as the longer verse. To resolve this ambiguity, order similarity is calculated for all indices between these extremes and the maximum similarity is taken as the final order similarity value.
 
