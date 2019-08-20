@@ -49,5 +49,15 @@ After correction for the contributions from all undertones, the new Harmonic Sum
 
 <img src="images/MusicFig8.png" width ="200">
 
+To avoid noise amplification, undertones lower than 3 Hz are not included in the calculation.
+
 The above approximations allow the program to determine pitch without the used of massive libraries of instrument harmonic signatures. However, because of the approximations, there will inevitably be errors in pitch detection. The most common error is the octave error, where the pitch is detected as being the first harmonic or first undertone rather than the base pitch.
+
+To reduce some of the noise from these calculations, some filtering is done on the spectrum. The user can specify the fraction of the maximum Fourier Transform coefficient below which all coefficients will be set to zero before calculating the Harmonic Sum Spectrum. After the Harmonic Sum Spectrum is calculated, the result is filtered again, removing any signals below the minumum absolute HSS threshold (set by user). Finally, there is also a threshold below which undertone correction is not performed. 
+
+Finally, the corrected base frequencies are converted to pitch using the following formula.
+
+<img src="images/MusicFig10.png" width ="400">
+
+
 
