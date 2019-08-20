@@ -64,6 +64,9 @@ The fuction above is used to bin amplitudes by their pitch. Multiple signals pla
 
 The result of this process is called a chromagram. This is what is displayed in the plot windows before the score is output.
 
+### Key Detection
+Key detection is performed using a linear model. The sum of responses from all tones is calculated. This sum is modeled as a linear combination of a vector a ones (representing all possible notes), a scale vector (corresponding to only notes in the scale of the key), and a triad vector (corresponding to tonic, third, and dominant). These three vectors are chosen because most songs follow a pattern where notes adhere to the scale and the triad notes are more predominant than other notes. These vectors are defined for all major and minor keys. The model is created for all these keys, and the one with the highest R<sup>2</sup> is chosen as the key.
+
 ### Note Detection
 From the chromagram, the transcription step size can be set (as number of chromagram points). This defines wider segments used for note detection and rhythm analysis. The chromagram (binned Harmonic Sum Spectrum) results within each segment are summed in order to reduce noise.
 
