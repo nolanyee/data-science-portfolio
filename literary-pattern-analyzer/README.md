@@ -53,6 +53,8 @@ Then the remaining entries are filled in with copies of the closest index corres
 
 <img src="images/LiteraryFig3.png" width = "600">
 
+Once the two vectors have been calculated, the order similarity is given by
+
 
 
 
