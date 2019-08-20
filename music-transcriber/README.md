@@ -17,7 +17,7 @@ Save these plots if so desired. Then after closing the two windows, the score wi
 
 ## Technical Details
 ### Pitch Detection
-Pitch is directly related to the main frequency of a sound wave. Music audio data is a mixture of sound waves at different frequencies. It can be considered a linear combination of sine and cosine waves of different frequencies, where the sine and cosine components form a basis in terms of which any time shift in the wave can be expressed. To convert the waveform (intensity vs. time) into a spectrum (amplitude vs. frequency), the coefficients of all the different sine and cosine components must be determined. This is done with fast Fourier Transform. Since pitch changes over time, the audio data is split into small time segments. Fourier Transform is performed on each segment.
+Pitch is directly related to the main frequency of a sound wave. Music audio data is a mixture of sound waves at different frequencies. It can be considered a linear combination of sine and cosine waves of different frequencies, where the sine and cosine components form a basis in terms of which any time shift in the wave can be expressed. To convert the waveform (intensity vs. time) into a spectrum (amplitude vs. frequency), the coefficients of all the different sine and cosine components must be determined. This is done with fast Fourier Transform. The user can specify the range of frequencies for which the coefficients are calculated. Since pitch changes over time, Fourier Transform is performed on a small window, which is moved along the data. The user can specify the window and step size.
 
 <img src="images/MusicFig1.png" width ="900">
 
@@ -37,4 +37,7 @@ Visually it is the sum of spectra that are scaled by one over an integer.
 
 <img src="images/MusicFig3.png" width ="600">
 
+From the example above it is clear that the Harmonic Sum Spectrum has a maximum at the base frequency. For any frequency, the only interference in the Harmonic Sum Spectrum comes from undertones. These are lower notes that have the base frequency as a harmonic. Deconvolution must be performed to subtract the contribution from these lower frequencies. Combining the definition of the assumed harmonic signature with the definition of the Harmonic Sum Spectrum, we obtain the following
+
+<img src="images/MusicFig6.png" width ="500">
 
