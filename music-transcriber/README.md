@@ -47,5 +47,5 @@ Then making a slight approximation the final contribution from the *j*<sup>th</s
 
 The sum of contributions from all undertones is
 
-<img src="images/MusicFig7.png" width ="250">
+<img src="images/MusicFig8.png" width ="200">
 
