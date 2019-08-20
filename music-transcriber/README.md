@@ -18,7 +18,7 @@ Save these plots if so desired. Then after closing the two windows, the score wi
 ## Technical Details
 
 ### Pitch Detection
-Pitch is directly related to the main frequency of a sound wave. Music audio data is a mixture of sound waves at different frequencies. It can be considered a linear combination of sine and cosine waves of different frequencies, where the sine and cosine components form a basis in terms of which any time shift in the wave can be expressed. To convert the waveform (intensity vs. time) into a spectrum (amplitude vs. frequency), the coefficients of all the different sine and cosine components must be determined. This is done with fast Fourier Transform. The user can specify the range of frequencies for which the coefficients are calculated. Since pitch changes over time, Fourier Transform is performed on a small window, which is moved along the data. The user can specify the window and step size.
+Pitch is directly related to the main frequency of a sound wave. Music audio data is a mixture of sound waves at different frequencies. It can be considered a linear combination of sine and cosine waves of different frequencies, where the sine and cosine components form a basis in terms of which any time shift in the wave can be expressed. To convert the waveform (intensity vs. time) into a spectrum (amplitude vs. frequency), the coefficients of all the different sine and cosine components must be determined. This is done with fast Fourier Transform. The user can specify the range of frequencies for which the coefficients are calculated. Since pitch changes over time, Fourier Transform is performed on a small window, which is moved along the data. The user can specify the window and step size. The transcription region parameters specify where to start transcription and how many steps to take.
 
 <img src="images/MusicFig1.png" width ="900">
 
@@ -60,9 +60,15 @@ Finally, the corrected base frequencies are converted to pitch using the followi
 
 <img src="images/MusicFig10.png" width ="300">
 
-The epsilon term is a user defined pitch correction term, expressed in terms of half-tones.
+The fuction above is used to bin amplitudes by their pitch. Multiple signals placed in the same pitch bin are summed. The epsilon term is a user defined pitch correction term, expressed in terms of half-tones. This is used to correct for an out of tune instrument or alternate tunings.
+
+The result of this process is called a chromagram. This is what is displayed in the plot windows before the score is output.
 
 ### Note Detection
+From the chromagram, the transcription step size can be set (as number of chromagram points). This defines wider segments used for note detection and rhythm analysis. The chromagram results within each segment are summed in order to reduce noise.
+
+<img src="images/MusicFig11.png" width ="800">
+
 
 
 
