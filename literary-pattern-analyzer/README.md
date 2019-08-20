@@ -41,7 +41,7 @@ Where A and B are the lists being compared and S are the stop words. Note that o
 For word order similarity, the program uses the formula proposed by Y. Li, Z. Bandard, D. McLean, J. O'Shea. *A Method for Measuring Sentence Similarity and its Application to Conversational Agents.* Intelligent Systems Group, Department of Computing and Mathematics,
 Manchester Metropolitan University.
 
-For one of the texts the words are numbered consecutively. This vector of numbers is *v<sub>1</sub>*. For the second text's vector *v<sub>2</sub>*, the entries are the location of the first text's words in the second text. For example if the first text is "John ate shark" and the second text is "shark ate John" then *v<sub>1</sub>*=\[1,2,3\] and *v<sub>2</sub>*=\[3,2,1\]. However, this method only works it the two texts share the same words and are the same length, which is hardly ever the case.
+For one of the texts the words are numbered consecutively. This vector of numbers is *v<sub>1</sub>*. For the second text's vector *v<sub>2</sub>*, the entries are the location of the first text's words in the second text. For example if the first text is "John ate shark" and the second text is "shark ate John" then *v<sub>1</sub>*=\[1,2,3\] and *v<sub>2</sub>*=\[3,2,1\]. However, this method only works it the two texts have the same number of each of the shared words. Therefore some modification is necessary to apply this method.
 
 The first step in applying this method is to remove any words that are not in both texts. This yields two texts with the same words. The position vector, however, will still use the word position from the original text. For example for the two texts "the dog bit a cat" and "he bought the dog food", *v<sub>1</sub>*=\[1,2\] and *v<sub>2</sub>*=\[3,4\].
 
@@ -65,7 +65,20 @@ __Total Similarity = Jaccard Similarity x (Content Similarity)<sup>&#x03B1;</sup
 
 Verses can be of arbitrary length, and comparing two verses of different length often results in lower similarity. This is not desirable for parallelism detection. Therefore only a segment of the longer verse, equal in length to the shorter verse, should be taken for comparison. However, it is uncertain which part of the longer verse is most similar to the shorter one. To resolve this ambiguity, similarity is calculated for all possible segments of the longer verse, and the maximum similarity is taken as the final order similarity value.
 
+### Lexical Dispersion Plot
+This plot is similar to the nltk Lexical dispersion plot except that the x-axis is in verses, and the length of the bars represents the frequency of the word in the verse. The user can choose which book to analyze, and also how many of the highest frequency words to display. Alternatively the user can specify a list of specific words to be displayed.
+
 ### Word Intentionality Plot
+Word intentionality (i.e. word density) is defined here as the probability of observing a certain frequency of a word (or higher frequency) by chance, given the overall frequency in the text. It is a similar concept to td-idf except it is calculated using the binomial distribution. The instance of a word is considered a "success" and any other word is considered "failure." The frequency of the word in the text is the probability of a success. The number of trials is the number of words in a verse. Then binomial distribution is used to calculate the probability given the above parameters.
+
+The user can choose which words to analyze in which book. Alternatively the user can choose a book and any words occurring more than a threshold number of times in that book will be analyzed. The window parameter can be used to analyze the density over a larger window (many verses instead of just one). This can reduce noise.
+
+### Arc Plot
+The arc plot is used for identifying parallelism. It plots the similarity of every verse with every other verse. The darker arcs represent high similarity. The plot would be too dense if all arcs are shown, so there is a threshold similarity below which arcs will not be displayed. The color is then rescaled to achieve more contrast. The alpha parameter is the weight of word order in overall similarity. The window parameter allows comparisons of multiple verses at a time rather than just one.
+
+### Topic Plot
+Latent topics are calculated using Latent Dirichlet Allocation. This analysis is performed over each segment of a book. The book can be specified, as with the other plots. The window parameter indicates how wide of a segment the analysis is performed over (i.e the size of the moving window). The generalize parameter is used to control the number of topics (higher value results in fewer topics). Based on the nature of the algorithm, the topics are not always reproducible unless the number of passes is increased, but that would increase calculation time.
+
 
 
 
