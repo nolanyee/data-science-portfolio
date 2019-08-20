@@ -108,12 +108,21 @@ If the last negative second derivative maximum corresponds to a signal maximum, 
 ### Rhythm Alignment
 The algorithm above will result in misalignment of many notes because it is unlikely that the maxima will fall in the exact same position for all relevant channels. Therefore note alignment must be performed. The first step is to exclude short notes (the threshold note duration for exclusion can be set by the user).
 
-
 <img src="images/MusicFig18.png" width ="500">
 
+Then note starts are aligned. The user can set the window within which note starts are all set to the average start time.
 
+<img src="images/MusicFig19.png" width ="500">
 
+Then note ends are aligned with the closest start of any note in any channel, if the time between the note end and other note's start within a user defined window.
 
+<img src="images/MusicFig20.png" width ="500">
+
+Finally the ends of notes from different channels are aligned with the latest note end before a note start.
+
+<img src="images/MusicFig21.png" width ="500">
+
+Next, the tempo is determined. 
 
 
 
