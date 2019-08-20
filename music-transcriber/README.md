@@ -75,24 +75,24 @@ For note detection, the first and second derivatives of the chromagram are calcu
 
 Note detection relies on identifying maxima in both the signal and the negative second derivative. Maxima are identified as points for which all points within a window around the point being analyzed must be lower than the point being analyzed.
 
-<img src="images/MusicFig12.png" width ="700">
+<img src="images/MusicFig12.png" width ="500">
 
 This extrema detection window can be set for both the signal and second derivative. 
 
 The algorithm also matches the position of maxima in the signal and negative second derivative. The tolerance for this match can also be set by the user.
 
-<img src="images/MusicFig13.png" width ="700">
+<img src="images/MusicFig13.png" width ="500">
 
 Finally the threshold for note detection can be set. There is an absolute threshold as well as a relative threshold. The absolute threshold prevents detecting noise as notes. The relative threshold (expressed in fraction of maximum intensity across all channels) ensures only the loudest notes are detected.
 
 
-<img src="images/MusicFig14.png" width ="700">
+<img src="images/MusicFig14.png" width ="500">
 
-<img src="images/MusicFig15.png" width ="700">
+<img src="images/MusicFig15.png" width ="500">
 
-<img src="images/MusicFig16.png" width ="700">
+<img src="images/MusicFig16.png" width ="500">
 
-<img src="images/MusicFig17.png" width ="700">
+<img src="images/MusicFig17.png" width ="500">
 
 
 
