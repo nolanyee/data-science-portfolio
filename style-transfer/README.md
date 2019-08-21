@@ -8,6 +8,8 @@ It includes features for fine tuning the loss function by choosing which layers 
 
 The gradient descent is split into a slow and a fast stage. The slow stage helps mitigate noise generation by being more sensitive to small gradients at the beginning, so flatter areas will descend appropriately and consistently. This helps in areas of the picture with little content information.
 
+*Prerequisite Libraries: tensorflow, matplotlib, tkinter*
+
 ### Usage
 Below is a screenshot of the user interface for parameter setting.
 
