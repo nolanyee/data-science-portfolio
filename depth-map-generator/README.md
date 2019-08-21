@@ -138,7 +138,7 @@ The histogram is generated for all pixels that are marked as shadow.
 
 <img src="images/DepthMapFig19.png" width ="400">
 
-To clean up the shadow mask further, the user can define a threshold fraction. This fraction represents the fraction of total area under the shadow histogram. Any pixel falling under the intensity corresponding to the threshold fraction is included in the shadow mask if not already included. For example if the fraction is set to 0.50, all pixels with values within the 50<sup>the</sup> in the shadow histogram are marked as shadow in the mask.
+To clean up the shadow mask further, the user can define a threshold fraction. This fraction represents the fraction of total area under the shadow histogram. Any pixel falling under the intensity corresponding to the threshold fraction is included in the shadow mask if not already included. For example if the fraction is set to 0.50, all pixels with values within the 50<sup>th</sup> in the shadow histogram are marked as shadow in the mask.
 
 If the user determines that the shadow mask is inaccurate, the user can override the mask by specifying an intensity below which all pixels will be included in the mask, and above which all pixels will be excluded.
 
