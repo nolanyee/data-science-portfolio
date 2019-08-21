@@ -18,5 +18,7 @@ If nothing is changed the default settings will be used. The input image and out
 
 <img src="images/Figure_1.png" width ="900">
 
+The meaning of all the plots above are discussed in the sections below.
 
+## Technical Details
 ### Light Scattering
