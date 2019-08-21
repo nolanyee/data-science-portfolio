@@ -36,6 +36,6 @@ However, depending on the angle of the light and the shape of the surface, some 
 
 The amount of incident light the surface recieves is proportional to the cosine of the negative light vector and the surface normal vector. However, when this cosine is negative the surface is in cast shadow (there cannot be negative light).
 
-<img src="images/DepthMapFig4.png" width ="400">
+<img src="images/DepthMapFig4.png" width ="600">
 
 
