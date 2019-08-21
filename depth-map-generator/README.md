@@ -92,9 +92,18 @@ There may be instances where the direction of the gradient of the image is not i
 This normal vector will end up always being one of two extreme normals. Therefore the two extreme normal vectors (the ones that have the largest angle between the normal vector and the negative incident light vector when both vectors are projected on the xy plane) can be calculated and each one tested for similarity with the gradient, rather than testing all possible normal vectors.
 
 ### Determination of Light Direction
-The light direction is assumed to be the direction in which there is the most contrast in slices of the image. This can be seen the the example below.
+The light direction is assumed to be the direction in which there is the most contrast in slices of the image. (Slice is used here to refer to a vector of pixel values that are in a straight line in the image). This is because the midtone areas tend to be oriented orthogonally (or at least not close to parallel) to the light direction on the image plane. This means when moving along the light direction there will be fewer pixels in the midtones and more pixels in the highlights and shadows. This can be seen the the example below.
 
 <img src="images/DepthMapFig22.png" width ="900">
+
+Slicing in the light direction typically yields a distribution that is skewed towards the extreme, while slicing in other directions will result in a distribution that has more intermediate values. This means that the sum of squared deviations from the mean in each slice should be greater in the light direction. This leads to th first component of the light direction desirability score, which is the total sum of squared deviations from the individal slice means (not from the total mean, since that would be the same regardless of slice direction). 
+
+Also notice that adjacent slices are more similar to each other in the direction of the light than in other directions. This leads to the second component of the light direction desirability score, which is the sum of squared deviations from the adjacent slice (calculated for each slice then totalled).
+
+The light direction and the actual geometry of the surface both contribute to the variability of the slices, as can be seen in the following example:
+
+<img src="images/DepthMapFig12.png" width ="300">
+
 
 ### Mathematical Treatment
 For easier calculation of the cosine, the normal vectors and light vectors will all be considered normal. Therefore the cosine is simply the dot product. With all the theory and assumptions above, there are enough equations to calculate the normal vector for lit regions and cast shadow regions separately.
