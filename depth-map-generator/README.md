@@ -87,7 +87,7 @@ Another major assumption is needed to determine which vector it is. The assumpti
 
 There may be instances where the direction of the gradient of the image is not included in the projection of all possible normal vectors onto the xy plane. In this case the vector that is most similar (in terms of cosine) to the gradient vector is chosen.
 
-<img src="images/DepthMapFig16.png" width ="220">
+<img src="images/DepthMapFig16.png" width =300">
 
 
 
