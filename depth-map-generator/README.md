@@ -104,16 +104,34 @@ The light direction and the actual geometry of the surface both contribute to th
 
 <img src="images/DepthMapFig23.png" width ="300">
 
-The light direction slices (green) have a larger range (more areas of highlights and shadows) than the red slice (more midtones) in the upper part of the figure. However, in the lower part they are about the same. Here the variance is primarily due to the carved lines in the relief. If the entire image were just these lines, then the slice that is parallel to the lines would have little variance. This has nothing to do with the light direction. So the Sobel magnitude in the direction of the slice is used to correct for the surface geometry effect. The Sobel filter is used for edge detection. So the Sobel magnitude in the direction of a slice indicates how perpendicular edges are to the slice. The more perpendicular the edge is, the more contribution there will be due to the edge direction to the overall variance. Therefore the reciprocal of this magnitude is used as a multiplicative correctionf actor in the desirability score.
+The light direction slices (green) have a larger range (more areas of highlights and shadows) than the red slice (more midtones) in the upper part of the figure. However, in the lower part they are about the same. Here the variance is primarily due to the carved lines in the relief. If the entire image were just these lines, then the slice that is parallel to the lines would have little variance. This has nothing to do with the light direction. So the Sobel magnitude in the direction of the slice is used to correct for the surface geometry effect. The Sobel filter is used for edge detection. So the Sobel magnitude in the direction of a slice indicates how perpendicular edges are to the slice. The more perpendicular the edge is, the more contribution there will be due to the edge direction to the overall variance. Therefore the reciprocal of this magnitude is used as a multiplicative correction factor in the desirability score.
 
-The user can adjust the weights of the adjacent sum of squares and sobel magnitude in the desirability score. The algorithm calculates this score for all angles and chooses the angle with the largest desirability score. The user can also select how many angles the program will scan (more angles means more resolution on the desirability plot and a more precise output angle).
+The user can adjust the weights (exponents) of the adjacent sum of squares and sobel magnitude in the desirability score. The algorithm calculates this score for all angles and chooses the angle with the largest desirability score. The user can also select how many angles the program will scan (more angles means more resolution on the desirability plot and a more precise output angle).
 
 <img src="images/DepthMapFig17.png" width ="300">
 
-### Determination of Cast Shadow Regions
+If the user determines that the calculated light direction is not accurate, the user can override the angle.
 
 ### Determination of Flat Regions
 
+
+
+### Determination of Cast Shadow Regions
+To identify regions that are in cast shadow, the program scans through slices in the direction of the light. Drops in intensity greater than a user defined threshold over a user defined window mark the start of a shadow region, if the pixel intensity after the drop is lower than the midtone intensity (the intensity of the flat region, or a user defined intensity). Increases in intensity greater than another user defined threshold over another user defined window mark the end of a shadow region. 
+
+<img src="images/DepthMapFig13.png" width ="700">
+
+The pixels that are marked as shadow are assigned 1 in a shadow mask, and other pixels are assigned 0. In order to remove noise, any pixel in the mask that is surrounded by at least 6 pixels (out of 8 neighboring pixels) of a different value is assigned that different value.
+
+<img src="images/DepthMapFig20.png" width ="400">
+
+The histogram is generated for all pixels that are marked as shadow.
+
+<img src="images/DepthMapFig19.png" width ="400">
+
+To clean up the shadow mask further, the user can define a threshold fraction. This fraction represents the fraction of total area under the shadow histogram. Any pixel falling under the intensity corresponding to the threshold fraction is included in the shadow mask if not already included. For example if the fraction is set to 0.50, all pixels with values within the 50<sup>the</sup> in the shadow histogram are marked as shadow in the mask.
+
+If the user determines that the shadow mask is inaccurate, the user can override the mask by specifying an intensity below which all pixels will be included in the mask, and above which all pixels will be excluded.
 
 ### Mathematical Treatment
 For easier calculation of the cosine, the normal vectors and light vectors will all be considered normal. Therefore the cosine is simply the dot product. With all the theory and assumptions above, there are enough equations to calculate the normal vector for lit regions and cast shadow regions separately.
