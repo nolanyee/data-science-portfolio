@@ -1,6 +1,6 @@
 # Poker AI
 *Skills: Python, Probability*\
-*Prerequisite Libraries: sklearn, scipy*\
+*Prerequisite Libraries: sklearn, scipy*
 
 ### Overview
 This is a simple straight heads-up poker game. The player and computer are each dealt a 5 card hand, with no drawing. The algorithm uses card counting, combinatorics, probability, Bayes theorem, logistic regression, and heuristics.
