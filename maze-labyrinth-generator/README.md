@@ -14,6 +14,8 @@ The mazes are solved using Dijkstra's algorithm (each cell is treated as the nod
 
 <img src="images/MazeFig2.png" width = "200">
 
+*Prerequisite Libraries: tkinter*
+
 ### Usage
 A screenshot of the user interface is shown below.
 <img src="images/MazeFig1.png" width = "600">
