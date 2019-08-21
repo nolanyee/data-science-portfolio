@@ -6,6 +6,8 @@ This program simulates a flock of birds in flight (or perhaps a swarm of bees). 
 
 <img src="images/Flock1.jpg" width = "400">
 
+*Prerequisite Libraries: tkinter, numpy*
+
 ### Usage
 Right-Click to start and stop the animation.
 
