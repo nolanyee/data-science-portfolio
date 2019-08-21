@@ -108,7 +108,7 @@ The light direction slices (green) have a larger range (more areas of highlights
 
 The user can adjust the weights (exponents) of the adjacent sum of squares and sobel magnitude in the desirability score. The algorithm calculates this score for all angles and chooses the angle with the largest desirability score. The user can also select how many angles the program will scan (more angles means more resolution on the desirability plot and a more precise output angle).
 
-<img src="images/DepthMapFig17.png" width ="300">
+<img src="images/DepthMapFig17.png" width ="350">
 
 If the user determines that the calculated light direction is not accurate, the user can override the angle.
 
@@ -119,7 +119,7 @@ If the user determines that the calculated light direction is not accurate, the 
 ### Determination of Cast Shadow Regions
 To identify regions that are in cast shadow, the program scans through slices in the direction of the light. Drops in intensity greater than a user defined threshold over a user defined window mark the start of a shadow region, if the pixel intensity after the drop is lower than the midtone intensity (the intensity of the flat region, or a user defined intensity). Increases in intensity greater than another user defined threshold over another user defined window mark the end of a shadow region. 
 
-<img src="images/DepthMapFig13.png" width ="700">
+<img src="images/DepthMapFig14.png" width ="700">
 
 The pixels that are marked as shadow are assigned 1 in a shadow mask, and other pixels are assigned 0. In order to remove noise, any pixel in the mask that is surrounded by at least 6 pixels (out of 8 neighboring pixels) of a different value is assigned that different value.
 
