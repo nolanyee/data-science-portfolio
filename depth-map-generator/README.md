@@ -21,7 +21,7 @@ If nothing is changed the default settings will be used. The input image and out
 The meaning of all the plots above are discussed in the sections below.
 
 ## Technical Details
-### Light Scattering
+### Diffuse Reflection
 The main assumption used to generate the depth map is that when incoming light hits the surface is scattered equally in all directions. This kind of diffuse reflection or scattering is called Lambertian reflectance. This assumption holds true if the surface is the same color throughout and the surface is matte.
 
 <img src="images/DepthMapFig1.png" width ="400">
@@ -38,4 +38,6 @@ The amount of incident light the surface recieves (and thus the amount of scatte
 
 <img src="images/DepthMapFig4.png" width ="600">
 
+### Cast Shadow
+In most images, regions with cast shadow are not completely black because of other light sources. The first possible source of light is light that is scattered from other parts of the surface.
 
