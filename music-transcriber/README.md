@@ -139,7 +139,7 @@ After tempo determination, the closest matching valid note is assigned to each n
 The use can set the maximum allowable adjustment for note durations, and the minumum score improvement required to make an adjustment.
 
 ### Results and Discussion
-The algorithm was tested on 3 small sections of pieces by J. S. Bach.
+The algorithm was tested on 3 small sections of pieces by J. S. Bach. The first two were at a moderate tempo, but the last one is faster. The results are shown below.
 
  <img src="images/MusicFig25.png" width ="900">
  
@@ -147,5 +147,6 @@ The algorithm was tested on 3 small sections of pieces by J. S. Bach.
  
  <img src="images/MusicFig27.png" width ="900">
 
+It is clear that the rhythm is quite inaccurate in all 3 cases. The recall and precision of notes is fairly good for the first two excerpts, but the third one is very poor. This is probably because the tempo was faster, but also because quite a few notes were on the wrong octave. This is the octave error mentioned above.
 
-Because of all the assumptions made during the transcription process, it is clear that the transcription results are not very accurate. An expert can easily transcribe more accurately than this program. Though this project did not produce an accurate or usable algorithm for transcription, it demonstrates the complexity of music transcription process and some of the challenges it poses. 
+All 3 audio files were piano recordings, so the note start times were clear. One can imagine that for other instruments, especially stringed instruments, the results will be even worse. Because of all the assumptions made during the transcription process, it is clear that the transcription results are not very accurate. An expert can easily transcribe more accurately than this program. Although this project did not produce an accurate or usable algorithm for transcription, it demonstrates the complexity of music transcription process and some of the challenges it poses. 
