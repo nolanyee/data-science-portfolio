@@ -43,7 +43,7 @@ A practical example of these principles is how sunlight hits the earth. During t
 ### Cast Shadow
 In most images, regions with cast shadow are not completely black because of other light sources. The first possible source of light is light that is scattered from other parts of the surface. Light reflected from raised parts of the surface will be the most direct where the vector from the origin of the light to the location it strikes in the cast shadow is parallel to the surface normal of the shadow region. Overall, unless the other parts of the surface are much taller than the region of cast shadow, the reflected light will be generally in the horizontal direction.
 
-<img src="images/DepthMapFig4.png" width ="600">
+<img src="images/DepthMapFig5.png" width ="600">
 
 
 
