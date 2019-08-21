@@ -47,7 +47,7 @@ In most images, regions with cast shadow are not completely black because of oth
 
 This can also be seen applying the Huygens-Fresnel principle. The overall wavefront is moving roughly horizontally.
 
-<img src="images/DepthMapFig6.png" width ="700">
+<img src="images/DepthMapFig7.png" width ="700">
 
 
 
