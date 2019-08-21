@@ -22,11 +22,11 @@ The meaning of all the plots above are discussed in the sections below.
 
 ## Technical Details
 ### Light Scattering
-The main assumption used to generate the depth map is that when incoming light hits the surface is scattered equally in all directions. This assumption holds true if the surface is the same color throughout and the surface is matte.
+The main assumption used to generate the depth map is that when incoming light hits the surface is scattered equally in all directions. This kind of diffuse reflection or scattering is called Lambertian reflectance. This assumption holds true if the surface is the same color throughout and the surface is matte.
 
 <img src="images/DepthMapFig1.png" width ="400">
 
-If the assumption holds, then the intensity of scattered light reaching the observer is the same for all regions of the surface that have the same amount of incident light.
+If the assumption holds, then the intensity of scattered light reaching the observer is the same for all regions of the surface that have the same amount of incident light. Thus the intensity observed is proportionally to the intensity of incident light.
 
 <img src="images/DepthMapFig2.png" width ="400">
 
@@ -34,7 +34,7 @@ However, depending on the angle of the light and the shape of the surface, some 
 
 <img src="images/DepthMapFig3.png" width ="400">
 
-The amount of incident light the surface recieves is proportional to the cosine of the negative light vector and the surface normal vector. However, when this cosine is negative the surface is in cast shadow (there cannot be negative light).
+The amount of incident light the surface recieves (and thus the amount of scattered light observed) is proportional to the cosine of the negative light vector and the surface normal vector, which is calculated by taking the dot product of the normalized vectors. However, when this cosine is negative the surface is in cast shadow (there cannot be negative light).
 
 <img src="images/DepthMapFig4.png" width ="600">
 
