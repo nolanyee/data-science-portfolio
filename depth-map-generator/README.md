@@ -121,7 +121,7 @@ This maximum length is stored for all window positions for all slices. Then the 
 
 <img src="images/DepthMapFig18.png" width ="375">
 
-The maximum window position is used as the intensity of the flat region in calculations. However, the user may override this intensity in the settings window.
+The maximum window position is used as the intensity of the flat region in calculations. The above algorithm is based on the assumption that the flat regions in a bas-relief have the largest areas (corresponding to the unraised background of the relief). This assumption may not always hold. Therefore, the user may override this intensity in the settings window.
 
 ### Determination of Cast Shadow Regions
 To identify regions that are in cast shadow, the program scans through slices in the direction of the light. Drops in intensity greater than a user defined threshold over a user defined window mark the start of a shadow region, if the pixel intensity after the drop is lower than the midtone intensity (the intensity of the flat region, or a user defined intensity). Increases in intensity greater than another user defined threshold over another user defined window mark the end of a shadow region. 
