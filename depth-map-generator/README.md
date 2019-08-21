@@ -119,7 +119,7 @@ If the user determines that the calculated light direction is not accurate, the 
 ### Determination of Cast Shadow Regions
 To identify regions that are in cast shadow, the program scans through slices in the direction of the light. Drops in intensity greater than a user defined threshold over a user defined window mark the start of a shadow region, if the pixel intensity after the drop is lower than the midtone intensity (the intensity of the flat region, or a user defined intensity). Increases in intensity greater than another user defined threshold over another user defined window mark the end of a shadow region. 
 
-<img src="images/DepthMapFig14.png" width ="700">
+<img src="images/DepthMapFig14.png" width ="550">
 
 The pixels that are marked as shadow are assigned 1 in a shadow mask, and other pixels are assigned 0. In order to remove noise, any pixel in the mask that is surrounded by at least 6 pixels (out of 8 neighboring pixels) of a different value is assigned that different value.
 
