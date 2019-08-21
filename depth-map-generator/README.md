@@ -76,7 +76,7 @@ Alternatively, the light source can be from a distant surface that has diffuse r
 
 <img src="images/DepthMapFig10.png" width ="700">
 
-### Mathematical Treatment
+### Additional Approximations
 As a simplification, only diffuse reflectance will be considered in areas recieving incident light. And either reflected light or ambient light will be considered in the calculations for regions of cast shadow (the user must select which type of light is predominant).
 
 However, all the theory discussed above still does not give enough information to decude the surface normal vector. It only gives the angle between the normal vector and the light vector. But this still forms a cone with an infinite number of possible normal vectors.
@@ -89,6 +89,13 @@ There may be instances where the direction of the gradient of the image is not i
 
 <img src="images/DepthMapFig16.png" width ="300">
 
+This normal vector will end up always being one of two extreme normals. Therefore the two extreme normal vectors (the ones that have the largest angle between the normal vector and the negative incident light vector when both vectors are projected on the xy plane) can be calculated and each one tested for similarity with the gradient, rather than testing all possible normal vectors.
 
+### Determination of Light Direction
+
+
+
+### Mathematical Treatment
+For easier calculation of the cosine, the normal vectors and light vectors will all be considered normal. Therefore the cosine is simply the dot product. With all the theory and assumptions above, there are enough equations to calculate the normal vector for lit regions and cast shadow regions separately.
 
 
