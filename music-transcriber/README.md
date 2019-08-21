@@ -147,7 +147,7 @@ The algorithm was tested on 3 small sections of pieces by J. S. Bach. The first 
  
  <img src="images/MusicFig26.png" width ="900">
  
- <img src="images/MusicFig27.png" width ="900">
+ <img src="images/MusicFig27.png" width ="800">
 
 It is clear that the rhythm is quite inaccurate in all 3 cases. The recall and precision of notes is fairly good for the first two excerpts, but the third one is very poor. This is probably because the tempo was faster, but also because quite a few notes were on the wrong octave. This is the octave error mentioned above.
 
