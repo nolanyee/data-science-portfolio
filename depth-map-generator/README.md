@@ -92,7 +92,7 @@ There may be instances where the direction of the gradient of the image is not i
 This normal vector will end up always being one of two extreme normals. Therefore the two extreme normal vectors (the ones that have the largest angle between the normal vector and the negative incident light vector when both vectors are projected on the xy plane) can be calculated and each one tested for similarity with the gradient, rather than testing all possible normal vectors.
 
 ### Determination of Light Direction
-The light direction is assumed to be the direction in which there is the most contrast in slices of the image. (Slice is used here to refer to a vector of pixel values that are in a straight line in the image). This is because the midtone areas tend to be oriented orthogonally (or at least not close to parallel) to the light direction on the image plane. This means when moving along the light direction there will be fewer pixels in the midtones and more pixels in the highlights and shadows. This can be seen the the example below.
+The light direction is assumed to be the direction in which there is the most contrast in slices of the image. (Slice is used here to refer to a vector of pixel values that are in a straight line in the image). This is because the midtone areas tend to be oriented orthogonally (or at least not close to parallel) to the light direction on the image plane. This means when moving along the light direction there will be fewer pixels in the midtones and more pixels in the highlights and shadows. This can be seen the the illustration below.
 
 <img src="images/DepthMapFig22.png" width ="900">
 
@@ -104,7 +104,11 @@ The light direction and the actual geometry of the surface both contribute to th
 
 <img src="images/DepthMapFig23.png" width ="300">
 
-The light direction slices (green) have a larger range (brighter highlights and darker shadows) but the red slice (not in the light direction) still has some contrast that is primarily due to the carved lines in the relief. 
+The light direction slices (green) have a larger range (more areas of highlights and shadows) than the red slice (more midtones) in the upper part of the figure. However, in the lower part they are about the same. Here the variance is primarily due to the carved lines in the relief. If the entire image were just these lines, then the slice that is parallel to the lines would have little variance. This has nothing to do with the light direction. So the Sobel magnitude in the direction of the slice is used to correct for the surface geometry effect. The Sobel filter is used for edge detection. So the Sobel magnitude in the direction of a slice indicates how perpendicular edges are to the slice. The more perpendicular the edge is, the more contribution there will be due to the edge direction to the overall variance. Therefore the reciprocal of this magnitude is used as a multiplicative correctionf actor in the desirability score.
+
+The user can adjust the weights of the adjacent sum of squares and sobel magnitude in the desirability score. The algorithm calculates this score for all angles and chooses the angle with the largest desirability score.
+
+<img src="images/DepthMapFig17.png" width ="600">
 
 ### Mathematical Treatment
 For easier calculation of the cosine, the normal vectors and light vectors will all be considered normal. Therefore the cosine is simply the dot product. With all the theory and assumptions above, there are enough equations to calculate the normal vector for lit regions and cast shadow regions separately.
