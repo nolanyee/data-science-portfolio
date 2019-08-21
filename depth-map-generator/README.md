@@ -108,7 +108,7 @@ The light direction slices (green) have a larger range (more areas of highlights
 
 The user can adjust the weights of the adjacent sum of squares and sobel magnitude in the desirability score. The algorithm calculates this score for all angles and chooses the angle with the largest desirability score. The user can also select how many angles the program will scan (more angles means more resolution on the desirability plot and a more precise output angle).
 
-<img src="images/DepthMapFig17.png" width ="400">
+<img src="images/DepthMapFig17.png" width ="300">
 
 ### Determination of Cast Shadow Regions
 
