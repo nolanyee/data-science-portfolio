@@ -76,5 +76,13 @@ Alternatively, the light source can be from a distant surface that has diffuse r
 
 <img src="images/DepthMapFig10.png" width ="700">
 
+### Mathematical Treatment
+As a simplification, only diffuse reflectance will be considered in areas recieving incident light. And either reflected light or ambient light will be considered in the calculations for regions of cast shadow (the user must select which type of light is predominant).
+
+However, all the theory discussed above still does not give enough information to decude the surface normal vector. It only gives the angle between the normal vector and the light vector. But this still forms a cone with an infinite number of possible normal vectors.
+
+<img src="images/DepthMapFig11.png" width ="400">
+
+
 
 
