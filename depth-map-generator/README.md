@@ -92,8 +92,9 @@ There may be instances where the direction of the gradient of the image is not i
 This normal vector will end up always being one of two extreme normals. Therefore the two extreme normal vectors (the ones that have the largest angle between the normal vector and the negative incident light vector when both vectors are projected on the xy plane) can be calculated and each one tested for similarity with the gradient, rather than testing all possible normal vectors.
 
 ### Determination of Light Direction
-The light direction is assumed to be the direction in which there is the most contrast in slices of the image. This is because 
+The light direction is assumed to be the direction in which there is the most contrast in slices of the image. This can be seen the the example below.
 
+<img src="images/DepthMapFig22.png" width ="900">
 
 ### Mathematical Treatment
 For easier calculation of the cosine, the normal vectors and light vectors will all be considered normal. Therefore the cosine is simply the dot product. With all the theory and assumptions above, there are enough equations to calculate the normal vector for lit regions and cast shadow regions separately.
