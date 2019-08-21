@@ -29,3 +29,11 @@ The main assumption used to generate the depth map is that when incoming light h
 If the assumption holds, then the intensity of scattered light reaching the observer is the same for all regions of the surface that have the same amount of incident light.
 
 <img src="images/DepthMapFig2.png" width ="400">
+
+However, depending on the angle of the light and the shape of the surface, some parts of the surface will have less incident light than other parts. The surface that is normal to the light direction will have the most incident light hitting it per area of the image (the projection of the surface onto the image plane). And the surface that is parallel to the light direction will have the least light. 
+
+<img src="images/DepthMapFig3.png" width ="400">
+
+The amount of incident light the surface recieves is proportional to the cosine of the light vector and the surface normal vector.
+
+
