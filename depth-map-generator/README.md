@@ -83,6 +83,12 @@ However, all the theory discussed above still does not give enough information t
 
 <img src="images/DepthMapFig11.png" width ="200">
 
+Another major assumption is needed to determine which vector it is. The assumption will be that the contours of the image intensity function (the image itself) and the contours of the actual surface are the same. This means the projection of the normal vector onto the image (xy) plane is parallel to the gradient of the image intensity function (this gradient is estimated using a Sobel filter).
+
+There may be instances where the direction of the gradient of the image is not included in the projection of all possible normal vectors onto the xy plane. In this case the vector that is most similar (in terms of cosine) to the gradient vector is chosen.
+
+
+
 
 
 
