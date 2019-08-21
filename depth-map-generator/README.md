@@ -113,13 +113,20 @@ The user can adjust the weights (exponents) of the adjacent sum of squares and s
 If the user determines that the calculated light direction is not accurate, the user can override the angle.
 
 ### Determination of Flat Regions
+The angle determined above is the light direction projected onto the xy plane. To obtain the z component additional information is needed. The program calculates this component using the intensity corresponding to flat regions in the image (regions parallel to the image plane, whose surface normal is the z unit vector). In order to determine the intensity for each slice in the direction of the light, the algorithm uses a moving window (of user specified size). For each position of the window, the algorithm calculates the maximum length where the intensity is continuously in the window. 
 
+<img src="images/DepthMapFig13.png" width ="550">
 
+This maximum length is stored for all window positions for all slices. Then the sum across all slices is taken and plotted against the window position.
+
+<img src="images/DepthMapFig18.png" width ="375">
+
+The maximum window position is used as the intensity of the flat region in calculations. However, the user may override this intensity in the settings window.
 
 ### Determination of Cast Shadow Regions
 To identify regions that are in cast shadow, the program scans through slices in the direction of the light. Drops in intensity greater than a user defined threshold over a user defined window mark the start of a shadow region, if the pixel intensity after the drop is lower than the midtone intensity (the intensity of the flat region, or a user defined intensity). Increases in intensity greater than another user defined threshold over another user defined window mark the end of a shadow region. 
 
-<img src="images/DepthMapFig14.png" width ="550">
+<img src="images/DepthMapFig14.png" width ="500">
 
 The pixels that are marked as shadow are assigned 1 in a shadow mask, and other pixels are assigned 0. In order to remove noise, any pixel in the mask that is surrounded by at least 6 pixels (out of 8 neighboring pixels) of a different value is assigned that different value.
 
