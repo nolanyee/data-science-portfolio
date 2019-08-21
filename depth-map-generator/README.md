@@ -143,4 +143,6 @@ If the user determines that the shadow mask is inaccurate, the user can override
 ### Mathematical Treatment
 For easier calculation of the cosine, the normal vectors and light vectors will all be considered normal. Therefore the cosine is simply the dot product. With all the theory and assumptions above, there are enough equations to calculate the normal vector for lit regions and cast shadow regions separately.
 
+Refer to the 
+
 
