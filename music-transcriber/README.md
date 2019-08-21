@@ -119,7 +119,7 @@ Then note starts are aligned. The user can set the window within which note star
 
 <img src="images/MusicFig19.png" width ="500">
 
-Then note ends are aligned with the closest start of any note in any channel, if the time between the note end and other note's start within a user defined window.
+Then note ends are aligned with the closest start of any note in any channel, if the time between the note end and other note's start is within a user defined window.
 
 <img src="images/MusicFig20.png" width ="500">
 
