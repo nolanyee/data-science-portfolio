@@ -94,7 +94,7 @@ Once the signal goes above the threshold, note start and end time detection is a
 
 <img src="images/MusicFig14.png" width ="500">
 
-If there is no second derivative maximum after the first one, the note end is the point at which the signal falls below the threshold. Moving onto the next example:
+If there is no negative second derivative maximum after the first one, the note end is the point at which the signal falls below the threshold. Moving on to the next example:
 
 <img src="images/MusicFig15.png" width ="500">
 
