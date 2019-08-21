@@ -49,6 +49,13 @@ This can also be seen applying the Huygens-Fresnel principle. The overall wavefr
 
 <img src="images/DepthMapFig7.png" width ="700">
 
+Reflected light from flat areas of the surface are strongest in the areas of shadow where the surface is vertical and the normal is the horizontal, in the same direction as the reflected light source. This also leads to a strong horizontally directed light in the region of cast shadow.
+
+<img src="images/DepthMapFig6.png" width ="700">
+
+Once again this can also be seen applying Huygens-Fresnel principle.
+
+<img src="images/DepthMapFig8.png" width ="700">
 
 
 
