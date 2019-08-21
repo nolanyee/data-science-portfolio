@@ -104,7 +104,7 @@ In the next example there is an additional maximum.
 
 <img src="images/MusicFig16.png" width ="500">
 
-In this cases, if there is another negative second derivative maximum that corresponds to a signal maximum, the first note is ended and a second note is started.
+In this case, if there is another negative second derivative maximum that corresponds to a signal maximum, the first note is ended and a second note is started.
 
 If the last negative second derivative maximum corresponds to a signal maximum, the note is ended, a new note is started, and that new note is ended when the signal falls below the threshold.
 
