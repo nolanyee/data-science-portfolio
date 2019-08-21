@@ -77,3 +77,4 @@ Alternatively, the light source can be from a distant surface that has diffuse r
 <img src="images/DepthMapFig10.png" width ="700">
 
 
+
