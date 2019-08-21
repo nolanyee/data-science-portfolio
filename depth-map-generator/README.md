@@ -40,7 +40,7 @@ The amount of incident light the surface recieves (and thus the amount of scatte
 
 A practical example of these principles is how sunlight hits the earth. During the night the observer is in cast shadow. During the day, the amount of sunlight (assuming no clouds) is related to latitude. During the summer there is more incident light because the angle between the light rays and the normal vector of the earth at that particular location (depends on lattitude) is smallest. And in winter it is the largest. The tropic of cancer recieves the most mid-day light during the summer because the normal vector of the earth is the same direction as the light vector.
 
-### Cast Shadow
+### Reflected Light
 In most images, regions with cast shadow are not completely black because of other light sources. The first possible source of light is light that is scattered from other parts of the surface. Light reflected from raised parts of the surface will be the most direct where the vector from the origin of the light to the location it strikes in the cast shadow is parallel to the surface normal of the shadow region. Overall, unless the other parts of the surface are much taller than the region of cast shadow, the reflected light will be generally strongest in the horizontal direction.
 
 <img src="images/DepthMapFig5.png" width ="700">
@@ -57,9 +57,23 @@ Once again this can also be seen applying Huygens-Fresnel principle.
 
 <img src="images/DepthMapFig8.png" width ="700">
 
-So overall, reflected light from the surface should be directed approximately horizontally. In addition, reflected light can only come from areas that recieve incident light. Therefore no reflected light can come from the areas of cast shadow, which is in the direction of the incident light. Therefore on average the reflected light is directed roughly in the opposite direction of the incident light, when projected on the image plane.
+So overall, reflected light from the surface should be directed approximately horizontally in the direction opposite to the incident light. 
+
+Reflected light can only come from areas that recieve incident light. Therefore no reflected light can come from the areas of cast shadow, which is in the direction of the incident light. Therefore on average the reflected light is directed roughly in the opposite direction of the incident light, when projected on the image plane.
 
 <img src="images/DepthMapFig15.png" width ="500">
 
+Therefore the reflected light vector is considered to be the negative projection of the incident light vector on the image plane (xy).
+
+### Ambient Light
+The second possible source of light in regions of cast shadow is ambient light. This is light coming from the environment. Ambient light can be the same intensity in all directions. In this case surfaces parallel to the image plane recieve more light than surfaces perpendicular to the image plane.
+
+<img src="images/DepthMapFig9.png" width ="500">
+
+This situation can be approximated as a light source pointing in the same direction as the normal of the image plane (in the z direction).
+
+Alternatively, the light source can be from a distant surface that has diffuse reflection. For example if the relief is displayed vertically, the scattered light from the opposite wall would hit the surface. If the relief is displayed horizontally, the scattered light would be from the ceiling. In either case using the Huygens-Fresnel principle this light would be equivalent to light pointing in the z direction, making it the same as the previous case.
+
+<img src="images/DepthMapFig10.png" width ="500">
 
 
