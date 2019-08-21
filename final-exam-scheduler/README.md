@@ -8,6 +8,8 @@ This program uses graph coloring theory to generate a final exam schedule from s
 
 In the final exam schedule, no course can be in the same time block as any of the courses it is connected to in the graph (in the example above, English must be in a separate block since it is connected to all other courses). Since the graph is not necessarily planar, determining the minimum number of colors (time slots) for the nodes analytically is difficult. However, a workable (but perhaps not completely optimal) schedule can still be calculated using a simple algorithm that iterates through all courses and through all time slots. If a course is not connected to any courses in a time slot, it is added to that slot (it is assumed that there is no limit on number of exams that can take place at one time). Otherwise, the next slot is evaluated. If the course cannot be placed into any existing slot, a new slot is created.
 
+*Prerequisite Libraries: matplotlib*
+
 ### Time Complexity
 The program also includes a feature to generate random student enrollment data with sequentially numbered courses. This is useful for analyzing the average time complexity of the algorithm. 
 
