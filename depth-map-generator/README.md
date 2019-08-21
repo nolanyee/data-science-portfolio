@@ -16,7 +16,7 @@ The graphical user interface enables the user to set any of the parameters used 
 
 If nothing is changed the default settings will be used. The input image and output normal map and depth map image file names are mandatory. Once everything is filled out, press "OK" and the calculation will begin. When calculation is finished, the following window will appear and the files will have been saved.
 
-<img src="images/Figure_1.jpg" width ="900">
+<img src="images/Figure_1.png" width ="900">
 
 
 ### Light Scattering
