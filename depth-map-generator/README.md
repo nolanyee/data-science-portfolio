@@ -68,12 +68,12 @@ Therefore the reflected light vector is considered to be the negative projection
 ### Ambient Light
 The second possible source of light in regions of cast shadow is ambient light. This is light coming from the environment. Ambient light can be the same intensity in all directions. In this case surfaces parallel to the image plane recieve more light than surfaces perpendicular to the image plane.
 
-<img src="images/DepthMapFig9.png" width ="500">
+<img src="images/DepthMapFig9.png" width ="700">
 
 This situation can be approximated as a light source pointing in the same direction as the normal of the image plane (in the z direction).
 
 Alternatively, the light source can be from a distant surface that has diffuse reflection. For example if the relief is displayed vertically, the scattered light from the opposite wall would hit the surface. If the relief is displayed horizontally, the scattered light would be from the ceiling. In either case using the Huygens-Fresnel principle this light would be equivalent to light pointing in the z direction, making it the same as the previous case.
 
-<img src="images/DepthMapFig10.png" width ="500">
+<img src="images/DepthMapFig10.png" width ="700">
 
 
