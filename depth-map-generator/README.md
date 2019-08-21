@@ -22,3 +22,10 @@ The meaning of all the plots above are discussed in the sections below.
 
 ## Technical Details
 ### Light Scattering
+The main assumption used to generate the depth map is that when incoming light hits the surface is scattered equally in all directions. This assumption holds true if the surface is the same color throughout and the surface is matte.
+
+<img src="images/DepthMapFig1.png" width ="400">
+
+If the assumption holds, then the intensity of scattered light reaching the observer is the same for all regions of the surface that have the same amount of incident light.
+
+<img src="images/DepthMapFig2.png" width ="400">
