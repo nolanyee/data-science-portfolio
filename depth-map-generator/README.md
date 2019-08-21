@@ -59,7 +59,7 @@ Once again this can also be seen applying Huygens-Fresnel principle.
 
 So overall, reflected light from the surface should be directed approximately horizontally. In addition, reflected light can only come from areas that recieve incident light. Therefore no reflected light can come from the areas of cast shadow, which is in the direction of the incident light. Therefore on average the reflected light is directed roughly in the opposite direction of the incident light, when projected on the image plane.
 
-<img src="images/DepthMapFig5.png" width ="700">
+<img src="images/DepthMapFig`5.png" width ="500">
 
 
 
