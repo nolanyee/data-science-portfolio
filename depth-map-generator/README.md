@@ -102,8 +102,9 @@ Also notice that adjacent slices are more similar to each other in the direction
 
 The light direction and the actual geometry of the surface both contribute to the variability of the slices, as can be seen in the following example:
 
-<img src="images/DepthMapFig12.png" width ="300">
+<img src="images/DepthMapFig23.png" width ="300">
 
+The light direction slices (green) have a larger range (brighter highlights and darker shadows) but the red slice (not in the light direction) still has some contrast that is primarily due to the carved lines in the relief. 
 
 ### Mathematical Treatment
 For easier calculation of the cosine, the normal vectors and light vectors will all be considered normal. Therefore the cosine is simply the dot product. With all the theory and assumptions above, there are enough equations to calculate the normal vector for lit regions and cast shadow regions separately.
