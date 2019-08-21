@@ -139,6 +139,13 @@ After tempo determination, the closest matching valid note is assigned to each n
 The use can set the maximum allowable adjustment for note durations, and the minumum score improvement required to make an adjustment.
 
 ### Results and Discussion
+The algorithm was tested on 3 small sections of pieces by J. S. Bach.
+
+ <img src="images/MusicFig25.png" width ="900">
+ 
+ <img src="images/MusicFig26.png" width ="900">
+ 
+ <img src="images/MusicFig27.png" width ="900">
 
 
 Because of all the assumptions made during the transcription process, it is clear that the transcription results are not very accurate. An expert can easily transcribe more accurately than this program. Though this project did not produce an accurate or usable algorithm for transcription, it demonstrates the complexity of music transcription process and some of the challenges it poses. 
