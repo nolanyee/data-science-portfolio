@@ -81,7 +81,7 @@ As a simplification, only diffuse reflectance will be considered in areas reciev
 
 However, all the theory discussed above still does not give enough information to decude the surface normal vector. It only gives the angle between the normal vector and the light vector. But this still forms a cone with an infinite number of possible normal vectors.
 
-<img src="images/DepthMapFig11.png" width ="400">
+<img src="images/DepthMapFig11.png" width ="200">
 
 
 
