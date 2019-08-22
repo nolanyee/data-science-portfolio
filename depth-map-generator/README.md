@@ -215,7 +215,7 @@ In this case the depth map was inverted before applying it to the texture.
 
 Then the following images were rendered using these maps.
 
-<img src="images/Comparisons2.png" width ="900">
+<img src="images/Comparisons2.png" width ="750">
 
 If the diffuse color is just grey (top left), the normal map gives a fairly detailed rendering of the relief (middle left). The bump map is not as detailed (bottom left). Then on the right the diffuse color is replaced with a faint version of the image. With only the diffuse color (top right) it is fairly obvious that the texture is just an image applied on the surface. With the addition of the normal map (middle right), it looks like a real relief, and the details are enhanced from the image on the left. For the bump map on the bottom right, again some detail is recovered compared to the image on the left, and the final rendering looks still more realistic than using the image alone. 
 
