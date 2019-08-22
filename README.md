@@ -18,40 +18,64 @@ The projects focus on solving interesting and diverse problems using a variety o
 
 * Image Processing
   * [Depth Map Generator](depth-map-generator/README.md):
+  *Skills: Python, Image Processing, Linear Algebra, Multivariable Calculus, Visualization*
+  
   * [Style Transfer Implementation](style-transfer/README.md):
+  *Skills: Python, Image Processing, Convolutional Neural Networks, Gradient Descent*
   * [Handwritten Digit Recognition](digit-recognition/HandwrittenDigitRecognition.pdf):
+  
 
 * Audio Processing
-  * [Music Transcriber](music-transcriber/README.md)
+  * [Music Transcriber](music-transcriber/README.md):
+  
 
 * Natural Language Processing
   * [Literary Pattern Analyzer](literary-pattern-analyzer/README.md):
+  
   * [Twitter Hate Speech Detection](hate-speech-detection/Twitter%20Hate%20Speech%20Detection.pdf):
+  
   * [Recipe Nationality Classification](recipe-nationality/RecipeNationalityClassification.pdf):
+  
 
 ## Structured Data Analysis
 
 * R Projects
   * [Human Activity Recognition](human-activity-recognition/HumanActivityRecognition.pdf):
+  
   * [Transportation Usage Forecasting](transportation-usage/TransportationUsageForecasting.pdf):
+  
   * [Grocery Sales Prediction](grocery-sales/GrocerySalesPrediction.pdf):
+  
   * [Census Income Prediction](census-income/CensusIncomePrediction.pdf):
+  
   * [Loan Status Prediction](loan-status/LoanStatusPrediction.pdf):
+  
  
 * Python Projects
   * [Movie Recommender Model](movie-recommender/MovieRecommenderSystem.pdf):
+  
   * [Black Friday Sales Prediction](black-friday-sales/BlackFridaySales.pdf):
+  
   * [Titanic Survival Prediction](titanic-survival/TitanicSurvivalPrediction.pdf):
+  
   * [Iris Species Classification](iris-classification/IrisClassification.pdf):
+  
 
 ## Probability
   * [Bayesian Network Investigator](bayesian-investigator/README.md):
+  
   * [Poker AI](poker-ai/README.md):
+  
 
 ## Computer Science
   * [Maze and Labyrinth Generator](maze-labyrinth-generator/README.md):
+  
   * [Unbeatable Tic-Tac-Toe AI](unbeatable-tic-tac-toe-ai/README.md):
+  
   * [Sudoku Solver](sudoku-solver/README.md):
+  
   * [Final Exam Scheduler](final-exam-scheduler/README.md):
-  * [Flock Simulator](flock-simulator/README.md)
+  
+  * [Flock Simulator](flock-simulator/README.md):
+  
 
