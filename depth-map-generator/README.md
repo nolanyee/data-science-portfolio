@@ -57,7 +57,7 @@ Reflected light from flat areas of the surface are strongest in the areas of sha
 
 <img src="images/DepthMapFig6.png" width ="700">
 
-Once again this can also be seen applying Huygens-Fresnel principle.
+Once again this can also be seen applying the Huygens-Fresnel principle.
 
 <img src="images/DepthMapFig8.png" width ="700">
 
