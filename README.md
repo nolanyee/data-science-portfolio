@@ -34,7 +34,7 @@ This repository is a portfolio of all my self-study projects and other coding si
   * [Transportation Usage Forecasting](transportation-usage/TransportationUsageForecasting.pdf):
   * [Grocery Sales Prediction](grocery-sales/GrocerySalesPrediction.pdf):
   * [Census Income Prediction](census-income/CensusIncomePrediction.pdf):
-  * [Loan Status Prediction](loan-status/LoanSatusPrediction.pdf):
+  * [Loan Status Prediction](loan-status/LoanStatusPrediction.pdf):
  
 * Python Pojects
   * [Movie Recommender Model](movie-recommender/MovieRecommenderSystem.pdf):
