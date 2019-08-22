@@ -24,7 +24,7 @@ It may be desirable to split a text in other ways than those mentioned above. Or
 
 Then a list of pairs (either lists or tuples with 2 elements) of starting word number (index of the token list) and segment identifier must be generated. The global variable name 'verselist' must be assigned to this list. For example: \[(0,'1:1'),(32,'1:2'),(48,'1:3'),(60,'1:4'),(84,'1:5')\].
 
-As examples, the scraping and pre-processing procedure is built into this application for Homer's Iliad and biblical books, primarily due the the relatively straightforward structure of their websites.
+As examples, the scraping and pre-processing procedure is built into this application for Homer's Iliad and biblical books, primarily due to the relatively straightforward structure of their websites.
 
 ### Generalizing Tokens
 The token list (referred to as the global variable 'book') is lemmatized and stemmed, generating the token lists 'lemmatizedbook' and 'stemmedbook'. A custom list of stop words and punctuation is defined within in the program. Tokens in the stop word and punctuation lists are ignnored in the next steps. 
@@ -101,7 +101,7 @@ It can also hint at chiastic structure (e.g. ABCDEDCBA).\
 The less verbatim the parallels are, the harder it will be to detect on the arc plot. Parallel ideas that are not expressed in synonymous words (or antonyms) will likely not be detected.
 
 ### Topic Plot
-Latent topics are calculated using Latent Dirichlet Allocation. This analysis is performed over each segment of a book. The book can be specified, as with the other plots. The window parameter indicates how wide of a segment the analysis is performed over (i.e the size of the moving window). The generalization parameter is used to control the number of topics (higher value results in fewer topics). Based on the nature of the algorithm, the topics are not always reproducible unless the number of passes is increased, but that would increase calculation time.
+Latent topics are calculated using Latent Dirichlet Allocation. This analysis is performed over each segment of a book. The book can be specified, as with the other plots. The window parameter indicates how wide of a segment the analysis is performed over (i.e. the size of the moving window). The generalization parameter is used to control the number of topics (higher value results in fewer topics). Based on the nature of the algorithm, the topics are not always reproducible unless the number of passes is increased, but that would increase calculation time.
 
 <img src="images/LiteraryFig13.png" width ="900">
 
