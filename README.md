@@ -71,7 +71,7 @@ The projects focus on solving interesting and diverse problems using a variety o
   * [__Titanic Survival Prediction__](titanic-survival/TitanicSurvivalPrediction.pdf): The classic problem involving prediction of passenger survival on the Titanic, but with an emphasis on feature extraction from text, including prediction of ethnicity and imputation techniques.
     * *Skills: Python, Feature Extraction, Imputation, Visualization, Machine Learning, Feature Selection*
   
-  * [__Iris Species Classification__](iris-classification/IrisClassification.pdf):
+  * [__Iris Species Classification__](iris-classification/IrisClassification.pdf): Evaluation of common machine learning algorithms for the classic Iris dataset.
     * *Skills: Python, Visualization, Machine Learning*
 
 ## Probability
