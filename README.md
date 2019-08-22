@@ -1,6 +1,6 @@
 # Data Science Portfolio
 
-This repository is a portfolio of all my self-study projects and other coding side projects. It contains Jupyter Notebooks using Python or R, as well as scripts/applications written in Python. The repository has a subfolder for each project, containing the code in Jupyter Notebook files or Python files, as well as relevant data sets. For quick perusal, the links below point to README files or pdf versions of the Jupyter Notebook. 
+This repository is a portfolio of all my self-study projects and other coding side projects. It contains Jupyter Notebooks using Python or R, as well as scripts/applications written in Python. The repository has a subfolder for each project, containing the code in .ipynb files or .py files, as well as relevant data sets. For quick perusal, the links below point to README files or PDF versions of the Jupyter Notebook. 
 
 The projects focus on solving interesting and diverse problems using a variety of different techniques.
 
