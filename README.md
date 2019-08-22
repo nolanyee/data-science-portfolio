@@ -43,8 +43,13 @@ This repository is a portfolio of all my self-study projects and other coding si
   * [Iris Species Classification](iris-classification/IrisClassification.pdf):
 
 ## Probability
-
+  * [Bayesian Network Investigator](bayesian-investigator/README.md):
+  * [Poker AI](poker-ai/README.md):
 
 ## Computer Science
-
+  * [Maze and Labyrinth Generator](maze-labyrinth-generator/README.md):
+  * [Unbeatable Tic-Tac-Toe AI](unbeatable-tic-tac-toe-ai/README.md):
+  * [Sudoku Solver](sudoku-solver/README.md):
+  * [Final Exam Scheduler](final-exam-scheduler/README.md):
+  * [Flock Simulator](flock-simulator/README.md)
 
