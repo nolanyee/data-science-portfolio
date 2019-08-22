@@ -202,9 +202,17 @@ It is clear the much information is lost in the above example. Much of the deter
 Overall, the results are not perfect. However, in combination with a faint version of original image as the diffuse layer, some of the details can be restored. In addition, the normal map itself is a bit more accurate than the depth map and can be used instead of the depth map. This is shown in this final example.
 
 The original image is
+
 <img src="images/basrelief12.jpg" width ="700">
+
 This resulted in the following normal map and depth map
 
 <img src="images/normalmap12c.jpg" width ="700">
+
 <img src="images/depthmap12c.jpg" width ="700">
+In this case the depth map was inverted before applying to the texture. 
+
+Then the following images were rendered using these maps.
+
+<img src="images/comparisons2.jpg" width ="900">
 
