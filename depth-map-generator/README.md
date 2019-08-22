@@ -38,11 +38,11 @@ However, depending on the angle of the light and the shape of the surface, some 
 
 <img src="images/DepthMapFig3.png" width ="400">
 
-The amount of incident light the surface recieves (and thus the amount of scattered light observed) is proportional to the cosine of the negative light vector and the surface normal vector, which is calculated by taking the dot product of the normalized vectors. However, when this cosine is negative the surface is in cast shadow (there cannot be negative light).
+The amount of incident light the surface receives (and thus the amount of scattered light observed) is proportional to the cosine of the negative light vector and the surface normal vector, which is calculated by taking the dot product of the normalized vectors. However, when this cosine is negative the surface is in cast shadow (there cannot be negative light).
 
 <img src="images/DepthMapFig4.png" width ="600">
 
-A practical example of these principles is how sunlight hits the earth. During the night the observer is in cast shadow. During the day, the amount of sunlight (assuming no clouds) is related to latitude. During the summer there is more incident light because the angle between the light rays and the normal vector of the earth at that particular location (depends on latitude) is smallest. And in winter it is the largest. The tropic of cancer recieves the most mid-day light during the summer because the normal vector of the earth is the same direction as the light vector.
+A practical example of these principles is how sunlight hits the earth. During the night the observer is in cast shadow. During the day, the amount of sunlight (assuming no clouds) is related to latitude. During the summer there is more incident light because the angle between the light rays and the normal vector of the earth at that particular location (depends on latitude) is smallest. And in winter it is the largest. The tropic of cancer receives the most mid-day light during the summer because the normal vector of the earth is the same direction as the light vector.
 
 ### Reflected Light
 In most images, regions with cast shadow are not completely black because of other light sources. The first possible source of light is light that is scattered from other parts of the surface. Light reflected from raised parts of the surface will be the most direct where the vector from the origin of the light to the location it strikes in the cast shadow is parallel to the surface normal of the shadow region. Overall, unless the other parts of the surface are much taller than the region of cast shadow, the reflected light will be generally strongest in the horizontal direction.
@@ -81,7 +81,7 @@ Alternatively, the light source can be from a distant surface that has diffuse r
 <img src="images/DepthMapFig10.png" width ="700">
 
 ### Additional Approximations
-As a simplification, only diffuse reflectance will be considered in areas recieving incident light. And either reflected light or ambient light will be considered in the calculations for regions of cast shadow (the user must select which type of light is predominant).
+As a simplification, only diffuse reflectance will be considered in areas receiving incident light. And either reflected light or ambient light will be considered in the calculations for regions of cast shadow (the user must select which type of light is predominant).
 
 However, all the theory discussed above still does not give enough information to decude the surface normal vector. It only gives the angle between the normal vector and the light vector. But this still forms a cone with an infinite number of possible normal vectors.
 
