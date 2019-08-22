@@ -30,17 +30,17 @@ This repository is a portfolio of all my self-study projects and other coding si
 ## Structured Data Analysis
 
 * R Projects
- * [Human Activity Recognition](human-activity-recognition/HumanActivityRecognition.pdf):
- * [Transportation Usage Forecasting](transportation-usage/TransportationUsageForecasting.pdf):
- * [Grocery Sales Prediction](grocery-sales/GrocerySalesPrediction.pdf):
- * [Census Income Prediction](census-income/CensusIncomePrediction.pdf):
- * [Loan Status Prediction](loan-status/LoanSatusPrediction.pdf):
+  * [Human Activity Recognition](human-activity-recognition/HumanActivityRecognition.pdf):
+  * [Transportation Usage Forecasting](transportation-usage/TransportationUsageForecasting.pdf):
+  * [Grocery Sales Prediction](grocery-sales/GrocerySalesPrediction.pdf):
+  * [Census Income Prediction](census-income/CensusIncomePrediction.pdf):
+  * [Loan Status Prediction](loan-status/LoanSatusPrediction.pdf):
  
 * Python Pojects
- * [Movie Recommender Model](movie-recommender/MovieRecommenderSystem.pdf):
- * [Black Friday Sales Prediction](black-friday-sales/BlackFridaySales.pdf):
- * [Titanic Survival Prediction](titanic-survival/TitanicSurvivalPrediction.pdf):
- * [Iris Species Classification](iris-classification/IrisClassification.pdf):
+  * [Movie Recommender Model](movie-recommender/MovieRecommenderSystem.pdf):
+  * [Black Friday Sales Prediction](black-friday-sales/BlackFridaySales.pdf):
+  * [Titanic Survival Prediction](titanic-survival/TitanicSurvivalPrediction.pdf):
+  * [Iris Species Classification](iris-classification/IrisClassification.pdf):
 
 ## Probability
 
