@@ -12,7 +12,7 @@ When texturing 3D models, most of the time having only a diffuse channel is not 
 ### Usage
 The graphical user interface enables the user to set any of the parameters used in the depth map generation. 
 
-<img src="images/ScreenShot.jpg" width ="500">
+<img src="images/ScreenShot.png" width ="500">
 
 If nothing is changed the default settings will be used. The input image and output normal map and depth map image file names are mandatory. The input image should be an image of a monotone (it can be color image, but the relief should not be painted) matte bas-relief, for example
 
