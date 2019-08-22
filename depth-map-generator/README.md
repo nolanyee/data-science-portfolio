@@ -199,7 +199,7 @@ It is clear the much information is lost in the above example. Much of the deter
 
 <img src="images/DepthMapTables2.png" width ="800">
 
-Overall, the results are not perfect. However, in combination with a faint version of original image as the diffuse layer, some of the details can be restored. In addition, the normal map itself is a bit more accurate than the depth map and can be used instead of the depth map. This is shown in this final example.
+Overall, the results are not perfect. However, in combination with a faint version of original image as the diffuse layer, some of the details can be restored. In addition, the normal map itself is a bit more accurate than the depth map and can be used instead of the depth map as long as the displacement does not need to be baked. This is shown in this final example.
 
 The original image is
 
