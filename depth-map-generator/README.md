@@ -183,3 +183,9 @@ At the end, due to various errors accumulated, the depth map may be tilted. Ther
 Finally, the depth map can also be smoothed based on the image Sobel magnitude, the same way as the displacement map is smoothed. In addition, there is a final smoothing that is applied to the entire map (without considering the Sobel magnitude).
 
 <img src="images/depthmap1.jpg" width ="300">
+
+This depth map can then be used as a texture on a surface.
+
+<img src="images/Depth1.jpg" width ="300">
+
+
