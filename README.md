@@ -23,7 +23,7 @@ The projects focus on solving interesting and diverse problems using a variety o
   * [Style Transfer Implementation](style-transfer/README.md): Inputs an image of a painting and a photograph, and applies the painting style to the photograph using a pre-trained convolutional neural network.\
   *Skills: Python, Image Processing, Convolutional Neural Networks, Gradient Descent*
   
-  * [Handwritten Digit Recognition](digit-recognition/HandwrittenDigitRecognition.pdf): Uses a neural network to classify handwritten digits. A classic problem, but a useful starting point.\
+  * [Handwritten Digit Recognition](digit-recognition/HandwrittenDigitRecognition.pdf): Uses a neural network to classify handwritten digits - a classic problem, but a useful starting point.\
   *Skills: Python, Image Recognition, Neural Networks*
 
 * Audio Processing
