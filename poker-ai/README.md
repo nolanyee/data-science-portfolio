@@ -17,7 +17,7 @@ The probability of each Poker hand is straightforward to determine analytically 
 
 __Straight Flush__\
 <sup>5</sup>&#9824;  <sup>6</sup>&#9824;  <sup>7</sup>&#9824;  <sup>8</sup>&#9824;  <sup>9</sup>&#9824;\
-For each suit and each value (not including 2 and 3 since they cannot be the high card in a straight), if the card is in the deck, the count is 1 if the 4 preceeding cards are also in the deck, and zero otherwise. 
+For each suit and each value (not including 2 and 3 since they cannot be the high card in a straight), if the card is in the deck, the count is 1 if the 4 preceding cards are also in the deck, and zero otherwise. 
 
 __Flush__\
 <sup>2</sup>&#9825;  <sup>K</sup>&#9825;  <sup>4</sup>&#9825;  <sup>7</sup>&#9825;  <sup>9</sup>&#9825;\
@@ -25,7 +25,7 @@ For each suit and each value (excluding 2-5, since they cannot be the high card 
 
 __Straight__\
 <sup>3</sup>&#9824;  <sup>4</sup>&#9825;  <sup>5</sup>&#x25CA;  <sup>6</sup>&#9825;  <sup>7</sup>&#9827;\
-For each suit and each value (not including 2 and 3 since they cannot be the high card in a straight), if the card is in the deck, the count is zero if there are not at least 1 of the five values required. Otherwise, the number of cards of each required value (high card's value and the 4 preceeding numbers) are multiplied together to give the number of combinations. Then the number of associated straight flushes is subtracted once again.
+For each suit and each value (not including 2 and 3 since they cannot be the high card in a straight), if the card is in the deck, the count is zero if there are not at least 1 of the five values required. Otherwise, the number of cards of each required value (high card's value and the 4 preceding numbers) are multiplied together to give the number of combinations. Then the number of associated straight flushes is subtracted once again.
 
 __No Pair__\
 <sup>2</sup>&#9824;  <sup>4</sup>&#9825;  <sup>8</sup>&#9824;  <sup>Q</sup>&#9825;  <sup>J</sup>&#9827;\
@@ -33,7 +33,7 @@ For each suit and each value (excluding 2-5 since they cannot be the high card i
 
 __Full House__\
 <sup>J</sup>&#9824;  <sup>J</sup>&#9825;  <sup>J</sup>&#9827;  <sup>5</sup>&#9825;  <sup>5</sup>&#9827;\
-For each suit and each value, if the card is in the deck and there are at least 2 other cards of the same value but a lower suit, then the combinations of all posible pairs (C<sup>*n*</sup><sub>2</sub> where *n* is the number of cards with the same value) for all other values are summed. This is multiplied by the combinations of triplets (C<sup>*m*</sup><sub>2</sub> where *m* is the number of cards with the same value as the high card but a lower suit).
+For each suit and each value, if the card is in the deck and there are at least 2 other cards of the same value but a lower suit, then the combinations of all possible pairs (C<sup>*n*</sup><sub>2</sub> where *n* is the number of cards with the same value) for all other values are summed. This is multiplied by the combinations of triplets (C<sup>*m*</sup><sub>2</sub> where *m* is the number of cards with the same value as the high card but a lower suit).
 
 __4 of a Kind__\
 <sup>Q</sup>&#9824;  <sup>Q</sup>&#9825;  <sup>Q</sup>&#9827;  <sup>Q</sup>&#x25CA;  <sup>2</sup>&#9827;\
@@ -59,12 +59,12 @@ The probabilities of all the different hands are arranged in order. Then the cum
 
 ### Pot Probability
 Another important probability is the pot probability (related to pot odds), *p<sub>pot</sub>*. The pot probability is defined as\
-*gain / (gain+loss)*, which, as a conservative estimate, is calculated as *(pot - total previous bet) / (pot + current bet + current raise)*. This represents the reqired probability of having a losing hand to break even on average. The higher the pot probability, the higher probability of losing the player can tolerate. For a bet to be sensible, the probability of having a losing hand (and unsuccessful bluff if applicable) must be less than the pot probability.
+*gain / (gain+loss)*, which, as a conservative estimate, is calculated as *(pot - total previous bet) / (pot + current bet + current raise)*. This represents the required probability of having a losing hand to break even on average. The higher the pot probability, the higher probability of losing the player can tolerate. For a bet to be sensible, the probability of having a losing hand (and unsuccessful bluff if applicable) must be less than the pot probability.
 
 ### Probability of Folding
 The following are heuristic approximation models of player behavior. They are not necessarily theoretically rigorously provable, but are useful to describe the behavior generally. Note that the models are for folding vs. not folding. Calling and raising are not distinguished because they are accounted for in the pot probability (raising will lower the pot probability compared to just calling).
 
-The probability of folding *p<sub>fold</sub>* is modeled as a logistic function. The computer will be sensible, having an initial probabilty of folding of *p<sub>compfold</sub>*=1/(1+e<sup>-*w*(*p<sub>complose</sub>* - *p<sub>pot</sub>*)</sup>), where *w* is a constant. 
+The probability of folding *p<sub>fold</sub>* is modeled as a logistic function. The computer will be sensible, having an initial probability of folding of *p<sub>compfold</sub>*=1/(1+e<sup>-*w*(*p<sub>complose</sub>* - *p<sub>pot</sub>*)</sup>), where *w* is a constant. 
 
 The player, however may not be sensible. To determine how reckless or conservative the user is, logistic regression is performed on the player's most recent 100 moves (or less if the game has not progressed that far). The x values are the *p<sub>pot</sub>* and the y values are 1 (fold) or 0 (not fold). This will approximate the user's probability of folding on average, *f<sub>user</sub>*(*p<sub>pot</sub>*). On average the probability of having a losing hand is 0.5. If the inflection of the logistic regression curve is less than 0.5, the player is aggressive. If the inflection is much greater than 0.5, the player is conservative.
 
@@ -77,7 +77,7 @@ With the available information, it is easier to directly estimate *p*( win | no 
 
 However, if instead we assume that the player's decision to fold or not fold is based on the player's hand rather than being just random, then the frequency can be interpreted as the threshold rank of the player's hand below which the player will fold. (The term "rank" here is used to describe the probability of having a lower hand from a uniform distribution of all possible hands. In other words it is the probability of the user winning, assuming nothing about the computer's hand).
 
-Therefore, if the player folds, the player's hand must have been somewhere below the threshold *p<sub>fold</sub>*. Without additional information, it is assumed that in these regions the player's hand is uniformaly distributed. Then, if the computer's hand is also uniformly distributed, the probability that the computer's hand is in the same region as the player's is simply *p<sub>fold</sub>*. Then the probability that the computer's hand is less than the player's hand is *p<sub>fold</sub>*/2 (either one is equally likely to be higher). This therefore is *p*( win | fold ). This value is not that useful, since the computer doesn't need to decide anything if the the player folds.
+Therefore, if the player folds, the player's hand must have been somewhere below the threshold *p<sub>fold</sub>*. Without additional information, it is assumed that in these regions the player's hand is uniformly distributed. Then, if the computer's hand is also uniformly distributed, the probability that the computer's hand is in the same region as the player's is simply *p<sub>fold</sub>*. Then the probability that the computer's hand is less than the player's hand is *p<sub>fold</sub>*/2 (either one is equally likely to be higher). This therefore is *p*( win | fold ). This value is not that useful, since the computer doesn't need to decide anything if the player folds.
 
 <img src="images/PokerFig2.png" width="700">
 
