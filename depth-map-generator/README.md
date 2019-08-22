@@ -180,7 +180,7 @@ The second algorithm is an implementation of the iterative pyramidal integration
 
 <img src="images/DepthMapFig25.png" width ="600">
 
-Mipmaps are created for both x and y displacement maps. The depth map is initialized as all 0s. Starting with the lowest resolution map, each pixel is set to the average of the neighboring pixels offset by the displacement values from the displacement maps. This is iterated for each level. Between levels, the depth map is scaled up and the next mipmap level is used for updating. The number of iterations for each level can be specified by the user. The last level can be iterated more times (also specified by user).
+Mipmaps are created for both x and y displacement maps. The depth map is initialized as all 0s. Starting with the lowest resolution map, each pixel is set to the average of the neighboring pixels offset by the displacement values from the displacement maps. This is iterated for each level. Between levels, the depth map is scaled up and the next mipmap level is used for updating. The number of iterations for each level can be specified by the user. The last level can be iterated more times (also specified by user). The result will be a more detailed depth map, but it may be overall be less flat (the surface may be undulating or wavy).
 
 At the end, due to various errors accumulated, the depth map may be tilted. Therefore the entire depth map is modeled using a linear model with interaction: z = ax + by + cxy + d, or a quadratic model: z = ax + by + cxy + d + ex<sup>2</sup> + fy<sup>2</sup>. This bias is subtracted from the depth map values. Then the depth map is normalized so that the values are from 0 to 1. 
 
@@ -193,5 +193,10 @@ This depth map can then be used as a texture on a surface.
 <img src="images/Depth1.jpg" width ="300">
 
 ### Results and Discussion
-It is clear the much information is lost in the above example.
+It is clear the much information is lost in the above example. Much of the deterioration in quality is due to the fact that the image is overexposed, making it more difficult to deduce the normals from slight changes in intensity on the brighter parts of the picture. Some more examples are shown below. (About half the time the shadow threshold was overridden, about half the time ambient light was used instead of reflected light for the cast shadow calculation, and about half the time iterative integration was used instead of rotation).
+
+
+<img src="images/DepthMapTables1.png" width ="800">
+
+<img src="images/DepthMapTables2.png" width ="800">
 
