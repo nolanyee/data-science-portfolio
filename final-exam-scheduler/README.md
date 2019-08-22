@@ -13,7 +13,7 @@ In the final exam schedule, no course can be in the same time block as any of th
 ### Time Complexity
 The program also includes a feature to generate random student enrollment data with sequentially numbered courses. This is useful for analyzing the average time complexity of the algorithm. 
 
-At worst case the time complexity with respect to the courseload is expected to be O(n<sup>2</sup>) because a fully connected graph with n nodes has n(n-1)/2 connections. The worst case time complexity with respect to the total number of courses is also O(n<sup>2</sup>) because the algorithm has to cycle through all courses and all slots (which at worst case is equal to the number of courses if the entire graph is fully connected), and that would be n(n+1)/2 evaluations. The time complexity with respect to number of students is expected to be at worst O(n) because the graph connection process has to take place once for each student.
+At worst case the time complexity with respect to the course load is expected to be O(n<sup>2</sup>) because a fully connected graph with n nodes has n(n-1)/2 connections. The worst case time complexity with respect to the total number of courses is also O(n<sup>2</sup>) because the algorithm has to cycle through all courses and all slots (which at worst case is equal to the number of courses if the entire graph is fully connected), and that would be n(n+1)/2 evaluations. The time complexity with respect to number of students is expected to be at worst O(n) because the graph connection process has to take place once for each student.
 
 By comparison, the results of the Monte Carlo simulation are shown below.
 
@@ -21,5 +21,5 @@ By comparison, the results of the Monte Carlo simulation are shown below.
 <img src="images/Exams2.png" width="700">
 <img src="images/Exams3.png" width="700">
 
-The average time complexity appears to be O(n) for students and courseload, and O(log(n)) for total number of courses.
-The results also show that for students and courseload the number of time slots increases roughly linearly. However, with total number of courses, it appears to decrease as k+1/n (or some power thereof). This is because the more courses there are, the more sparse the graph will be. If the number of courses is large enough, the timeslots approaches the course load, as each student's enrollment is less likely to overlap with that of other students.
+The average time complexity appears to be O(n) for students and course load, and O(log(n)) for total number of courses.
+The results also show that for students and course load the number of time slots increases roughly linearly. However, with total number of courses, it appears to decrease as k+1/n (or some power thereof). This is because the more courses there are, the more sparse the graph will be. If the number of courses is large enough, the timeslots approaches the course load, as each student's enrollment is less likely to overlap with that of other students.
