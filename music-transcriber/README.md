@@ -56,13 +56,13 @@ To avoid noise amplification, undertones lower than 3 Hz are not included in the
 
 The above approximations allow the program to determine pitch without the use of massive libraries of instrument harmonic signatures. However, because of the approximations, there will inevitably be errors in pitch detection. The most common error is the octave error, where the pitch is detected as being the first harmonic or first undertone rather than the base pitch.
 
-To reduce some of the noise from these calculations, some filtering is done on the spectrum. The user can specify the fraction of the maximum Fourier Transform coefficient below which all coefficients will be set to zero before calculating the Harmonic Sum Spectrum. After the Harmonic Sum Spectrum is calculated, the result is filtered again, removing any signals below the minumum absolute HSS threshold (set by user). Finally, there is also a threshold below which undertone correction is not performed. 
+To reduce some of the noise from these calculations, some filtering is done on the spectrum. The user can specify the fraction of the maximum Fourier Transform coefficient below which all coefficients will be set to zero before calculating the Harmonic Sum Spectrum. After the Harmonic Sum Spectrum is calculated, the result is filtered again, removing any signals below the minimum absolute HSS threshold (set by user). Finally, there is also a threshold below which undertone correction is not performed. 
 
 Finally, the corrected base frequencies are converted to pitch using the following formula.
 
 <img src="images/MusicFig10.png" width ="300">
 
-The fuction above is used to bin amplitudes by their pitch. Multiple signals placed in the same pitch bin are summed. The epsilon term is a user defined pitch correction term, expressed in terms of half-tones. This is used to correct for an out of tune instrument or alternate tunings.
+The function above is used to bin amplitudes by their pitch. Multiple signals placed in the same pitch bin are summed. The epsilon term is a user defined pitch correction term, expressed in terms of half-tones. This is used to correct for an out of tune instrument or alternate tunings.
 
 The result of this process is called a chromagram. This is what is displayed in the plot windows before the score is output.
 
@@ -138,7 +138,7 @@ After tempo determination, the closest matching valid note is assigned to each n
 
 <img src="images/MusicFig22.png" width ="900">
 
-The user can set the maximum allowable adjustment for note durations, and the minumum score improvement required to make an adjustment.
+The user can set the maximum allowable adjustment for note durations, and the minimum score improvement required to make an adjustment.
 
 ### Results and Discussion
 The algorithm was tested on 3 small sections of pieces by J. S. Bach. The first two were at a moderate tempo, but the last one is faster. The results are shown below.
