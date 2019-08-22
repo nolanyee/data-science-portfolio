@@ -17,7 +17,7 @@ The projects focus on solving interesting and diverse problems using a variety o
 ## Unstructured Data Analysis and Processing
 
 * Image Processing
-  * [Depth Map Generator](depth-map-generator/README.md):
+  * [Depth Map Generator](depth-map-generator/README.md): This program generates normal maps and depth maps from monocular images of  monochromatic matte bas-reliefs.
   *Skills: Python, Image Processing, Linear Algebra, Multivariable Calculus, Visualization*
   
   * [Style Transfer Implementation](style-transfer/README.md):
