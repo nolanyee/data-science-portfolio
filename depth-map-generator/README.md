@@ -14,7 +14,11 @@ The graphical user interface enables the user to set any of the parameters used 
 
 <img src="images/ScreenShot.jpg" width ="500">
 
-If nothing is changed the default settings will be used. The input image and output normal map and depth map image file names are mandatory. Once everything is filled out, press "OK" and the calculation will begin. When calculation is finished, the following window will appear and the files will have been saved.
+If nothing is changed the default settings will be used. The input image and output normal map and depth map image file names are mandatory. The input image should be an image of a monotone matte bas-relief, for example
+
+<img src="images/basrelief.jpg" width ="300">
+
+Once everything is filled out, press "OK" and the calculation will begin. When calculation is finished, the following window will appear and the files will have been saved.
 
 <img src="images/Figure_1.png" width ="900">
 
@@ -188,4 +192,6 @@ This depth map can then be used as a texture on a surface.
 
 <img src="images/Depth1.jpg" width ="300">
 
+### Results and Discussion
+It is clear the much information is lost in the above example.
 
