@@ -16,12 +16,6 @@ The projects focus on solving interesting and diverse problems using a variety o
 
 ## Unstructured Data Analysis and Processing
 
-* a
-  * a
-    * a
-      * a
-        * a
-
 * __Image Processing__
   * [__Depth Map Generator__](depth-map-generator/README.md): Generates normal maps and depth maps from monocular images of  monochromatic matte bas-reliefs. The application is primarily for use in texturing 3D models. This program uses physical and mathematical approaches to solve this challenging problem.
     * *Skills: Python, Image Processing, Linear Algebra, Multivariable Calculus, Visualization*
@@ -30,79 +24,78 @@ The projects focus on solving interesting and diverse problems using a variety o
   
     * *Skills: Python, Image Processing, Convolutional Neural Networks, Gradient Descent*
   
-  * [__Handwritten Digit Recognition__](digit-recognition/HandwrittenDigitRecognition.pdf): Uses a neural network to classify handwritten digits - a classic problem, but a useful starting point.\
-  \
-  *Skills: Python, Image Recognition, Neural Networks*
+  * [__Handwritten Digit Recognition__](digit-recognition/HandwrittenDigitRecognition.pdf): Uses a neural network to classify handwritten digits - a classic problem, but a useful starting point.
+    * *Skills: Python, Image Recognition, Neural Networks*
 
 * __Audio Processing__
   * [__Music Transcriber__](music-transcriber/README.md):
-  *Skills: Python, Audio Processing, Calculus*
+    * *Skills: Python, Audio Processing, Calculus*
 
 * __Natural Language Processing__
   * [__Literary Pattern Analyzer__](literary-pattern-analyzer/README.md):
-  *Skills: Python, Natural Language Processing, Visualization*
+    * *Skills: Python, Natural Language Processing, Visualization*
   
   * [__Twitter Hate Speech Detection__](hate-speech-detection/Twitter%20Hate%20Speech%20Detection.pdf):
-  *Skills: Python, Natural Language Processing, Feature Extraction, Algorithms, Machine Learning*
+    * *Skills: Python, Natural Language Processing, Feature Extraction, Algorithms, Machine Learning*
   
   * [__Recipe Nationality Classification__](recipe-nationality/RecipeNationalityClassification.pdf):
-  *Skills: Python, Natural Language Processing, Machine Learning*
+    * *Skills: Python, Natural Language Processing, Machine Learning*
   
 
 ## Structured Data Analysis
 
 * __R Projects__
   * [__Human Activity Recognition__](human-activity-recognition/HumanActivityRecognition.pdf):
-  *Skills: R, Machine Learning*
+    * *Skills: R, Machine Learning*
   
   * [__Transportation Usage Forecasting__](transportation-usage/TransportationUsageForecasting.pdf):
-  *Skills: R, Visualization, Time Series Analysis, Nonlinear Regression*
+    * *Skills: R, Visualization, Time Series Analysis, Nonlinear Regression*
   
   * [__Grocery Sales Prediction__](grocery-sales/GrocerySalesPrediction.pdf):
-  *Skills: R, Feature Extraction, Visualization, Machine Learning*
+    * *Skills: R, Feature Extraction, Visualization, Machine Learning*
   
   * [__Census Income Prediction__](census-income/CensusIncomePrediction.pdf):
-  *Skills: R, Visualization, Imputation, Machine Learning*
+    * *Skills: R, Visualization, Imputation, Machine Learning*
   
   * [__Loan Status Prediction__](loan-status/LoanStatusPrediction.pdf):
-  *Skills: R, Visualization, Machine Learning*
+    * *Skills: R, Visualization, Machine Learning*
  
 * __Python Projects__
 
   * [__Movie Recommender Model__](movie-recommender/MovieRecommenderSystem.pdf):
-  *Skills: Python, Linear Algebra, Feature Extraction, Optimization, Visualization*
+    * *Skills: Python, Linear Algebra, Feature Extraction, Optimization, Visualization*
   
   * [__Black Friday Sales Prediction__](black-friday-sales/BlackFridaySales.pdf):
-  *Skills: Python, Data Cleaning, Feature Extraction, Visualization, Machine Learning, Feature Selection*
+    * *Skills: Python, Data Cleaning, Feature Extraction, Visualization, Machine Learning, Feature Selection*
   
   * [__Titanic Survival Prediction__](titanic-survival/TitanicSurvivalPrediction.pdf):
-  *Skills: Python, Feature Extraction, Imputation, Visualization, Machine Learning, Feature Selection*
+    * *Skills: Python, Feature Extraction, Imputation, Visualization, Machine Learning, Feature Selection*
   
   * [__Iris Species Classification__](iris-classification/IrisClassification.pdf):
-  *Skills: Python, Visualization, Machine Learning*
+    * *Skills: Python, Visualization, Machine Learning*
 
 ## Probability
 
   * [__Bayesian Network Investigator__](bayesian-investigator/README.md):
-  *Skills: Python, Probability, Algorithms, Gradient Descent*
+     * *Skills: Python, Probability, Algorithms, Gradient Descent*
   
   * [__Poker AI__](poker-ai/README.md):
-  *Skills: Python, Probability*
+    * *Skills: Python, Probability*
   
 
 ## Computer Science
   * [__Maze and Labyrinth Generator__](maze-labyrinth-generator/README.md):
-  *Skills: Python, Algorithms, Data Structures*
+    * *Skills: Python, Algorithms, Data Structures*
   
   * [__Unbeatable Tic-Tac-Toe AI__](unbeatable-tic-tac-toe-ai/README.md):
-  *Skills: Python, Linear Algebra*
+    * *Skills: Python, Linear Algebra*
   
   * [__Sudoku Solver__](sudoku-solver/README.md):
-  *Skills: Python, Algorithms*
+    * *Skills: Python, Algorithms*
   
   * [__Final Exam Scheduler__](final-exam-scheduler/README.md):
-  *Skills: Python, Algorithms, Monte-Carlo Simulation*
+    * *Skills: Python, Algorithms, Monte-Carlo Simulation*
   
   * [__Flock Simulator__](flock-simulator/README.md):
-  *Skills: Python, Linear Algebra*
+    * *Skills: Python, Linear Algebra*
 
