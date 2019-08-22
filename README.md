@@ -22,12 +22,16 @@ This repository is a portfolio of all my self-study projects and other coding si
   * [Music Transcriber](music-transcriber/README.md)
 
 * Natural Language Processing
-  * [Literary Pattern Analyzer](literary-pattern-analyzer/README.md)
-  * [Twitter Hate Speech Detection](hate-speech-detection/TwitterHateSpeechDetection.pdf)
-  * [Recipe Nationality Classification](recipe-nationality/RecipeNationalityClassification.pdf)
+  * [Literary Pattern Analyzer](literary-pattern-analyzer/README.md):
+  * [Twitter Hate Speech Detection](hate-speech-detection/TwitterHateSpeechDetection.pdf):
+  * [Recipe Nationality Classification](recipe-nationality/RecipeNationalityClassification.pdf):
 
 ## Structured Data Analysis
+* Python Pojects
+ * [Movie Recommender Model](movie-recommender/MovieRecommenderSystem.pdf):
+ * 
 
+* R Projects
 
 ## Probability
 
