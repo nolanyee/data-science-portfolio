@@ -38,7 +38,7 @@ The projects focus on solving interesting and diverse problems using a variety o
   * [__Twitter Hate Speech Detection__](hate-speech-detection/Twitter%20Hate%20Speech%20Detection.pdf): Identifies tweets containing hate speech. This analysis uses a depth first search algorithm for splitting hashtags, and tf-idf for feature generation.
     * *Skills: Python, Natural Language Processing, Feature Extraction, Algorithms, Machine Learning*
   
-  * [__Recipe Nationality Classification__](recipe-nationality/RecipeNationalityClassification.pdf): Classification of recipies by country of origin. This analysis uses tf-idf for generation of the sparse feature matrix.
+  * [__Recipe Nationality Classification__](recipe-nationality/RecipeNationalityClassification.pdf): Classification of recipies by country of origin based on the lists of ingredients. This analysis uses tf-idf for generation of the sparse feature matrix.
     * *Skills: Python, Natural Language Processing, Machine Learning*
   
 
