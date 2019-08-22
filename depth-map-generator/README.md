@@ -203,16 +203,16 @@ Overall, the results are not perfect. However, in combination with a faint versi
 
 The original image is
 
-<img src="images/basrelief12.jpg" width ="700">
+<img src="images/basrelief12.jpg" width ="600">
 
 This resulted in the following normal map and depth map
 
-<img src="images/normalmap12c.jpg" width ="700">
+<img src="images/normalmap12c.jpg" width ="600">
 
-<img src="images/depthmap12c.jpg" width ="700">
+<img src="images/depthmap12c.jpg" width ="600">
 In this case the depth map was inverted before applying to the texture. 
 
 Then the following images were rendered using these maps.
 
-<img src="images/comparisons2.jpg" width ="900">
+<img src="images/Comparisons2.jpg" width ="900">
 
