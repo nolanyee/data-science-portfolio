@@ -65,7 +65,7 @@ So overall, reflected light from the surface should be directed approximately ho
 
 Reflected light can only come from areas that recieve incident light. Therefore no reflected light can come from the areas of cast shadow, which is in the direction of the incident light. Therefore on average the reflected light is directed roughly in the opposite direction of the incident light, when projected on the image plane.
 
-<img src="images/DepthMapFig15.png" width ="500">
+<img src="images/DepthMapFig15b.png" width ="500">
 
 Therefore the reflected light vector is considered to be the negative projection of the incident light vector on the image plane (xy).
 
@@ -100,7 +100,7 @@ This normal vector will end up always being one of two extreme normals. Therefor
 ### Determination of Light Direction
 The light direction is assumed to be the direction in which there is the most contrast in slices of the image. (Slice is used here to refer to a vector of pixel values that are in a straight line in the image). This is because the midtone areas tend to be oriented orthogonally (or at least not close to parallel) to the light direction on the image plane. This means when moving along the light direction there will be fewer pixels in the midtones and more pixels in the highlights and shadows. This can be seen the the illustration below.
 
-<img src="images/DepthMapFig22.png" width ="900">
+<img src="images/DepthMapFig22b.png" width ="900">
 
 Slicing in the light direction typically yields a distribution that is skewed towards the extremes, while slicing in other directions will result in a distribution that has more intermediate values. This means that the sum of squared deviations from the mean in each slice should be greater in the light direction. This leads to the first component of the light direction desirability score, which is the total sum of squared deviations from the individal slice means (not from the total mean, since that would be the same regardless of slice direction). 
 
