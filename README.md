@@ -76,26 +76,26 @@ The projects focus on solving interesting and diverse problems using a variety o
 
 ## Probability
 
-  * [__Bayesian Network Investigator__](bayesian-investigator/README.md):
+  * [__Bayesian Network Investigator__](bayesian-investigator/README.md): A prototype application intended to facilitate construction of Bayesian networks and serve as a simpler version of a Bayesian network in cases where the joint probabilities for each node are mostly unknown and there is not enough data to learn them. It is also able to show paths and nodes in the network that are suspect when contradictory evidence is given.
      * *Skills: Python, Probability, Algorithms, Gradient Descent*
   
-  * [__Poker AI__](poker-ai/README.md):
+  * [__Poker AI__](poker-ai/README.md): A simple straight heads-up poker game simulation. The player and computer are each dealt a 5 card hand, with no drawing. The algorithm uses card counting, combinatorics, probability, logistic regression, and heuristics.
     * *Skills: Python, Probability*
   
 
 ## Computer Science
-  * [__Maze and Labyrinth Generator__](maze-labyrinth-generator/README.md):
+  * [__Maze and Labyrinth Generator__](maze-labyrinth-generator/README.md): A program that generates and solves random mazes *and* labyrinths of variable size (a labyrinth contains only one path and no branches). It also allows the user to move a turtle around the maze and has a toggle button to show and hide the solution.
     * *Skills: Python, Algorithms, Data Structures*
   
-  * [__Unbeatable Tic-Tac-Toe AI__](unbeatable-tic-tac-toe-ai/README.md):
+  * [__Unbeatable Tic-Tac-Toe AI__](unbeatable-tic-tac-toe-ai/README.md): A Tic-Tac-Toe AI that has 3 levels of difficulty. The Hard mode is unbeatable. Rather than using the common minimax algorithm, this AI uses a unique deterministic algorithm based on linear algebra to solve this classic problem.
     * *Skills: Python, Linear Algebra*
   
-  * [__Sudoku Solver__](sudoku-solver/README.md):
+  * [__Sudoku Solver__](sudoku-solver/README.md): A program that solves any solvable Sudoku puzzle and can generate random solvable puzzles. The algorithm is based on set theory and depth first search.
     * *Skills: Python, Algorithms*
   
-  * [__Final Exam Scheduler__](final-exam-scheduler/README.md):
+  * [__Final Exam Scheduler__](final-exam-scheduler/README.md): A program uses graph coloring theory to generate a final exam schedule from students' enrollment data. It includes a Monte-Carlo simulation function to profile time complexity.
     * *Skills: Python, Algorithms, Monte-Carlo Simulation*
   
-  * [__Flock Simulator__](flock-simulator/README.md):
+  * [__Flock Simulator__](flock-simulator/README.md):A program that simulates a flock of birds in flight (or perhaps a swarm of bees). The birds are trapped in the window and fly around. The user can act as a predator and chase the birds around the window.
     * *Skills: Python, Linear Algebra*
 
