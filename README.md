@@ -8,4 +8,7 @@ This repository is a portfolio of all my self-study projects and other coding si
 [Literary Pattern Analyzer](literary-pattern-analyzer/README.md)\
 [Bayesian Network Investigator](bayesian-investigator/README.md)\
 [Movie Recommender Model](movie-recommender/MovieRecommenderSystem.pdf)\
-[Maze and Labyrinth Generator](maze-labyrinth-generator/README.md)\
+[Maze and Labyrinth Generator](maze-labyrinth-generator/README.md)
+
+# Contents
+
