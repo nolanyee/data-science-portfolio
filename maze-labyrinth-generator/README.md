@@ -37,7 +37,7 @@ The shortest solution path is calculated using Dijkstra's algorithm, and can be 
 ### Maze Generation
 The maze begins with each cell having all 4 walls. Each cell is a disjoint set. The union of a disjoint set produces a new set. Each set has walls that form its border. When two sets are unioned a wall is randomly selected from the intersection of the border walls of the two sets. If the cells neighboring the walls already have walls deleted, the probability of deleting the border wall is diminished. The decision to delete or not is made by a random number generator. If the number of deleted walls in a cell exceeds the sum of the random number and the branching parameter, the wall is not deleted and a new border wall is selected randomly. Random adjacent sets are unioned until there is only one set remaining.
 
-The following is an example of this process. the blue and red regions are sets that are unioned.
+The following is an example of this process. The blue and red regions are sets that are unioned.
 <img src="images/MazeFig3.png" width = "600">
 
 Typically more complex maze solutions are created when the branching parameter is close to 2.
@@ -70,7 +70,7 @@ Dead ends in the labyrinth can be created by building a wall randomly in the mid
 <img src="images/MazeFig9.png" width = "600">
 
 ### Grid Maze Generation
-This type of maze begins by dividing the grid into subgrids. A labyrinth is generated in the subgrid using depth first search. A layrinth is a single path (which can only visit a cell once) that must cover all cells. Therefore all the possible single paths are explored and the algorithm stops when all the cells have been encorporated into the path. This is a much more time consuming algorithm than the one used above, but it may be more appropriate for smaller labyrinths, since the previous algorithm requires the use of 2x2 units. 
+This type of maze begins by dividing the grid into subgrids. A labyrinth is generated in the subgrid using depth first search. A labyrinth is a single path (which can only visit a cell once) that must cover all cells. Therefore all the possible single paths are explored and the algorithm stops when all the cells have been incorporated into the path. This is a much more time consuming algorithm than the one used above, but it may be more appropriate for smaller labyrinths, since the previous algorithm requires the use of 2x2 units. 
 
 The following is an example of a tree of possible paths, starting from the top left corner of the grid.
 <img src="images/MazeFig8.png" width = "600">
