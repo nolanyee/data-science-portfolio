@@ -36,7 +36,7 @@ This repository is a portfolio of all my self-study projects and other coding si
   * [Census Income Prediction](census-income/CensusIncomePrediction.pdf):
   * [Loan Status Prediction](loan-status/LoanStatusPrediction.pdf):
  
-* Python Pojects
+* Python Projects
   * [Movie Recommender Model](movie-recommender/MovieRecommenderSystem.pdf):
   * [Black Friday Sales Prediction](black-friday-sales/BlackFridaySales.pdf):
   * [Titanic Survival Prediction](titanic-survival/TitanicSurvivalPrediction.pdf):
