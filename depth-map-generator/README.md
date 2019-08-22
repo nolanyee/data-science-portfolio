@@ -1,5 +1,5 @@
 # Depth Map Generator
-*Skills: Python, Image Processing, Linear Algebra, Multivariable Calculus*
+*Skills: Python, Image Processing, Linear Algebra, Multivariable Calculus, Visualization*
 
 ### Overview
 This program generates a depth map from a monocular image of matte monochromatic bas-relief. The algorithm uses physical principles of light to calculate a normal map, which is integrated to a depth map. 
