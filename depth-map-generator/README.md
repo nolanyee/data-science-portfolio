@@ -26,7 +26,7 @@ The meaning of all the plots above are discussed in the sections below.
 
 ## Technical Details
 ### Diffuse Reflection
-The main assumption used to generate the depth map is that when incoming light hits the surface is scattered equally in all directions. This kind of diffuse reflection or scattering is called Lambertian reflectance. This assumption holds true if the surface is the same color throughout and the surface is matte.
+The main assumption used to generate the depth map is that when incoming light hits the surface, it is scattered equally in all directions. This kind of diffuse reflection or scattering is called Lambertian reflectance. This assumption holds true if the surface is the same color throughout and the surface is matte.
 
 <img src="images/DepthMapFig1.png" width ="400">
 
