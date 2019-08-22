@@ -24,7 +24,7 @@ The projects focus on solving interesting and diverse problems using a variety o
   
     * *Skills: Python, Image Processing, Convolutional Neural Networks, Gradient Descent*
   
-  * [__Handwritten Digit Recognition__](digit-recognition/HandwrittenDigitRecognition.pdf): Uses a neural network to classify handwritten digits - a classic problem, but a useful starting point.
+  * [__Handwritten Digit Recognition__](digit-recognition/HandwrittenDigitRecognition.pdf): Uses a neural network to classify handwritten digits from the NIST dataset - a classic problem, but a useful starting point.
     * *Skills: Python, Image Recognition, Neural Networks*
 
 * __Audio Processing__
