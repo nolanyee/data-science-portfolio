@@ -51,10 +51,10 @@ The projects focus on solving interesting and diverse problems using a variety o
   * [__Transportation Usage Forecasting__](transportation-usage/TransportationUsageForecasting.pdf): Forecasting the number of passengers on a new transit system based on historical data. The series is decomposed as a multiplicative time series. The components are trend, seasonality, and remainder. The remainder component is stationary and thus is modeled with ARIMA. The trend is modeled using nonlinear regression.
     * *Skills: R, Visualization, Time Series Analysis, Nonlinear Regression*
   
-  * [__Grocery Sales Prediction__](grocery-sales/GrocerySalesPrediction.pdf):
+  * [__Grocery Sales Prediction__](grocery-sales/GrocerySalesPrediction.pdf): Prediction of sales of grocery items in different grocery stores. This analysis involves feature extraction, and evaluates a linear model and decision tree model to solve the regression problem.
     * *Skills: R, Feature Extraction, Visualization, Machine Learning*
   
-  * [__Census Income Prediction__](census-income/CensusIncomePrediction.pdf):
+  * [__Census Income Prediction__](census-income/CensusIncomePrediction.pdf): Prediction of income class from census data. Due to the large size of the data set, the processing is split into 3 notebooks and intermediate results are saved and re-imported in order to release memory from previous steps. In addition, since the classes are heavily imbalanced, subsampling is used on the larger class in order to create different models that are ensembled at the end.
     * *Skills: R, Visualization, Imputation, Machine Learning*
   
   * [__Loan Status Prediction__](loan-status/LoanStatusPrediction.pdf):
