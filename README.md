@@ -57,7 +57,7 @@ The projects focus on solving interesting and diverse problems using a variety o
   * [__Census Income Prediction__](census-income/CensusIncomePrediction.pdf): Prediction of income class from census data. Due to the large size of the data set, the processing is split into 3 notebooks and intermediate results are saved and re-imported in order to release memory from previous steps. In addition, since the classes are heavily imbalanced, subsampling is used on the larger class in order to create different models that are ensembled at the end.
     * *Skills: R, Visualization, Imputation, Machine Learning*
   
-  * [__Loan Status Prediction__](loan-status/LoanStatusPrediction.pdf):
+  * [__Loan Status Prediction__](loan-status/LoanStatusPrediction.pdf): Prediction of loan approval status based on demographic and applicant history data. This is a classification problem.
     * *Skills: R, Visualization, Machine Learning*
  
 * __Python Projects__
