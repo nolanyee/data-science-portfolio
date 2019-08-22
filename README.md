@@ -12,6 +12,11 @@ The projects focus on solving interesting and diverse problems using a variety o
 [Movie Recommender Model](movie-recommender/MovieRecommenderSystem.pdf)\
 [Maze and Labyrinth Generator](maze-labyrinth-generator/README.md)
 
+#### Skills Summary
+Python, R, image processing, audio processing, natural language processing, linear algebra, multivariable calculus, visualization, feature extraction and imputation, machine learning, forecasting, simulation, neural networks, and algorithms
+
+
+
 # Contents
 
 ## Unstructured Data Analysis and Processing
