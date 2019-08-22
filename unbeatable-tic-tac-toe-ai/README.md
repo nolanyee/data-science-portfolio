@@ -5,7 +5,7 @@
 ### Strategy Overview
 This program is a Tic-Tac-Toe AI that has 3 levels of difficulty. The Hard mode is unbeatable. Rather than using the common minimax algorithm, this AI uses a custom deterministic algorithm based on linear algebra. 
 
-First, the gameboard (a 3x3 matrix) is flattened to a row vector of length 9. For each winning path, a vector is created with 1s where the path is, and 0s elsewhere. For example
+First, the game board (a 3x3 matrix) is flattened to a row vector of length 9. For each winning path, a vector is created with 1s where the path is, and 0s elsewhere. For example
 
 <img src="images/TicTacToeFig1.png" width="600">
 
@@ -46,7 +46,7 @@ The tuple (1, 1) corresponds to one X and 2 empty cells in a path. This score is
 
 The tuples with Total Occupancy of 3 correspond to paths that are completely occupied, so they have a score of 0. The tuple (0, 2) corresponds to one X and one O in the path. Placing an X here does not block the user since there is already an X in the path, and there is only one possible cell to occupy for the computer. Since there is not much to gain with this path, the score is also 0.
 
-The path scores form a row vector __s__ of dimension 8. The total score fo each cell is given by the vector __c__=__P__<sup>T</sup>__s__<sup>T</sup>, in which each cell's score is the sum of the scores of the paths that the cell is in.
+The path scores form a row vector __s__ of dimension 8. The total score for each cell is given by the vector __c__=__P__<sup>T</sup>__s__<sup>T</sup>, in which each cell's score is the sum of the scores of the paths that the cell is in.
 
 This vector __c__ is calculated before the computer makes a move. The computer then chooses the cell with the highest score based on the vector __c__. If there is a tie, the computer always picks the first of equivalent cells in the vector. This is what leads to the deterministic nature of the Hard mode AI. Because it never chooses the other equivalent cells, it trims the tree of possible games that can occur.
 
@@ -57,7 +57,7 @@ In order to test whether or not the AI is unbeatable, all possible games are sim
 
 To perform the iteration, a custom iterator was created that takes in a list and returns a series of lists one at a time. The input list is the number of possible moves at each turn. The output lists are all the possible sequences of moves, where the number *i* in the list represents the *i*<sup>th</sup> possible move (*i*<sup>th</sup> available cell, in numerical order). 
 
-The iterator basically counts in a variable base number system, where the base of the each digit is the number in the input list. For example if the list was \[10,10,10\] the cooresponding numbers would be simply counting up from 0 to 999: 000, 001, 002, 003, ... 999, and output lists would be \[0,0,0\], \[0,0,1\]...\[9,9,9\]. However, if the input list is \[4,3,2\] then the counting would look like 000, 001, 010, 011, 020, 021, 100, 101, 110, 111, 120, 121, 200 ... 321 instead. This counting is achieved simply with modulus and floor division operators.
+The iterator basically counts in a variable base number system, where the base of the each digit is the number in the input list. For example if the list was \[10,10,10\] the corresponding numbers would be simply counting up from 0 to 999: 000, 001, 002, 003, ... 999, and output lists would be \[0,0,0\], \[0,0,1\]...\[9,9,9\]. However, if the input list is \[4,3,2\] then the counting would look like 000, 001, 010, 011, 020, 021, 100, 101, 110, 111, 120, 121, 200 ... 321 instead. This counting is achieved simply with modulus and floor division operators.
 
 If the computer goes first, the number of available cells for the user to choose from are 8, 6, 4, 2 for the user's four turns respectively. If the user goes first, the number of available cells are 9, 7, 5, 3, 1 for the user's five turns respectively. These are the two possible input lists for the iterator. In each game the simulated user will move according to the output of the iterator. For example if the computer goes first and the iterator output is \[*i, j, k, l*\] then the user will take the *i*<sup>th</sup> empty cell on the first move, the *j*<sup>th</sup> on the second, the *k*<sup>th</sup> on the third, and the *l*<sup>th</sup> on the last move (according to Python indexing, meaning the first corresponds to the 0<sup>th</sup>).
 
