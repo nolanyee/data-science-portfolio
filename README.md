@@ -28,7 +28,7 @@ The projects focus on solving interesting and diverse problems using a variety o
     * *Skills: Python, Image Recognition, Neural Networks*
 
 * __Audio Processing__
-  * [__Music Transcriber__](music-transcriber/README.md):
+  * [__Music Transcriber__](music-transcriber/README.md): A rudimentary polyphonic music transcription algorithm, primarily focused on classical music. This program uses Fourier Transform, Harmonic Sum Spectra, second derivative peak detection, and linear modeling, among other techniques, to generate the final score.
     * *Skills: Python, Audio Processing, Calculus*
 
 * __Natural Language Processing__
