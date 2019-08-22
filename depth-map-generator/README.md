@@ -169,7 +169,7 @@ The values of the normal map vectors *n* are used to calculate an x and y displa
 
 <img src="images/DepthMapFig21.png" width ="300">
 
-The user can set a threshold value for the maximum absolute displacement. This will help reduce errors due to large spikes in the displacement map. After the displacement maps are generated, they are smoothed. Any pixel with sobel magnitude (in the Sobel filtered original image) less than the user defined threshold will by Gaussian filtered according to the user specified sigma (smoothing factor). This selectively smooths non-edge pixels.
+The user can set a threshold value for the maximum absolute displacement. This will help reduce errors due to large spikes in the displacement map. After the displacement maps are generated, they are smoothed. Any pixel with Sobel magnitude (in the Sobel filtered original image) less than the user defined threshold will be Gaussian filtered according to the user specified sigma (smoothing factor). This selectively smooths non-edge pixels.
 
 ### Depth Map Generation
 If the displacemnent map were integrable, then any method of integration should yield a perfect depth map. However, due to noise caused by slight surface color differences, and errors caused by all the assumptions that had to be made for calculations, the displacement maps are likely not even close to be integrable. In order to decrease the noise there are 2 algorithms the user can choose from.
