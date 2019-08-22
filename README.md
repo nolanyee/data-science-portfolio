@@ -62,13 +62,13 @@ The projects focus on solving interesting and diverse problems using a variety o
  
 * __Python Projects__
 
-  * [__Movie Recommender Model__](movie-recommender/MovieRecommenderSystem.pdf):
+  * [__Movie Recommender Model__](movie-recommender/MovieRecommenderSystem.pdf): Custom recommender model, developed and optimized using a 1 million movie rating dataset from MovieLens. The model is a weighted combination of collaborative filtering and content-based models. A combination of demographic data, movie genre, and latent factors extracted using non-negative matrix factorization are used to calculate custom similarity functions.
     * *Skills: Python, Linear Algebra, Feature Extraction, Optimization, Visualization*
   
-  * [__Black Friday Sales Prediction__](black-friday-sales/BlackFridaySales.pdf):
+  * [__Black Friday Sales Prediction__](black-friday-sales/BlackFridaySales.pdf): Analysis of consumer demographic data, past spending, and product category data, using regression models to predict the amount that given consumers will spend on certain products on Black Friday.
     * *Skills: Python, Data Cleaning, Feature Extraction, Visualization, Machine Learning, Feature Selection*
   
-  * [__Titanic Survival Prediction__](titanic-survival/TitanicSurvivalPrediction.pdf):
+  * [__Titanic Survival Prediction__](titanic-survival/TitanicSurvivalPrediction.pdf): The classic problem involving prediction of passenger survival on the Titanic, but with an emphasis on feature extraction from text, including prediction of ethnicity and imputation techniques.
     * *Skills: Python, Feature Extraction, Imputation, Visualization, Machine Learning, Feature Selection*
   
   * [__Iris Species Classification__](iris-classification/IrisClassification.pdf):
