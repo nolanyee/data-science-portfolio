@@ -193,10 +193,18 @@ This depth map can then be used as a texture on a surface.
 <img src="images/Depth1.jpg" width ="300">
 
 ### Results and Discussion
-It is clear the much information is lost in the above example. Much of the deterioration in quality is due to the fact that the image is overexposed, making it more difficult to deduce the normals from slight changes in intensity on the brighter parts of the picture. Some more examples are shown below. (About half the time the shadow threshold was overridden, about half the time ambient light was used instead of reflected light for the cast shadow calculation, and about half the time iterative integration was used instead of rotation).
-
+It is clear the much information is lost in the above example. Much of the deterioration in quality is due to the fact that the image is overexposed, making it more difficult to deduce the normals from slight changes in intensity on the brighter parts of the picture. Some more examples are shown below. (About half the time the shadow threshold was overridden, about half the time ambient light was used instead of reflected light for the cast shadow calculation, and about half the time iterative integration was used instead of rotation). Sometimes the depth map had to be inverted to achieve a the desired result (convex or concave). The original image is shown  on the left, the depth map in the middle, and the depth map applied as a texture (using Maya) on the right.
 
 <img src="images/DepthMapTables1.png" width ="800">
 
 <img src="images/DepthMapTables2.png" width ="800">
+
+Overall, the results are not perfect. However, in combination with a faint version of original image as the diffuse layer, some of the details can be restored. In addition, the normal map itself is a bit more accurate than the depth map and can be used instead of the depth map. This is shown in this final example.
+
+The original image is
+<img src="images/basrelief12.jpg" width ="700">
+This resulted in the following normal map and depth map
+
+<img src="images/normalmap12c.jpg" width ="700">
+<img src="images/depthmap12c.jpg" width ="700">
 
