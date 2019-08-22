@@ -16,88 +16,88 @@ The projects focus on solving interesting and diverse problems using a variety o
 
 ## Unstructured Data Analysis and Processing
 
-* Image Processing
-  * [Depth Map Generator](depth-map-generator/README.md): Generates normal maps and depth maps from monocular images of  monochromatic matte bas-reliefs. The application is primarily for use in texturing 3D models. This program uses physical and mathematical approaches to solve this challenging problem.\
+* __Image Processing__
+  * [__Depth Map Generator__](depth-map-generator/README.md): Generates normal maps and depth maps from monocular images of  monochromatic matte bas-reliefs. The application is primarily for use in texturing 3D models. This program uses physical and mathematical approaches to solve this challenging problem.\
   \
    *Skills: Python, Image Processing, Linear Algebra, Multivariable Calculus, Visualization*
   
-  * [Style Transfer Implementation](style-transfer/README.md): Inputs an image of a painting and a photograph, and applies the painting style to the photograph using a pre-trained convolutional neural network. This is an implementation of L. A. Gatys, A. S. Ecker, M. Bethge. Image Style Transfer Using Convolutional Neural Networks. In IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2016.\
+  * [__Style Transfer Implementation__](style-transfer/README.md): Inputs an image of a painting and a photograph, and applies the painting style to the photograph using a pre-trained convolutional neural network. This is an implementation of L. A. Gatys, A. S. Ecker, M. Bethge. Image Style Transfer Using Convolutional Neural Networks. In IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2016.\
   \
   *Skills: Python, Image Processing, Convolutional Neural Networks, Gradient Descent*
   
-  * [Handwritten Digit Recognition](digit-recognition/HandwrittenDigitRecognition.pdf): Uses a neural network to classify handwritten digits - a classic problem, but a useful starting point.\
+  * [__Handwritten Digit Recognition__](digit-recognition/HandwrittenDigitRecognition.pdf): Uses a neural network to classify handwritten digits - a classic problem, but a useful starting point.\
   \
   *Skills: Python, Image Recognition, Neural Networks*
 
-* Audio Processing
-  * [Music Transcriber](music-transcriber/README.md):
+* __Audio Processing__
+  * [__Music Transcriber__](music-transcriber/README.md):
   *Skills: Python, Audio Processing, Calculus*
 
-* Natural Language Processing
-  * [Literary Pattern Analyzer](literary-pattern-analyzer/README.md):
+* __Natural Language Processing__
+  * [__Literary Pattern Analyzer__](literary-pattern-analyzer/README.md):
   *Skills: Python, Natural Language Processing, Visualization*
   
-  * [Twitter Hate Speech Detection](hate-speech-detection/Twitter%20Hate%20Speech%20Detection.pdf):
+  * [__Twitter Hate Speech Detection__](hate-speech-detection/Twitter%20Hate%20Speech%20Detection.pdf):
   *Skills: Python, Natural Language Processing, Feature Extraction, Algorithms, Machine Learning*
   
-  * [Recipe Nationality Classification](recipe-nationality/RecipeNationalityClassification.pdf):
+  * [__Recipe Nationality Classification__](recipe-nationality/RecipeNationalityClassification.pdf):
   *Skills: Python, Natural Language Processing, Machine Learning*
   
 
 ## Structured Data Analysis
 
-* R Projects
-  * [Human Activity Recognition](human-activity-recognition/HumanActivityRecognition.pdf):
+* __R Projects__
+  * [__Human Activity Recognition__](human-activity-recognition/HumanActivityRecognition.pdf):
   *Skills: R, Machine Learning*
   
-  * [Transportation Usage Forecasting](transportation-usage/TransportationUsageForecasting.pdf):
+  * [__Transportation Usage Forecasting__](transportation-usage/TransportationUsageForecasting.pdf):
   *Skills: R, Visualization, Time Series Analysis, Nonlinear Regression*
   
-  * [Grocery Sales Prediction](grocery-sales/GrocerySalesPrediction.pdf):
+  * [__Grocery Sales Prediction__](grocery-sales/GrocerySalesPrediction.pdf):
   *Skills: R, Feature Extraction, Visualization, Machine Learning*
   
-  * [Census Income Prediction](census-income/CensusIncomePrediction.pdf):
+  * [__Census Income Prediction__](census-income/CensusIncomePrediction.pdf):
   *Skills: R, Visualization, Imputation, Machine Learning*
   
-  * [Loan Status Prediction](loan-status/LoanStatusPrediction.pdf):
+  * [__Loan Status Prediction__](loan-status/LoanStatusPrediction.pdf):
   *Skills: R, Visualization, Machine Learning*
  
-* Python Projects
+* __Python Projects__
 
-  * [Movie Recommender Model](movie-recommender/MovieRecommenderSystem.pdf):
+  * [__Movie Recommender Model__](movie-recommender/MovieRecommenderSystem.pdf):
   *Skills: Python, Linear Algebra, Feature Extraction, Optimization, Visualization*
   
-  * [Black Friday Sales Prediction](black-friday-sales/BlackFridaySales.pdf):
+  * [__Black Friday Sales Prediction__](black-friday-sales/BlackFridaySales.pdf):
   *Skills: Python, Data Cleaning, Feature Extraction, Visualization, Machine Learning, Feature Selection*
   
-  * [Titanic Survival Prediction](titanic-survival/TitanicSurvivalPrediction.pdf):
+  * [__Titanic Survival Prediction__](titanic-survival/TitanicSurvivalPrediction.pdf):
   *Skills: Python, Feature Extraction, Imputation, Visualization, Machine Learning, Feature Selection*
   
-  * [Iris Species Classification](iris-classification/IrisClassification.pdf):
+  * [__Iris Species Classification__](iris-classification/IrisClassification.pdf):
   *Skills: Python, Visualization, Machine Learning*
 
 ## Probability
 
-  * [Bayesian Network Investigator](bayesian-investigator/README.md):
+  * [__Bayesian Network Investigator__](bayesian-investigator/README.md):
   *Skills: Python, Probability, Algorithms, Gradient Descent*
   
-  * [Poker AI](poker-ai/README.md):
+  * [__Poker AI__](poker-ai/README.md):
   *Skills: Python, Probability*
   
 
 ## Computer Science
-  * [Maze and Labyrinth Generator](maze-labyrinth-generator/README.md):
+  * [__Maze and Labyrinth Generator__](maze-labyrinth-generator/README.md):
   *Skills: Python, Algorithms, Data Structures*
   
-  * [Unbeatable Tic-Tac-Toe AI](unbeatable-tic-tac-toe-ai/README.md):
+  * [__Unbeatable Tic-Tac-Toe AI__](unbeatable-tic-tac-toe-ai/README.md):
   *Skills: Python, Linear Algebra*
   
-  * [Sudoku Solver](sudoku-solver/README.md):
+  * [__Sudoku Solver__](sudoku-solver/README.md):
   *Skills: Python, Algorithms*
   
-  * [Final Exam Scheduler](final-exam-scheduler/README.md):
+  * [__Final Exam Scheduler__](final-exam-scheduler/README.md):
   *Skills: Python, Algorithms, Monte-Carlo Simulation*
   
-  * [Flock Simulator](flock-simulator/README.md):
+  * [__Flock Simulator__](flock-simulator/README.md):
   *Skills: Python, Linear Algebra*
 
