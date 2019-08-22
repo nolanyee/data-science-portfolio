@@ -39,13 +39,13 @@ The projects focus on solving interesting and diverse problems using a variety o
     * *Skills: Python, Audio Processing, Calculus*
 
 * __Natural Language Processing__
-  * [__Literary Pattern Analyzer__](literary-pattern-analyzer/README.md): Visualization tools for finding structural literary patterns in ancient texts. The plots include a custom lexical dispersion plot with variable bar length based on word frequency within verses, a word intentionality plot based on the binomial distribution, a parallelsim arc plot based on Jaccard similarity and order similarity, and a topic plot generated using Latent Dirichlet Allocation.
+  * [__Literary Pattern Analyzer__](literary-pattern-analyzer/README.md): Visualization tools for finding structural literary patterns in ancient texts. The plots include a custom lexical dispersion plot with variable bar length based on word frequency within verses, a word intentionality plot based on the binomial distribution, a parallelism arc plot based on Jaccard similarity and order similarity, and a topic plot generated using Latent Dirichlet Allocation.
     * *Skills: Python, Natural Language Processing, Visualization*
   
   * [__Twitter Hate Speech Detection__](hate-speech-detection/Twitter%20Hate%20Speech%20Detection.pdf): Identifies tweets containing hate speech. This analysis uses a depth first search algorithm for splitting hashtags, and tf-idf for feature generation.
     * *Skills: Python, Natural Language Processing, Feature Extraction, Algorithms, Machine Learning*
   
-  * [__Recipe Nationality Classification__](recipe-nationality/RecipeNationalityClassification.pdf): Classification of recipies by country of origin based on the lists of ingredients. This analysis uses tf-idf for generation of the sparse feature matrix.
+  * [__Recipe Nationality Classification__](recipe-nationality/RecipeNationalityClassification.pdf): Classification of recipes by country of origin based on the lists of ingredients. This analysis uses tf-idf for generation of the sparse feature matrix.
     * *Skills: Python, Natural Language Processing, Machine Learning*
   
 ## Structured Data Analysis
