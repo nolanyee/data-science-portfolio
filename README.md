@@ -32,7 +32,7 @@ The projects focus on solving interesting and diverse problems using a variety o
     * *Skills: Python, Audio Processing, Calculus*
 
 * __Natural Language Processing__
-  * [__Literary Pattern Analyzer__](literary-pattern-analyzer/README.md):
+  * [__Literary Pattern Analyzer__](literary-pattern-analyzer/README.md): Visualization tools for finding structural literary patterns in ancient texts. The plots include a custom lexical dispersion plot with variable bar length based on word frequency within verses, a word intentionality plot based on the binomial distribution, a parallelsim arc plot based on Jaccard similarity and order similarity, and a topic plot generated using Latent Dirichlet Allocation.
     * *Skills: Python, Natural Language Processing, Visualization*
   
   * [__Twitter Hate Speech Detection__](hate-speech-detection/Twitter%20Hate%20Speech%20Detection.pdf):
