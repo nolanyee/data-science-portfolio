@@ -22,60 +22,79 @@ The projects focus on solving interesting and diverse problems using a variety o
   
   * [Style Transfer Implementation](style-transfer/README.md):
   *Skills: Python, Image Processing, Convolutional Neural Networks, Gradient Descent*
-  * [Handwritten Digit Recognition](digit-recognition/HandwrittenDigitRecognition.pdf):
   
+  * [Handwritten Digit Recognition](digit-recognition/HandwrittenDigitRecognition.pdf):
+  *Skills: Python, Image Recognition, Neural Networks*
 
 * Audio Processing
   * [Music Transcriber](music-transcriber/README.md):
-  
+  *Skills: Python, Audio Processing, Calculus*
 
 * Natural Language Processing
   * [Literary Pattern Analyzer](literary-pattern-analyzer/README.md):
+  *Skills: Python, Natural Language Processing, Visualization*
   
   * [Twitter Hate Speech Detection](hate-speech-detection/Twitter%20Hate%20Speech%20Detection.pdf):
+  *Skills: Python, Natural Language Processing, Feature Extraction, Algorithms, Machine Learning*
   
   * [Recipe Nationality Classification](recipe-nationality/RecipeNationalityClassification.pdf):
+  *Skills: Python, Natural Language Processing, Machine Learning*
   
 
 ## Structured Data Analysis
 
 * R Projects
   * [Human Activity Recognition](human-activity-recognition/HumanActivityRecognition.pdf):
+  *Skills: R, Machine Learning*
   
   * [Transportation Usage Forecasting](transportation-usage/TransportationUsageForecasting.pdf):
+  *Skills: R, Visualization, Time Series Analysis, Nonlinear Regression*
   
   * [Grocery Sales Prediction](grocery-sales/GrocerySalesPrediction.pdf):
+  *Skills: R, Feature Extraction, Visualization, Machine Learning*
   
   * [Census Income Prediction](census-income/CensusIncomePrediction.pdf):
+  *Skills: R, Visualization, Imputation, Machine Learning*
   
   * [Loan Status Prediction](loan-status/LoanStatusPrediction.pdf):
-  
+  *Skills: R, Visualization, Machine Learning*
  
 * Python Projects
+
   * [Movie Recommender Model](movie-recommender/MovieRecommenderSystem.pdf):
+  *Skills: Python, Linear Algebra, Feature Extraction, Optimization, Visualization*
   
   * [Black Friday Sales Prediction](black-friday-sales/BlackFridaySales.pdf):
+  *Skills: Python, Data Cleaning, Feature Extraction, Visualization, Machine Learning, Feature Selection*
   
   * [Titanic Survival Prediction](titanic-survival/TitanicSurvivalPrediction.pdf):
+  *Skills: Python, Feature Extraction, Imputation, Visualization, Machine Learning, Feature Selection*
   
   * [Iris Species Classification](iris-classification/IrisClassification.pdf):
-  
+  *Skills: Python, Visualization, Machine Learning*
 
 ## Probability
+
   * [Bayesian Network Investigator](bayesian-investigator/README.md):
+  *Skills: Python, Probability, Algorithms, Gradient Descent*
   
   * [Poker AI](poker-ai/README.md):
+  *Skills: Python, Probability*
   
 
 ## Computer Science
   * [Maze and Labyrinth Generator](maze-labyrinth-generator/README.md):
+  *Skills: Python, Algorithms, Data Structures*
   
   * [Unbeatable Tic-Tac-Toe AI](unbeatable-tic-tac-toe-ai/README.md):
+  *Skills: Python, Linear Algebra*
   
   * [Sudoku Solver](sudoku-solver/README.md):
+  *Skills: Python, Algorithms*
   
   * [Final Exam Scheduler](final-exam-scheduler/README.md):
+  *Skills: Python, Algorithms, Monte-Carlo Simulation*
   
   * [Flock Simulator](flock-simulator/README.md):
-  
+  *Skills: Python, Linear Algebra*
 
