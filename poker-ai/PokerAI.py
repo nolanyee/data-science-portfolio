@@ -26,7 +26,7 @@ from math import e
 from collections import deque
 
 number = {1:'A',2:'2',3:'3',4:'4',5:'5',6:'6',7:'7',8:'8',9:'9',10:'10',11:'J',12:'Q',13:'K',14:'A'}
-symbol={'spade':'\u2660','heart':'\u2661','diamond':'\u2662','club':'\u2663'}
+symbol={'spade':'\u2660','heart':'\u2665','diamond':'\u2666','club':'\u2663'}
 ranking = {'spade':4,'heart':3,'diamond':2,'club':1}
 invranking = {4:'spade',3:'heart',2:'diamond',1:'club'}
 handranking = ['nopair','onepair','twopair','threekind','straight','flush','fullhouse','fourkind','straightflush']
