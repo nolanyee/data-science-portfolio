@@ -13,6 +13,7 @@ This repository is a portfolio of all my self-study projects and other coding si
 # Contents
 
 ## Unstructured Data Analysis and Processing
+
 * Image Processing
   * [Depth Map Generator](depth-map-generator/README.md):
   * [Style Transfer Implementation](style-transfer/README.md):
@@ -27,11 +28,19 @@ This repository is a portfolio of all my self-study projects and other coding si
   * [Recipe Nationality Classification](recipe-nationality/RecipeNationalityClassification.pdf):
 
 ## Structured Data Analysis
-* Python Pojects
- * [Movie Recommender Model](movie-recommender/MovieRecommenderSystem.pdf):
- * 
 
 * R Projects
+ * [Human Activity Recognition](human-activity-recognition/HumanActivityRecognition.pdf):
+ * [Transportation Usage Forecasting](transportation-usage/TransportationUsageForecasting.pdf):
+ * [Grocery Sales Prediction](grocery-sales/GrocerySalesPrediction.pdf):
+ * [Census Income Prediction](census-income/CensusIncomePrediction.pdf):
+ * [Loan Status Prediction](loan-status/LoanSatusPrediction.pdf):
+ 
+* Python Pojects
+ * [Movie Recommender Model](movie-recommender/MovieRecommenderSystem.pdf):
+ * [Black Friday Sales Prediction](black-friday-sales/BlackFridaySales.pdf):
+ * [Titanic Survival Prediction](titanic-survival/TitanicSurvivalPrediction.pdf):
+ * [Iris Species Classification](iris-classification/IrisClassification.pdf):
 
 ## Probability
 
