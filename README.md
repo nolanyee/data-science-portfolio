@@ -99,7 +99,7 @@ The projects focus on solving interesting and diverse problems using a variety o
   * [__Sudoku Solver__](sudoku-solver/README.md): A program that solves any solvable Sudoku puzzle and can generate random solvable puzzles. The algorithm is based on set theory and depth first search.
     * *Skills: Python, Algorithms*
   
-  * [__Final Exam Scheduler__](final-exam-scheduler/README.md): A program uses graph coloring theory to generate a final exam schedule from students' enrollment data. It includes a Monte-Carlo simulation function to profile time complexity.
+  * [__Final Exam Scheduler__](final-exam-scheduler/README.md): A program that uses graph coloring theory to generate a final exam schedule from students' enrollment data. It includes a Monte-Carlo simulation function to profile time complexity.
     * *Skills: Python, Algorithms, Monte-Carlo Simulation*
   
   * [__Flock Simulator__](flock-simulator/README.md): A program that simulates a flock of birds in flight (or perhaps a swarm of bees). The birds are trapped in the window and fly around. The user can act as a predator and chase the birds around the window.
