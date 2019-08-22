@@ -174,6 +174,7 @@ The first algorithm integrates from top to bottom and left to right. This integr
 
 The second algorithm is an implementation of the iterative pyramidal integration procedure from the paper V. Nozick. *Pyramidal Normal Map Integration for Real-time Photometric Stereo.* EAM Mechatronics 2010, Nov 2010, Japan. pp.128-132. See the paper for technical details. The algorithm creates a mipmap, which is a series of the same image at lower and lower resolutions (each level of the mipmap pyramid corresponds to halving the x and y dimensions). 
 
+<img src="images/DepthMapFig25.png" width ="500">
 
 Mipmaps are created for both x and y displacement maps. The depth map is initialized as all 0s. Starting with the lowest resolution map, each pixel is set to the average of the neighboring pixels offset by the displacement values from the displacement maps. This is iterated for each level. Between levels, the depth map is scaled up and the next mipmap level is used for updating. The number of iterations for each level can be specified by the user. The last level can be iterated more times (also specified by user).
 
