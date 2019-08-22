@@ -13,7 +13,7 @@ The projects focus on solving interesting and diverse problems using a variety o
 [Maze and Labyrinth Generator](maze-labyrinth-generator/README.md)
 
 #### Skills Summary
-Python, R, image processing, audio processing, natural language processing, linear algebra, multivariable calculus, visualization, feature extraction and imputation, machine learning, forecasting, simulation, neural networks, and algorithms
+Python, R, image processing, audio processing, natural language processing, statistics, linear algebra, multivariable calculus, visualization, feature extraction, imputation, machine learning, forecasting, simulation, neural networks, and algorithms
 
 
 
