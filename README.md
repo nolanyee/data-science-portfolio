@@ -16,10 +16,15 @@ The projects focus on solving interesting and diverse problems using a variety o
 
 ## Unstructured Data Analysis and Processing
 
+* a
+  * a
+    * a
+      * a
+        * a
+
 * __Image Processing__
-  * [__Depth Map Generator__](depth-map-generator/README.md): Generates normal maps and depth maps from monocular images of  monochromatic matte bas-reliefs. The application is primarily for use in texturing 3D models. This program uses physical and mathematical approaches to solve this challenging problem.\
-  \
-   *Skills: Python, Image Processing, Linear Algebra, Multivariable Calculus, Visualization*
+  * [__Depth Map Generator__](depth-map-generator/README.md): Generates normal maps and depth maps from monocular images of  monochromatic matte bas-reliefs. The application is primarily for use in texturing 3D models. This program uses physical and mathematical approaches to solve this challenging problem.
+    * *Skills: Python, Image Processing, Linear Algebra, Multivariable Calculus, Visualization*
   
   * [__Style Transfer Implementation__](style-transfer/README.md): Inputs an image of a painting and a photograph, and applies the painting style to the photograph using a pre-trained convolutional neural network. This is an implementation of L. A. Gatys, A. S. Ecker, M. Bethge. Image Style Transfer Using Convolutional Neural Networks. In IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2016.
   
