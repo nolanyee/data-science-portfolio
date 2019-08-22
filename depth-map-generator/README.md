@@ -63,14 +63,14 @@ Once again this can also be seen applying the Huygens-Fresnel principle.
 
 So overall, reflected light from the surface should be directed approximately horizontally in the direction opposite to the incident light. 
 
-Reflected light can only come from areas that recieve incident light. Therefore no reflected light can come from the areas of cast shadow, which is in the direction of the incident light. Therefore on average the reflected light is directed roughly in the opposite direction of the incident light, when projected on the image plane.
+Reflected light can only come from areas that receive incident light. Therefore no reflected light can come from the areas of cast shadow, which is in the direction of the incident light. Therefore on average the reflected light is directed roughly in the opposite direction of the incident light, when projected on the image plane.
 
 <img src="images/DepthMapFig15b.png" width ="500">
 
 Therefore the reflected light vector is considered to be the negative projection of the incident light vector on the image plane (xy).
 
 ### Ambient Light
-The second possible source of light in regions of cast shadow is ambient light. This is light coming from the environment. Ambient light can be the same intensity in all directions. In this case surfaces parallel to the image plane recieve more light than surfaces perpendicular to the image plane.
+The second possible source of light in regions of cast shadow is ambient light. This is light coming from the environment. Ambient light can be the same intensity in all directions. In this case surfaces parallel to the image plane receive more light than surfaces perpendicular to the image plane.
 
 <img src="images/DepthMapFig9.png" width ="700">
 
@@ -98,13 +98,13 @@ This normal vector will end up always being one of two extreme normals. Therefor
 *Note the assignment of "convex" here is arbitrary, because depending on the z component of the light vector, the convexity assumption may result in a concave looking surface in the normal map. Adding to the complexity, sometimes during integration of the normal map the convexity will be reversed again. It is best to examine the depth map at the end and invert it if necessary.*
 
 ### Determination of Light Direction
-The light direction is assumed to be the direction in which there is the most contrast in slices of the image. (Slice is used here to refer to a vector of pixel values that are in a straight line in the image). This is because the midtone areas tend to be oriented orthogonally (or at least not close to parallel) to the light direction on the image plane. This means when moving along the light direction there will be fewer pixels in the midtones and more pixels in the highlights and shadows. This can be seen the the illustration below.
+The light direction is assumed to be the direction in which there is the most contrast in slices of the image. (Slice is used here to refer to a vector of pixel values that are in a straight line in the image). This is because the midtone areas tend to be oriented orthogonally (or at least not close to parallel) to the light direction on the image plane. This means when moving along the light direction there will be fewer pixels in the midtones and more pixels in the highlights and shadows. This can be seen in the illustration below.
 
 <img src="images/DepthMapFig22b.png" width ="900">
 
-Slicing in the light direction typically yields a distribution that is skewed towards the extremes, while slicing in other directions will result in a distribution that has more intermediate values. This means that the sum of squared deviations from the mean in each slice should be greater in the light direction. This leads to the first component of the light direction desirability score, which is the total sum of squared deviations from the individal slice means (not from the total mean, since that would be the same regardless of slice direction). 
+Slicing in the light direction typically yields a distribution that is skewed towards the extremes, while slicing in other directions will result in a distribution that has more intermediate values. This means that the sum of squared deviations from the mean in each slice should be greater in the light direction. This leads to the first component of the light direction desirability score, which is the total sum of squared deviations from the individual slice means (not from the total mean, since that would be the same regardless of slice direction). 
 
-Also notice that adjacent slices are more similar to each other in the direction of the light than in other directions. This leads to the second component of the light direction desirability score, which is the sum of squared deviations from the adjacent slice (calculated for each slice then totalled).
+Also notice that adjacent slices are more similar to each other in the direction of the light than in other directions. This leads to the second component of the light direction desirability score, which is the sum of squared deviations from the adjacent slice (calculated for each slice then totaled).
 
 The light direction and the actual geometry of the surface both contribute to the variability of the slices, as can be seen in the following example:
 
@@ -112,7 +112,7 @@ The light direction and the actual geometry of the surface both contribute to th
 
 The light direction slice (green) has a larger range (more areas of highlights and shadows) than the red slice (more midtones) in the upper part of the figure. However, in the lower part they are about the same. Here the variance is primarily due to the carved lines in the relief. If the entire image were just these lines, then the slice that is parallel to the lines would have little variance. This has nothing to do with the light direction. So the Sobel magnitude in the direction of the slice is used to correct for the surface geometry effect. The Sobel filter is used for edge detection. So the Sobel magnitude in the direction of a slice indicates how perpendicular edges are to the slice. The more perpendicular the edge is, the more contribution there will be due to the edge direction to the overall variance. Therefore the reciprocal of this magnitude is used as a multiplicative correction factor in the desirability score.
 
-The user can adjust the weights (exponents) of the adjacent sum of squares and sobel magnitude in the desirability score. The algorithm calculates this score for all angles and chooses the angle with the largest desirability score. The user can also select how many angles the program will scan (more angles means more resolution on the desirability plot and a more precise output angle).
+The user can adjust the weights (exponents) of the adjacent sum of squares and Sobel magnitude in the desirability score. The algorithm calculates this score for all angles and chooses the angle with the largest desirability score. The user can also select how many angles the program will scan (more angles means more resolution on the desirability plot and a more precise output angle).
 
 <img src="images/DepthMapFig17.png" width ="350">
 
@@ -172,9 +172,9 @@ The values of the normal map vectors *n* are used to calculate an x and y displa
 The user can set a threshold value for the maximum absolute displacement. This will help reduce errors due to large spikes in the displacement map. After the displacement maps are generated, they are smoothed. Any pixel with Sobel magnitude (in the Sobel filtered original image) less than the user defined threshold will be Gaussian filtered according to the user specified sigma (smoothing factor). This selectively smooths non-edge pixels.
 
 ### Depth Map Generation
-If the displacemnent map were integrable, then any method of integration should yield a perfect depth map. However, due to noise caused by slight surface color differences, and errors caused by all the assumptions that had to be made for calculations, the displacement maps are likely not even close to being integrable. In order to decrease the noise there are 2 algorithms the user can choose from.
+If the displacement map were integrable, then any method of integration should yield a perfect depth map. However, due to noise caused by slight surface color differences, and errors caused by all the assumptions that had to be made for calculations, the displacement maps are likely not even close to being integrable. In order to decrease the noise there are 2 algorithms the user can choose from.
 
-The first algorithm integrates from top to bottom and left to right. This integration is repeated *k* times with the image rotated by 90/*k* degrees. After each ntegration, the result is unrotated. Then all these results are averaged. The number of rotations *k* can be specified by the user. This results in a smoother but flatter depth map with less detail.
+The first algorithm integrates from top to bottom and left to right. This integration is repeated *k* times with the image rotated by 90/*k* degrees. After each integration, the result is unrotated. Then all these results are averaged. The number of rotations *k* can be specified by the user. This results in a smoother but flatter depth map with less detail.
 
 The second algorithm is an implementation of the iterative pyramidal integration procedure from the paper V. Nozick. *Pyramidal Normal Map Integration for Real-time Photometric Stereo.* EAM Mechatronics 2010, Nov 2010, Japan. pp.128-132. See the paper for technical details. The algorithm creates a mipmap, which is a series of the same image at lower and lower resolutions (each level of the mipmap pyramid corresponds to halving the x and y dimensions). 
 
