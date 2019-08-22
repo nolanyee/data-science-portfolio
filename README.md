@@ -48,7 +48,6 @@ The projects focus on solving interesting and diverse problems using a variety o
   * [__Recipe Nationality Classification__](recipe-nationality/RecipeNationalityClassification.pdf): Classification of recipies by country of origin based on the lists of ingredients. This analysis uses tf-idf for generation of the sparse feature matrix.
     * *Skills: Python, Natural Language Processing, Machine Learning*
   
-
 ## Structured Data Analysis
 
 * __R Projects__
@@ -103,6 +102,5 @@ The projects focus on solving interesting and diverse problems using a variety o
   * [__Final Exam Scheduler__](final-exam-scheduler/README.md): A program uses graph coloring theory to generate a final exam schedule from students' enrollment data. It includes a Monte-Carlo simulation function to profile time complexity.
     * *Skills: Python, Algorithms, Monte-Carlo Simulation*
   
-  * [__Flock Simulator__](flock-simulator/README.md):A program that simulates a flock of birds in flight (or perhaps a swarm of bees). The birds are trapped in the window and fly around. The user can act as a predator and chase the birds around the window.
+  * [__Flock Simulator__](flock-simulator/README.md): A program that simulates a flock of birds in flight (or perhaps a swarm of bees). The birds are trapped in the window and fly around. The user can act as a predator and chase the birds around the window.
     * *Skills: Python, Linear Algebra*
-
