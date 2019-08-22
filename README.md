@@ -45,10 +45,10 @@ The projects focus on solving interesting and diverse problems using a variety o
 ## Structured Data Analysis
 
 * __R Projects__
-  * [__Human Activity Recognition__](human-activity-recognition/HumanActivityRecognition.pdf):
+  * [__Human Activity Recognition__](human-activity-recognition/HumanActivityRecognition.pdf): Classification of samples into one of six possible activities based on features extracted from motion sensors. The data set contains 561 features derived from time series data from a waist sensor.
     * *Skills: R, Machine Learning*
   
-  * [__Transportation Usage Forecasting__](transportation-usage/TransportationUsageForecasting.pdf):
+  * [__Transportation Usage Forecasting__](transportation-usage/TransportationUsageForecasting.pdf): Forecasting the number of passengers on a new transit system based on historical data. The series is decomposed as a multiplicative time series. The components are trend, seasonality, and remainder. The remainder component is stationary and thus is modeled with ARIMA. The trend is modeled using nonlinear regression.
     * *Skills: R, Visualization, Time Series Analysis, Nonlinear Regression*
   
   * [__Grocery Sales Prediction__](grocery-sales/GrocerySalesPrediction.pdf):
