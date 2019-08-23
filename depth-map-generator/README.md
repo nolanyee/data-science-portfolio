@@ -229,7 +229,7 @@ The depth map results are compared below.
 
 <img src="images/Comparisons4.jpg" width ="750">
 
-In both the normal map and depth maps, this program produces most subtly accurate results than nDo2. However, the results from nDo2 are smoother, with less high frequency noise, and have more definition of the details (perhaps overexaggerated definition).
+In both the normal map and depth maps, this program produces most subtly accurate results than nDo2. However, the results from nDo2 are smoother, with less high frequency noise, and have more definition of the details - perhaps overexaggerated definition, which leads to the less accurate appearance.
 
 
 
