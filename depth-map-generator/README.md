@@ -219,4 +219,9 @@ Then the following images were rendered using these maps.
 
 If the diffuse color is just grey (top left), the normal map gives a fairly detailed rendering of the relief (middle left). The bump map is not as detailed (bottom left). Then on the right the diffuse color is replaced with a faint version of the image. With only the diffuse color (top right) it is fairly obvious that the texture is just an image applied on the surface. With the addition of the normal map (middle right), it looks like a real relief, and the details are enhanced from the image on the left. For the bump map on the bottom right, again some detail is recovered compared to the image on the left, and the final rendering looks still more realistic than using the image alone. 
 
+Finally, the results of this program can be compared against the commercially available software called nDo2.
+<img src="images/Comparisons3.png" width ="750">
+<img src="images/Comparisons4.png" width ="750">
+
+
 Overall, this program is able to produce usable depth maps. Although the depth maps have some quality issues, they still enhance the rendering if applied with the faint original image as the diffuse layer. But even more useful perhaps is the normal map itself, which preserves detail while at the same time enhancing the image and making the surface look more realistic.
