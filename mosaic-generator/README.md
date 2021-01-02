@@ -65,12 +65,19 @@ Since both maps contain noise, a reduction in noise is achieved by using a unifo
 Next, all points with gradient less than a user specified threshold are set to zero to reduce noise further.
 
 <img src="images/Figure2.png" width="600">
-<img src="images/Mixed.png" width="400">
+<img src="images/Mixed.png" width="350">
+
+Finally, using the filtered gradient, cones are calculated for all points above a user defined threshold. The height of the cones is set based on the magnitude of the gradient. An upper limit to cone height is  set by the user to make all featues above a certain magnitude equal. These features that are at the maximum height are the major features. Minor features may often be covered up by the larger ones, except when major features are far away.
+
+<img src="images/Figure1.png" width="900">
+<img src="images/Cones.png" width="350">
 
 In addition, a binary edge mask is created by setting points above a user specified threshold to 1 and all other points to 0. This is used later on to move Vornoi regions away from edges, ensuring the the tiles end up along the edges instead of overlapping them.
 
 <img src="images/Figure3.png" width="600">
-<img src="images/EdgeMask.png" width="400">
+<img src="images/EdgeMask.png" width="350">
+
+
 
 
 
