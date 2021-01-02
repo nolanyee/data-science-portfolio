@@ -50,7 +50,7 @@ parameterfield('ConeUpper','Cone Upper Percentile',5,0.95,9)
 parameterfield('ConeLower','Cone Lower Percentile',5,0.90,10)
 parameterfield('SmoothingRadius','Smoothing Radius',5,3,11)
 
-headinglabel3 = Label(frame, text='VORNOI DIAGRAM')
+headinglabel3 = Label(frame, text='VORONOI DIAGRAM')
 headinglabel3.grid(row=12, column=0, sticky=E)
 
 parameterfield('EdgePercentile','Edge Mask Percentile',5,0.90,13)
