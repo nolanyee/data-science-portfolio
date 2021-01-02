@@ -38,9 +38,9 @@ The first step in gradient calculation is to calulate the weight matrices for th
 
 Next, the distance function for any 2 pixels (reprsented as vetors in RBG space) is calculated as follows.
 
-<img src="images/Equation2.png" width="300">
+<img src="images/Equation2.png" width="350">
 
-<img src="images/Equation3.png" width="210">
+<img src="images/Equation3.png" width="250">
 
 
 
