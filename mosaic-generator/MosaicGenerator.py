@@ -57,7 +57,7 @@ parameterfield('EdgePercentile','Edge Mask Percentile',5,0.90,13)
 parameterfield('EdgePenalty','Edge Penalty',5,0.5,14)
 parameterfield('Beta','Aspect Ratio Factor',5,1.5,15)
 parameterfield('TileNumber','Number of Tiles',5,1000,16)
-parameterfield('VornoiIterations','Vornoi Iterations',5,20,17)
+parameterfield('VoronoiIterations','Voronoi Iterations',5,20,17)
 
 headinglabel4 = Label(frame, text='TILE SHAPE ADJUSTMENT')
 headinglabel4.grid(row=18, column=0, sticky=E)
@@ -106,7 +106,7 @@ EdgePercentile = float(EdgePercentileentry.get()) # Percentile of gradient inten
 EdgePenalty = float(EdgePenaltyentry.get()) # Penalty used to weight edge pixels in centroid determination
 Beta = float(Betaentry.get()) # Aspect Ratio factor, amount tiles are stretched parallel to edges at edges (1 = square)
 TileNumber = int(TileNumberentry.get()) # Number of tiles
-VornoiIterations = int(VornoiIterationsentry.get()) # Number of iterations of Lloyd's algorithm
+VoronoiIterations = int(VoronoiIterationsentry.get()) # Number of iterations of Lloyd's algorithm
 Delta = float(Deltaentry.get()) # Tile dilation factor (recommend 0.8), smaller values reduce tile overlap
 Increment = float(Incremententry.get()) # Amount tile corners are moved in each iteration (recommend 1 to start)
 TileIterations = int(TileIterationsentry.get()) # Number of iterations for tile adjustment algorithm (gradient descent)
@@ -236,7 +236,7 @@ orient0norm = orient0/np.sqrt(orient0**2+orient1**2)
 orient1norm = orient1/np.sqrt(orient0**2+orient1**2)
 
 # Lloyd's algorithm using oriented rectangular pyramids instead of cones
-def vornoi(beta = 1.0, penalty = 0.0, n=50, inputDiagram = None):
+def voronoi(beta = 1.0, penalty = 0.0, n=50, inputDiagram = None):
     x0 = np.repeat([np.arange(0,shape0)],shape1,0).T
     x1 = np.repeat([np.arange(0,shape1)],shape0,0)
     if inputDiagram is None:
@@ -275,24 +275,24 @@ def vornoi(beta = 1.0, penalty = 0.0, n=50, inputDiagram = None):
         diagram[:,:,0] = np.minimum(diagram[:,:,0],layer[:,:,0])
     return diagram
 
-def iterativeVornoi(iterations = 1, beta = 1.0, penalty = 0.0, n=50):
+def iterativeVoronoi(iterations = 1, beta = 1.0, penalty = 0.0, n=50):
     inputDiagram = None
     for i in range(iterations):
-        inputDiagram = vornoi(beta, penalty, n, inputDiagram)
+        inputDiagram = voronoi(beta, penalty, n, inputDiagram)
     return inputDiagram
 
-# Calculating Vornoi diagram
-finalVornois = iterativeVornoi(VornoiIterations,Beta,EdgePenalty,TileNumber)
-finalVornoi = finalVornois[:,:,1]
+# Calculating Voronoi diagram
+finalVoronois = iterativeVoronoi(VoronoiIterations,Beta,EdgePenalty,TileNumber)
+finalVoronoi = finalVoronois[:,:,1]
 
-# Coloring Vornoi Diagram with mean of colors in each region
-def colorVornoi():
-    tileCount = np.nanmax(finalVornoi)+1
+# Coloring Voronoi Diagram with mean of colors in each region
+def colorVoronoi():
+    tileCount = np.nanmax(finalVoronoi)+1
     crystallized = image
-    colorVornoi = finalVornoi.reshape(shape0,shape1,1)
+    colorVoronoi = finalVoronoi.reshape(shape0,shape1,1)
     for i in range(tileCount):
-        color = np.nanmean(np.where(colorVornoi == i, 1,np.NaN)*crystallized,(0,1)).astype(int)
-        crystallized = np.where(colorVornoi == i, color,crystallized)
+        color = np.nanmean(np.where(colorVoronoi == i, 1,np.NaN)*crystallized,(0,1)).astype(int)
+        crystallized = np.where(colorVoronoi == i, color,crystallized)
     return crystallized
 
 # Generation of a binary matrix approximating a circular mask
@@ -312,7 +312,7 @@ def coneStroke(image, R):
 
 # Creating polygons from centroid position, orientation map, and shape parameters
 def polygons(beta=1.0, delta = 0.8):
-    N = np.nanmax(finalVornoi)
+    N = np.nanmax(finalVoronoi)
     x0 = np.repeat([np.arange(0,shape0)],shape1,0).T
     x1 = np.repeat([np.arange(0,shape1)],shape0,0)
     dim = delta*math.sqrt(shape0*shape1/N)
@@ -320,8 +320,8 @@ def polygons(beta=1.0, delta = 0.8):
     polygons = []
     pointArray = []
     for i in range(1,N+1):
-        c0 = np.nanmean(np.where(finalVornoi == i, x0, np.NaN))
-        c1 = np.nanmean(np.where(finalVornoi == i, x1, np.NaN))
+        c0 = np.nanmean(np.where(finalVoronoi == i, x0, np.NaN))
+        c1 = np.nanmean(np.where(finalVoronoi == i, x1, np.NaN))
         c0Int =int(round(c0))
         c1Int =int(round(c1))
         u0 = orient0norm[c0Int,c1Int]
