@@ -42,7 +42,7 @@ Next, the distance function for any 2 pixels (represented as vectors in RBG spac
 
 <img src="images/Equation3.png" width="250">
 
-The magnitude of the difference is equal to the sum of squared differences in RGB values, and the sign is equal to the sign of the sum of differences in RGB values.
+The magnitude of the difference is equal to the sum of squared differences in RGB values, and the sign is equal to the sign of the sum of differences in RGB values. This makes the distance sensitive to hue differences as long as the total intensity is not exactly the same.
 
 Next, the matrices are calculated with weighted difference between each pixel and the center pixel.
 
