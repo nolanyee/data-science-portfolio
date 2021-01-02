@@ -15,7 +15,7 @@ The graphical user interface enables the user to set any of the parameters used 
 
 <img src="images/GUI.png" width="500">
 
-If nothing is changed the default settings will be used. The input image file path and name and output file path are mandatory. The input image should ideally be a color image, for example this medieval Byzantine fresco
+If nothing is changed the default settings will be used. The input image file path and name and output file path are mandatory. The input image should ideally be a color image, like this medieval Byzantine fresco below:
 
 <img src="images/InputImage.jpg" width="350">
 
@@ -23,4 +23,12 @@ Once everything is filled out, press "OK" and the calculation will begin. When c
 
 <img src="images/Output.png" width="900">
 
-The file names are MosaicDiffuse.png, MosaicSpecular.png, MosaicDepth.png, and MosaicNormal.png
+The meaning of all the plots above are discussed in the sections below.
+
+The file names are MosaicDiffuse.png, MosaicSpecular.png, MosaicDepth.png, and MosaicNormal.png. If the script is run again, it will save over the original files. If the original files are to be kept, rename them, move them to a different folder, or save the new files in a different folder.
+
+## Technical Details
+### Gradient Calculation
+
+
+
