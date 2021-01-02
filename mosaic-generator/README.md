@@ -88,7 +88,7 @@ Vornoi diagram generation begins with placing a user specified number of centroi
 
 As in Hauser's method, the aspect ratio factor is included to stretch tiles near edges. This results in the following pyramids and Vornoi diagram.
 
-<img src="images/InitialPyramids.png" width="350"><img src="images/InitialVornoi.png" width="350">
+<img src="images/InitialPyramids.png" width="350"><img src="images/InitalVornoi.png" width="350">
 
 A binary edge mask is created from the gradient map of the original image by setting points above a user specified threshold to 1 and all other points to 0. This is used later on to move Vornoi regions away from edges, ensuring the the tiles end up along the edges instead of overlapping them.
 
@@ -99,7 +99,9 @@ Using this edge mask, pixels that lie on edges can be disregarded to weighted sm
 
 After calculating the centroids, the pyramids are recalculated and the process is iterated. After a user specified number of iterations, the final Vornoi diagram is obtained.
 
-<img src="images/FinalPyramids.png" width="350"><img src="images/FinalVornoi.png" width="350">
+<img src="images/FinalPyramids.png" width="350"><img src="images/FinalVornoi.png" width="350"><img src="images/ColoredVornoi.png" width="350">
+
+
 
 
 
