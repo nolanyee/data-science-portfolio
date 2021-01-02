@@ -72,6 +72,16 @@ Finally, using the filtered gradient, cones are calculated for all points above 
 <img src="images/Figure1.png" width="900">
 <img src="images/Cones.png" width="350">
 
+Due to the noisy nature of the gradient maps, sometimes features may appear as dotted lines. Therefore a Gaussian filter with a user specified radius is used to smooth the features.
+
+<img src="images/BlurredCones.png" width="350">
+
+The gradient of the result is taken using a Sobel filter. This results in a direction field that will orient the tiles.
+
+<img src="images/SobelCones.png" width="350">
+
+### Vornoi Diagram Generation
+
 In addition, a binary edge mask is created by setting points above a user specified threshold to 1 and all other points to 0. This is used later on to move Vornoi regions away from edges, ensuring the the tiles end up along the edges instead of overlapping them.
 
 <img src="images/Figure3.png" width="600">
