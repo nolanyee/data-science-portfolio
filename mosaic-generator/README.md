@@ -67,7 +67,7 @@ Next, all points with gradient less than a user specified threshold are set to z
 <img src="images/Figure2.png" width="600">
 <img src="images/Mixed.png" width="350">
 
-Finally, using the filtered gradient, cones are calculated in separate layers for all points above a user defined threshold, and at each pixel the height of the layer with the largest magnitude is chosen. The height of the cones is set based on the magnitude of the gradient. An upper limit to cone height is set by the user to make all featues above a certain magnitude equal. These features that are at the maximum height are the major features. Minor features may often be covered up by the larger ones, except when major features are far away.
+Finally, using the filtered gradient, cones are calculated in separate layers for all points above a user defined threshold, and at each pixel the height of the layer with the highest value is chosen. The height of the cones is set based on the magnitude of the gradient. An upper limit to cone height is set by the user to make all featues above a certain magnitude equal. These features that are at the maximum height are the major features. Minor features may often be covered up by the larger ones, except when major features are far away.
 
 <img src="images/Figure1.png" width="900">
 <img src="images/Cones.png" width="350">
@@ -104,6 +104,8 @@ After calculating the centroids, the pyramids are recalculated and the process i
 The resulting diagram (left) is compared to the mosaic filter (middle) and the crystallize filter (right) from Adobe Photoshop, all generated with a similar tile size. The mosaif filter uses evenly spaced square grid tiles, similar to the initial condition described above, except without orientation information. The crstallize filter is similar to a Vornoi diagram generated using circular cones instead of oriented pyramids.
 
 <img src="images/ColoredVornoi.png" width="250"><img src="images/PhotoshopMosaic.png" width="250"><img src="images/PhotoshopCrystallize.png" width="250">
+
+From the results it is clear that using oriented rectangular pyramids gives superior results than using a grid or a basic Vornoi diagram. The consideration of orietnation allows the image to be more accurately represented with similar sized tiles.
 
 
 
