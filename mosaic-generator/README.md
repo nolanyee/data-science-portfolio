@@ -12,4 +12,7 @@ For purposes of graphic design or texturing architectural 3D models, sometimes i
 
 ### Usage
 The graphical user interface enables the user to set any of the parameters used in the mosaic generation.
-<img src="images/GUI.png" width="400">
+
+<img src="images/GUI.png" width="500">
+
+
