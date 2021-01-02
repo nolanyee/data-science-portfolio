@@ -15,4 +15,12 @@ The graphical user interface enables the user to set any of the parameters used 
 
 <img src="images/GUI.png" width="500">
 
+If nothing is changed the default settings will be used. The input image file path and name and output file path are mandatory. The input image should ideally be a color image, for example
 
+<img src="images/InputImage.jpg" width="400">
+
+Once everything is filled out, press "OK" and the calculation will begin. When calculation is finished, the following window will appear and the files will have been saved.
+
+<img src="images/Output.png" width="900">
+
+The file names are MosaicDiffuse.png, MosaicSpecular.png, MosaicDepth.png, and MosaicNormal.png
