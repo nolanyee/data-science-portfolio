@@ -101,9 +101,9 @@ After calculating the centroids, the pyramids are recalculated and the process i
 
 <img src="images/FinalPyramids.png" width="350"><img src="images/FinalVornoi.png" width="350">
 
-The resulting diagram (left) is compared to the mosaic filter (middle) and the crystallize filter (right) from Adobe Photoshop. The mosaif filter uses evenly spaced square grid tiles, similar to the initial condition described above, except without orientation information. The crstallize filter is similar to a Vornoi diagram generated using circular cones instead of oriented pyramids.
+The resulting diagram (left) is compared to the mosaic filter (middle) and the crystallize filter (right) from Adobe Photoshop, all generated with a similar tile size. The mosaif filter uses evenly spaced square grid tiles, similar to the initial condition described above, except without orientation information. The crstallize filter is similar to a Vornoi diagram generated using circular cones instead of oriented pyramids.
 
-<img src="images/ColoredVornoi.png" width="250"><img src="images/PhotoshopMosaic.png" width="250"><img src="images/PhotoshopCrystalize.png" width="250">
+<img src="images/ColoredVornoi.png" width="250"><img src="images/PhotoshopMosaic.png" width="250"><img src="images/PhotoshopCrystallize.png" width="250">
 
 
 
