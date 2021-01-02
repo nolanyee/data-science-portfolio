@@ -119,7 +119,7 @@ For each tile, pyramids are created using erosion and dilation. These are differ
 
 The result is used to generate a gradient map using Sobel filters. Then each corner of each tile is moved by a user defined increment in the descending direction of the local gradient. The tiles are rendered again, and the new pyramids and corresponding gradient map are re-calculated. Then the incremental gradient descent is performed again. A this process is iterated, the corners move away from the centers of other tiles and towards the space between tiles. This results in the gradual reduction of space between tiles as well as tile overlap. 
 
-<img src="images/Iteration0.png" width="250"><img src="images/Iteration1.png" width="250"><img src="images/Iteration2.png" width="250"><img src="images/Iteration3.png" width="250"><img src="images/Iteration4.png" width="250">
+<img src="images/Iteration0.png" width="250"><img src="images/Iteration1.png" width="250"><img src="images/Iteration3.png" width="250"><img src="images/Iteration4.png" width="250">
 
 Note that if tile overlap is already severe when tiles are initially drawn, the iterative gradient descent may result in tiles that completely cross each other. This is best avoided by choosing a smaller tile size parameter so that overlap is minimized at the beginning.
 
