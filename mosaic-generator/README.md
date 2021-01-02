@@ -95,7 +95,7 @@ A binary edge mask is created from the gradient map of the original image by set
 <img src="images/Figure3.png" width="600">
 <img src="images/EdgeMask.png" width="350">
 
-Using this edge mask, pixels that lie on edges can be disregarded to weighted smaller than other pixels (with a user specified weight) when each regions pixel coordinates are averaged to determine the centroid. As with Hausner's method, this ensures tiles move away from edges.
+Using this edge mask, pixels that lie on edges can be disregarded or weighted smaller than other pixels (with a user specified weight) when each regions pixel coordinates are averaged to determine the centroid. As with Hausner's method, this ensures tiles move away from edges.
 
 After calculating the centroids, the pyramids are recalculated and the process is iterated. After a user specified number of iterations, the final Voronoi diagram is obtained.
 
