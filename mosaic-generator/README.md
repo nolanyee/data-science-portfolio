@@ -58,21 +58,21 @@ The resulting gradient map is shown below on the left, and compared with the Sob
 
 <img src="images/CustomGradient.png" width="400"><img src="images/Sobel.png" width="400">
 
-Note how the thick black lines in the original image show up in the custom gradient magnitude map. The Sobel filter has slightly more fine detail. Therefore, a user defined linear combination of the two maps is used in the next steps.
+Note how the thick black lines in the original image show up in the custom gradient magnitude map. The Sobel filter has slightly more fine detail. Therefore, a user-defined linear combination of the two maps is used in the next steps.
 
-Since both maps contain noise, a reduction in noise is achieved by using a uniform filter with a user specified number of pixels. This penalizes high gradient points in the map that are isolated. 
+Since both maps contain noise, a reduction in noise is achieved by using a uniform filter with a user-specified number of pixels. This penalizes high gradient points in the map that are isolated. 
 
-Next, all points with gradient less than a user specified threshold are set to zero to reduce noise further.
+Next, all points with gradient less than a user-specified threshold are set to zero to reduce noise further.
 
 <img src="images/Figure2.png" width="600">
 <img src="images/Mixed.png" width="350">
 
-Finally, using the filtered gradient, cones are calculated in separate layers for all points above a user defined threshold, and at each pixel the height of the layer with the highest value is chosen. The height of the cones is set based on the magnitude of the gradient. An upper limit to cone height is set by the user to make all features above a certain magnitude equal. These features that are at the maximum height are the major features. Minor features may often be covered up by the larger ones, except when major features are far away.
+Finally, using the filtered gradient, cones are calculated in separate layers for all points above a user-defined threshold, and at each pixel the height of the layer with the highest value is chosen. The height of the cones is set based on the magnitude of the gradient. An upper limit to cone height is set by the user to make all features above a certain magnitude equal. These features that are at the maximum height are the major features. Minor features may often be covered up by the larger ones, except when major features are far away.
 
 <img src="images/Figure1.png" width="900">
 <img src="images/Cones.png" width="350">
 
-Due to the noisy nature of the gradient maps, sometimes features may appear as dotted lines. Therefore a Gaussian filter with a user specified radius is used to smooth the features.
+Due to the noisy nature of the gradient maps, sometimes features may appear as dotted lines. Therefore a Gaussian filter with a user-specified radius is used to smooth the features.
 
 <img src="images/BlurredCones.png" width="350">
 
@@ -82,7 +82,7 @@ The gradient of the result is taken using a Sobel filter. This results in a dire
 
 ### Voronoi Diagram Generation
 
-Voronoi diagram generation begins with placing a user specified number of centroids evenly spaced throughout the image. Pyramids are calculated for each centroid, using the directional field to orient the pyramids, similar to Hausner's method. However, rather than using Manhattan distance, which has the corners aligned with the orientation axis, the equation used to generate the pyramids is as follows, where u is the orientation vector and v is the perpendicular vector.
+Voronoi diagram generation begins with placing a user-specified number of centroids evenly spaced throughout the image. Pyramids are calculated for each centroid, using the directional field to orient the pyramids, similar to Hausner's method. However, rather than using Manhattan distance, which has the corners aligned with the orientation axis, the equation used to generate the pyramids is as follows, where u is the orientation vector and v is the perpendicular vector.
 
 <img src="images/Equation6.png" width="350">
 
@@ -90,14 +90,14 @@ As in Hausner's method, the aspect ratio factor is included to stretch tiles nea
 
 <img src="images/InitialPyramids.png" width="350"><img src="images/InitalVornoi.png" width="350">
 
-A binary edge mask is created from the gradient map of the original image by setting points above a user specified threshold to 1 and all other points to 0. This is used later on to move Voronoi regions away from edges, ensuring the tiles end up along the edges instead of overlapping them.
+A binary edge mask is created from the gradient map of the original image by setting points above a user-specified threshold to 1 and all other points to 0. This is used later on to move Voronoi regions away from edges, ensuring the tiles end up along the edges instead of overlapping them.
 
 <img src="images/Figure3.png" width="600">
 <img src="images/EdgeMask.png" width="350">
 
-Using this edge mask, pixels that lie on edges can be disregarded or weighted smaller than other pixels (with a user specified weight) when each regions pixel coordinates are averaged to determine the centroid. As with Hausner's method, this ensures tiles move away from edges.
+Using this edge mask, pixels that lie on edges can be disregarded or weighted smaller than other pixels (with a user-specified weight) when each regions pixel coordinates are averaged to determine the centroid. As with Hausner's method, this ensures tiles move away from edges.
 
-After calculating the centroids, the pyramids are recalculated and the process is iterated. After a user specified number of iterations, the final Voronoi diagram is obtained.
+After calculating the centroids, the pyramids are recalculated and the process is iterated. After a user-specified number of iterations, the final Voronoi diagram is obtained.
 
 <img src="images/FinalPyramids.png" width="350"><img src="images/FinalVornoi.png" width="350">
 
@@ -109,7 +109,7 @@ From the results it is clear that using oriented rectangular pyramids gives supe
 
 ### Tile Adjustment
 
-From the final Voronoi diagram, exact centroids are calculated for each region (not rounded to the nearest pixel). Using the user defined aspect ratio factor, the directional field, and a user specified size parameter, the coordinates of the corners of each rectangle are calculated. Each tile is stored as a list of 4 corner points. The tiles are rendered as polygons using matplotlib. 
+From the final Voronoi diagram, exact centroids are calculated for each region (not rounded to the nearest pixel). Using the user-defined aspect ratio factor, the directional field, and a user-specified size parameter, the coordinates of the corners of each rectangle are calculated. Each tile is stored as a list of 4 corner points. The tiles are rendered as polygons using matplotlib. 
 
 <img src="images/Iteration0.png" width="350">
 
@@ -117,7 +117,7 @@ For each tile, pyramids are created using erosion and dilation. These are differ
 
 <img src="images/TilePyramids.png" width="450">
 
-The result is used to generate a gradient map using Sobel filters. Then each corner of each tile is moved by a user defined increment in the descending direction of the local gradient. The tiles are rendered again, and the new pyramids and corresponding gradient map are re-calculated. Then the incremental gradient descent is performed again. As this process is iterated, the corners move away from the centers of other tiles and towards the space between tiles. This results in the gradual reduction of space between tiles as well as tile overlap. 
+The result is used to generate a gradient map using Sobel filters. Then each corner of each tile is moved by a user-defined increment in the descending direction of the local gradient. The tiles are rendered again, and the new pyramids and corresponding gradient map are re-calculated. Then the incremental gradient descent is performed again. As this process is iterated, the corners move away from the centers of other tiles and towards the space between tiles. This results in the gradual reduction of space between tiles as well as tile overlap. 
 
 <img src="images/Iteration0.png" width="250"><img src="images/Iteration1.png" width="250"><img src="images/Iteration3.png" width="250"><img src="images/Iteration4.png" width="250">
 
@@ -125,7 +125,7 @@ Note that if tile overlap is already severe when tiles are initially drawn, the 
 
 ### Rendering
 
-For the diffuse map, the color of each tile is determined as the average of the color of the original image covered by each tile. The space between tiles is colored with a user specified grout color. The normal map and depth map are generated by randomly moving and tilting tiles along the z axis. The specular color map is a binary map of the tiles, since tiles are generally more reflective than grout. This can be colorized or adjusted with any image processing software.
+For the diffuse map, the color of each tile is determined as the average of the color of the original image covered by each tile. The space between tiles is colored with a user-specified grout color. The normal map and depth map are generated by randomly moving and tilting tiles along the z axis. The specular color map is a binary map of the tiles, since tiles are generally more reflective than grout. This can be colorized or adjusted with any image processing software.
 
 
 <img src="images/tileColor.png" width="250"><img src="images/tileDepth.png" width="250"><img src="images/tileNormal.png" width="250"><img src="images/tileSpecular.png" width="250">
@@ -138,13 +138,6 @@ When all these are rendered together using 3D rendering software, the following 
 ### Discussion
 
 The final results of this mosaic generation process are far superior to Adobe Photoshop filters. The entire process is automated, including detection of features in the image, which is an improvement on the method described by Hausner. Additionally, the iterative gradient descent process for corner adjustment yields mosaics with less space between tiles compared with Hausner's method. The generation of depth maps, normal maps, and specular color maps also enables this program to be extended for texturing 3D graphics.
-
-
-
-
-
-
-
 
 
 
