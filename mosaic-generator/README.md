@@ -34,13 +34,13 @@ The first step in generating the mosaic is calculating the gradient of the image
 
 The first step in gradient calculation is to calulate the weight matrices for the x and y components. The weight is equivalent to the normalized x or y component (respectively) of the vector from the center of the matrix to each other point in the matrix.
 
-<img src="images/Equation1.png" width="600">
+<img src="images/Equation1.png" width="622">
 
-Next, the distance function is calculated as follows.
+Next, the distance function for any 2 pixels (reprsented as vetors in RBG space) is calculated as follows.
 
-<img src="images/Equation2.png" width="300">
+<img src="images/Equation2.png" width="240">
 
-<img src="images/Equation3.png" width="600">
+<img src="images/Equation3.png" width="170">
 
 
 
