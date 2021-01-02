@@ -107,6 +107,11 @@ The resulting diagram (left) is compared to the mosaic filter (middle) and the c
 
 From the results it is clear that using oriented rectangular pyramids gives superior results than using a grid or a basic Vornoi diagram. The consideration of orietnation allows the image to be more accurately represented with similar sized tiles.
 
+### Tile Adjustment
+
+From the final Vornoi diagram, exact centroids are calculated for each region (not rounded to the nearest pixel). Using the user defined aspect ratio factor, the directional field, and a user specified size parameter, the coordinates of the corners of each rectangle are calculated. Each tile is stored as a list of 4 corner points. The tiles are rendered as polygons using matplotlib. 
+
+<img src="images/Iteration0.png" width="350">
 
 
 
