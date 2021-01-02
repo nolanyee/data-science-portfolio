@@ -1,6 +1,6 @@
 '''
 This program converts an image to a mosaic. The output is an image (diffuse), depth map, normal map, and specular map.
-The algorithm builds upon the work of A. Hauser. Simulating Decorative Mosaics. SIGGRAPH'01: 573-580, 2001.
+The algorithm builds upon the work of A. Hausner. Simulating Decorative Mosaics. SIGGRAPH'01: 573-580, 2001.
 '''
 
 import scipy.ndimage
