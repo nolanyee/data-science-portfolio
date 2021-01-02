@@ -137,8 +137,7 @@ When all these are rendered together using 3D rendering software, the following 
 
 Rendering with even more tiles produces a more detailed result.
 
-<img src="images/Rendered4000.png" width="450" height="332">
-
+<img src="images/Rendered4000.png" width="450">
 
 ### Discussion
 
