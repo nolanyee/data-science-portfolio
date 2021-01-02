@@ -42,6 +42,19 @@ Next, the distance function for any 2 pixels (reprsented as vetors in RBG space)
 
 <img src="images/Equation3.png" width="250">
 
+The magnitude of the difference is equal to the sum of squared differences in RGB values, and the sign is equal to the sign of the sum of differences in RGB values.
+
+Next, the matrices are calculated with weighted difference between each pixel and the center pixel.
+
+<img src="images/Equation4.png" width="350">
+
+Finally, the magnitude of the gradient is calculated as follows.
+
+<img src="images/Equation4.png" width="550">
+
+
+
+
 
 
 
