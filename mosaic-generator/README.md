@@ -34,7 +34,7 @@ The first step in generating the mosaic is calculating the gradient of the image
 
 The first step in gradient calculation is to calulate the weight matrices for the x and y components.
 
-<img src="images/Equation1.png" width="300">
+<img src="images/Equation1.png" width="700">
 
 
 
