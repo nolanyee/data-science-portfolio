@@ -32,9 +32,16 @@ The file names are MosaicDiffuse.png, MosaicSpecular.png, MosaicDepth.png, and M
 
 The first step in generating the mosaic is calculating the gradient of the image. A Sobel filter is a simple method that is employed for this purpose. However, this filter only takes into consideration the neighboring pixels, which may not be appropriate in cases where the image is high resolution, or where features are thick outlines rather than edges. In addition, the Sobel filter can only be applied to the channel sum or magnitude of color images, making it less sensitive to changes in hue. Therefore in addition to the Sobel filter, a custom method of calculating the gradient is used. This custom method allows the specification of the number of pixels on each side that will be used to calculate the gradient. In addition, rather than using the usual convolution procedure, a modified procedure is employed to catch outlines as well as edges.
 
-The first step in gradient calculation is to calulate the weight matrices for the x and y components.
+The first step in gradient calculation is to calulate the weight matrices for the x and y components. The weight is equivalent to the normalized x or y component (respectively) of the vector from the center of the matrix to each other point in the matrix.
 
-<img src="images/Equation1.png" width="700">
+<img src="images/Equation1.png" width="600">
+
+Next, the distance function is calculated as follows.
+
+<img src="images/Equation2.png" width="300">
+
+<img src="images/Equation3.png" width="600">
+
 
 
 
