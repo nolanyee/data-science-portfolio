@@ -50,7 +50,7 @@ Next, the matrices are calculated with weighted difference between each pixel an
 
 Finally, the magnitude of the gradient is calculated as follows.
 
-<img src="images/Equation4.png" width="550">
+<img src="images/Equation5.png" width="550">
 
 
 
