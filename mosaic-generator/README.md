@@ -133,7 +133,7 @@ For the diffuse map, the color of each tile is determined as the average of the 
 When all these are rendered together using 3D rendering software, the following (left) is obtained. Compared with the mosaic texture filter in Photoshop (right), the final results represent a mosaic much more convincingly, whereas the Photoshop filter looks like an image painted over tiles.
 
 
-<img src="images/RenderedMosaic.png" width="350"><img src="images/PhotoshopTexture.png" width="350">
+<img src="images/RenderedMosaic.png" width="350" height="332"><img src="images/PhotoshopTexture.png" width="350">
 
 ### Discussion
 
