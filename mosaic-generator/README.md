@@ -58,7 +58,17 @@ The resulting gradient map is shown below on the left, and compared with the Sob
 
 <img src="images/CustomGradient.png" width="400"><img src="images/Sobel.png" width="400">
 
-Note how the thick black lines in the original image show up in the custom gradient magnitude map.
+Note how the thick black lines in the original image show up in the custom gradient magnitude map. The Sobel filter has slightly more fine detail. Therefore, a user defined linear combination of the two maps is used in the next steps.
+
+Since both maps contain noise, a reduction in noise is achieved by using a uniform filter with a user specified number of pixels. This penalizes high gradient points in the map that are isolated. 
+
+Next, all points with gradient less than a user specified threshold are set to zero to reduce noise further.
+
+<img src="images/Figure2.png" width="400">
+
+
+
+
 
 
 
