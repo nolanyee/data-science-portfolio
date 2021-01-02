@@ -13,7 +13,7 @@ For purposes of graphic design or texturing architectural 3D models, sometimes i
 ### Usage
 The graphical user interface enables the user to set any of the parameters used in the mosaic generation.
 
-<img src="images/GUI.png" width="500">
+<img src="images/GUI_Screenshot.png" width="500">
 
 If nothing is changed the default settings will be used. The input image file path and name and output file path are mandatory. The input image should ideally be a color image, like this medieval Byzantine fresco below:
 
