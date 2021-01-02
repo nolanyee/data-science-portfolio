@@ -10,6 +10,7 @@ The projects focus on solving interesting and diverse problems using a variety o
 [Literary Pattern Analyzer](literary-pattern-analyzer/README.md)\
 [Bayesian Network Investigator](bayesian-investigator/README.md)\
 [Movie Recommender Model](movie-recommender/MovieRecommenderSystem.pdf)\
+[Mosaic Generator](mosaic-generator/README.md)\
 [Maze and Labyrinth Generator](maze-labyrinth-generator/README.md)
 
 #### *Skills Summary*
@@ -30,6 +31,10 @@ The projects focus on solving interesting and diverse problems using a variety o
   * [__Style Transfer Implementation__](style-transfer/README.md): Inputs an image of a painting and a photograph, and applies the painting style to the photograph using a pre-trained convolutional neural network. This is a flexible implementation of L. A. Gatys, A. S. Ecker, M. Bethge. *Image Style Transfer Using Convolutional Neural Networks*. In IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2016.
   
     * *Skills: Python, Image Processing, Convolutional Neural Networks, Gradient Descent*
+  
+  * [__Mosaic Generator__](mosaic-generator/README.md): Inputs an image and outputs diffuse, depth, normal, and specular maps of a mosaic version of the image. This extends and builds upon work found in the article A. Hausner. *Simulating Decorative Mosaics.* In SIGGRAPH'01: 573-580, 2001.
+  
+    * *Skills: Python, Image Processing, Linear Algebra, Multivariable Calculus, Algorithms, Visualization*  
   
   * [__Handwritten Digit Recognition__](digit-recognition/HandwrittenDigitRecognition.pdf): Uses a neural network to classify handwritten digits from the NIST dataset - a classic problem, but a useful introduction to image recognition.
     * *Skills: Python, Image Recognition, Neural Networks*
