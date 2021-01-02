@@ -137,7 +137,7 @@ When all these are rendered together using 3D rendering software, the following 
 
 ### Discussion
 
-
+The final results of this mosaic generation process are far superior than Adobe Photoshop filters. The entire process is automated, including detection of features in the image, which is an improvement on the method described by Hauser. Additionally, the iterative gradient descent process for corner adjustment yields mosaics with less space between tiles compared with Hauser's method.
 
 
 
