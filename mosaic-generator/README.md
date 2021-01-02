@@ -54,9 +54,10 @@ Finally, the magnitude of the gradient is calculated as follows.
 
 The differences on each side of the central pixel are summed separately, then the absolute values of both sums are added together. This enables the detection of outlines by preventing the differences on each side from cancelling out. Finally, the root mean square is calculated for the resulting x and y differences.
 
-The resulting gradient map is shown below.
+The resulting gradient map is shown below on the left, and compared with the Sobel magnitude on the right.
 
-<img src="images/CustomGradient.png" width="450">
+<img src="images/CustomGradient.png" width="400"><img src="images/Sobel.png" width="400">
+
 
 
 
