@@ -82,11 +82,11 @@ The gradient of the result is taken using a Sobel filter. This results in a dire
 
 ### Vornoi Diagram Generation
 
-Vornoi diagram generation begins with placing a user specified number of centroids evenly spaced throghout the image. Pyramids are calculated for each centroid, using the directional field to orient the pyramids, similar to Hauser's method. However, rather than using Manhattan distance, which has the corners aligned with the orientation axis, the equation used to generate the pyramids is as follows, where u is the orientation vector and v is the perpendicular vector.
+Vornoi diagram generation begins with placing a user specified number of centroids evenly spaced throghout the image. Pyramids are calculated for each centroid, using the directional field to orient the pyramids, similar to Hausner's method. However, rather than using Manhattan distance, which has the corners aligned with the orientation axis, the equation used to generate the pyramids is as follows, where u is the orientation vector and v is the perpendicular vector.
 
 <img src="images/Equation6.png" width="350">
 
-As in Hauser's method, the aspect ratio factor is included to stretch tiles near edges. This results in the following pyramids and Vornoi diagram.
+As in Hausner's method, the aspect ratio factor is included to stretch tiles near edges. This results in the following pyramids and Vornoi diagram.
 
 <img src="images/InitialPyramids.png" width="350"><img src="images/InitalVornoi.png" width="350">
 
@@ -95,13 +95,13 @@ A binary edge mask is created from the gradient map of the original image by set
 <img src="images/Figure3.png" width="600">
 <img src="images/EdgeMask.png" width="350">
 
-Using this edge mask, pixels that lie on edges can be disregarded to weighted smaller than other pixels (with a user specified weight) when each regions pixel coordinates are averaged to determine the centroid. As with Hauser's method, this ensures tiles move away from edges.
+Using this edge mask, pixels that lie on edges can be disregarded to weighted smaller than other pixels (with a user specified weight) when each regions pixel coordinates are averaged to determine the centroid. As with Hausner's method, this ensures tiles move away from edges.
 
 After calculating the centroids, the pyramids are recalculated and the process is iterated. After a user specified number of iterations, the final Vornoi diagram is obtained.
 
 <img src="images/FinalPyramids.png" width="350"><img src="images/FinalVornoi.png" width="350">
 
-The resulting diagram (left) is compared to the mosaic filter (middle) and the crystallize filter (right) from Adobe Photoshop, all generated with a similar tile size. The mosaif filter uses evenly spaced square grid tiles, similar to the initial condition described above, except without orientation information. The crstallize filter is similar to a Vornoi diagram generated using circular cones instead of oriented pyramids.
+The resulting diagram (left) is compared to the mosaic filter (middle) and the crystallize filter (right) from Adobe Photoshop, all generated with a similar tile size. The mosaif filter uses evenly spaced square grid tiles, similar to the initial condition described above, except without orientation information. The crystallize filter is similar to a Vornoi diagram generated using circular cones instead of oriented pyramids.
 
 <img src="images/ColoredVornoi.png" width="250"><img src="images/PhotoshopMosaic.png" width="250"><img src="images/PhotoshopCrystallize.png" width="250">
 
