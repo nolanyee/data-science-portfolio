@@ -113,6 +113,11 @@ From the final Vornoi diagram, exact centroids are calculated for each region (n
 
 <img src="images/Iteration0.png" width="350">
 
+For each tile, pyramids are created using erosion and dilation. These are different than the Vornoi diagram pyramids because they follow the tile shape exactly, and therefore do not have a single point as the apex unless the tile is perfectly square. The result is a gradient map.
+
+<img src="images/TilePyramids.png" width="450">
+
+
 
 
 
