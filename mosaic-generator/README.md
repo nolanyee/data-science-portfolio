@@ -46,7 +46,7 @@ The magnitude of the difference is equal to the sum of squared differences in RG
 
 Next, the matrices are calculated with weighted difference between each pixel and the center pixel.
 
-<img src="images/Equation4.png" width="350">
+<img src="images/Equation4.png" width="400">
 
 Finally, the magnitude of the gradient is calculated as follows.
 
