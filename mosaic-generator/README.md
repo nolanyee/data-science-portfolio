@@ -67,7 +67,7 @@ Next, all points with gradient less than a user specified threshold are set to z
 <img src="images/Figure2.png" width="600">
 <img src="images/Mixed.png" width="350">
 
-Finally, using the filtered gradient, cones are calculated for all points above a user defined threshold. The height of the cones is set based on the magnitude of the gradient. An upper limit to cone height is  set by the user to make all featues above a certain magnitude equal. These features that are at the maximum height are the major features. Minor features may often be covered up by the larger ones, except when major features are far away.
+Finally, using the filtered gradient, cones are calculated in separate layers for all points above a user defined threshold, and at each pixel the height of the layer with the largest magnitude is chosen. The height of the cones is set based on the magnitude of the gradient. An upper limit to cone height is set by the user to make all featues above a certain magnitude equal. These features that are at the maximum height are the major features. Minor features may often be covered up by the larger ones, except when major features are far away.
 
 <img src="images/Figure1.png" width="900">
 <img src="images/Cones.png" width="350">
@@ -99,7 +99,13 @@ Using this edge mask, pixels that lie on edges can be disregarded to weighted sm
 
 After calculating the centroids, the pyramids are recalculated and the process is iterated. After a user specified number of iterations, the final Vornoi diagram is obtained.
 
-<img src="images/FinalPyramids.png" width="350"><img src="images/FinalVornoi.png" width="350"><img src="images/ColoredVornoi.png" width="350">
+<img src="images/FinalPyramids.png" width="350"><img src="images/FinalVornoi.png" width="350">
+
+The resulting diagram (left) is compared to the mosaic filter (middle) and the crystallize filter (right) from Adobe Photoshop. The mosaif filter uses evenly spaced square grid tiles, similar to the initial condition described above, except without orientation information. The crstallize filter is similar to a Vornoi diagram generated using circular cones instead of oriented pyramids.
+
+<img src="images/ColoredVornoi.png" width="250"><img src="images/PhotoshopMosaic.png" width="250"><img src="images/PhotoshopCrystalize.png" width="250">
+
+
 
 
 
