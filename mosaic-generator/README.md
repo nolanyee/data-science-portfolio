@@ -64,7 +64,13 @@ Since both maps contain noise, a reduction in noise is achieved by using a unifo
 
 Next, all points with gradient less than a user specified threshold are set to zero to reduce noise further.
 
-<img src="images/Figure2.png" width="400">
+<img src="images/Figure2.png" width="600">
+<img src="images/Mixed.png" width="400">
+
+In addition, a binary edge mask is created by setting points above a user specified threshold to 1 and all other points to 0. This is used later on to move Vornoi regions away from edges, ensuring the the tiles end up along the edges instead of overlapping them.
+
+<img src="images/Figure3.png" width="600">
+<img src="images/EdgeMask.png" width="400">
 
 
 
