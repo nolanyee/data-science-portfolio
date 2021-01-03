@@ -139,7 +139,7 @@ Running the process with even more tiles produces a more detailed rendering.
 
 <img src="images/Rendered4000.png" width="450">
 
-In this case, the uniformity of tiles was sacrified to reduce space between tiles.
+In this case, the uniformity of tiles was sacrified to reduce space between tiles, by using a relatively large increment parameter during corner adjustment. This results in the more rustic look of the mosaic.
 
 ### Discussion
 
