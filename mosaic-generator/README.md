@@ -121,6 +121,8 @@ The result is used to generate a gradient map using Sobel filters. Then each cor
 
 <img src="images/Iteration0.png" width="250"><img src="images/Iteration1.png" width="250"><img src="images/Iteration3.png" width="250"><img src="images/Iteration4.png" width="250">
 
+Inevitably, the tiles will become less rectangular as the gradient descent progresses. The rectangularity score of tiles is calculated as one minus the average absolute value of the cosine of each angle in the quadrilateral. This score is raised to the power of the user-defined rectangularity parameter, which is then multiplied by the increment for each tile so that tiles that are more rectangular will be adjusted more than those that are less rectangular. This enables some control over the rectangularity of the tiles as the gradient descent progresses.
+
 Note that if tile overlap is already severe when tiles are initially drawn, the iterative gradient descent may result in tiles that completely cross each other. This is best avoided by choosing a smaller tile size parameter so that overlap is minimized at the beginning.
 
 Although tile adjustment results in reduced overlap and reduced space between tiles, it also results in tiles that are less rectangular, even some that are almost triangular. The tile shape can be balanced with space between tiles by adjusting the number of iterations. Smaller increments at each iteration also tend to make the adjustment more even between different tiles.
