@@ -145,7 +145,7 @@ This demonstrates that the parameters allow for flexibility in the overall style
 
 Another example using a different image is shown below. On the left is the original image, followed by the diffuse color output, and the final rendered mosaic combining all the output maps.
 
-<img src="images/Michael.png" width="350"><img src="images/MichaelDiffuse.png" width="350"><img src="images/MichaelRendered.png" width="350">
+<img src="images/Michael.png" width="300"><img src="images/MichaelDiffuse.png" width="300"><img src="images/MichaelRendered.png" width="300">
 
 ### Discussion
 
