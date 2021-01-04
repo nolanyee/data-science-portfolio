@@ -137,7 +137,7 @@ When all these are rendered together using 3D rendering software, the following 
 
 <img src="images/RenderedMosaic.png" width="350" height="332"><img src="images/PhotoshopTexture.png" width="350">
 
-Running the process with even more tiles produces a more detailed rendering. Below are the results varying the tile corner adjustment increment, aspect ratio, rectangularity, and shrinkage parameters
+Running the process with even more tiles produces a more detailed rendering. Below are the results varying the tile corner adjustment increment, aspect ratio, rectangularity, and shrinkage parameters. The parameters enable creation of mosaics in the *opus vermiculatum* style (left) or in the *opus palladianum* style (right).
 
 <img src="images/Rendered2.png" width="450"><img src="images/Rendered4000.png" width="450">
 
