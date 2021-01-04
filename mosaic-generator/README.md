@@ -135,11 +135,11 @@ When all these are rendered together using 3D rendering software, the following 
 
 <img src="images/RenderedMosaic.png" width="350" height="332"><img src="images/PhotoshopTexture.png" width="350">
 
-Running the process with even more tiles produces a more detailed rendering.
+Running the process with even more tiles produces a more detailed rendering. Below are the results varying the tile corner adjustment increment, aspect ratio, rectangularity, and shrinkage parameters
 
 <img src="images/Rendered2.png" width="450"><img src="images/Rendered4000.png" width="450">
 
-In this case, the uniformity of tiles was sacrified to reduce space between tiles, by using a relatively large increment parameter during corner adjustment. This results in the more rustic look of the mosaic.
+This demonstrates that the parameters allow for flexibility in the overall style of the final mosaic.
 
 ### Discussion
 
