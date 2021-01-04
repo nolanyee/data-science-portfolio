@@ -67,16 +67,17 @@ parameterfield('Increment','Tile Adjustment Increment',5,4,20)
 parameterfield('TileIterations','Tile Adjustment Iterations',5,5,21)
 parameterfield('DilationNumber','Dilation Radius',5,50,22)
 parameterfield('ErosionNumber','Erosion Radius',5,'',23)
+parameterfield('RectangleFactor','Rectangularity',5,0.0,24)
 
 headinglabel5 = Label(frame, text='TEXTURE GENERATION')
-headinglabel5.grid(row=24, column=0, sticky=E)
+headinglabel5.grid(row=25, column=0, sticky=E)
 
-parameterfield('Scale','Output Scale Factor',5,2.0,25)
-parameterfield('TiltAngle','Maximum Tilt Angle',5,10,26)
-parameterfield('TileDepth','Maximum Tile Depth',5,0.5,27)
-parameterfield('GroutDepth','Grout Depth',5,1,28)
-parameterfield('NormalDepth','Normal Map Depth Factor',5,1,29)
-parameterfield('GroutColor','Grout Color',10,'#333333',30)
+parameterfield('Scale','Output Scale Factor',5,2.0,26)
+parameterfield('TiltAngle','Maximum Tilt Angle',5,10,27)
+parameterfield('TileDepth','Maximum Tile Depth',5,0.5,28)
+parameterfield('GroutDepth','Grout Depth',5,1,29)
+parameterfield('NormalDepth','Normal Map Depth Factor',5,1,30)
+parameterfield('GroutColor','Grout Color',10,'#333333',31)
 
 def done():
     global loopactive
@@ -86,7 +87,7 @@ def done():
 
 okbutton =Button(frame, text='OK', command=done)
 
-okbutton.grid(row=31, column = 1, sticky = W)
+okbutton.grid(row=32, column = 1, sticky = W)
 
 while loopactive:
     window.update()
@@ -115,6 +116,7 @@ if ErosionNumberentry.get() is None or ErosionNumberentry.get() == '' or Erosion
     ErosionNumber = None
 else:
     ErosionNumber = int(ErosionNumberentry.get()) # Pixels to erode the tiles in generation of tile gradient
+RectangleFactor = float(RectangleFactorentry.get()) # Amount to enforce rectangularity of tiles (preferably 0 to 4)
 Scale = float(Scaleentry.get())/100 # Resolution is increased by the scale factor (since dpi = 100)
 TiltAngle = float(TiltAngleentry.get()) # Maximum angle (degrees) for tiles to be randomly tilted from flat
 TileDepth = float(TileDepthentry.get()) # Maximum depth for tiles to be randomly sunken, relative to tile size
@@ -365,7 +367,7 @@ def renderPolygons(polylist, scale = 0.05, close=True):
     return newimage
 
 # Adjust corners of polygon using iterative gradient decent, re-calculating gradient after each iteration
-def adjustCorners(polylist, increment = 1.0, outerN=50, innerN=None, scale=0.05):
+def adjustCorners(polylist, increment = 1.0, outerN=50, innerN=None, scale=0.05, rectanglePenalty=0.0):
     if innerN is None:
         innerN = int(round(2*math.sqrt(shape0*shape1/len(polylist[1])),0))
     raster = renderPolygons(polylist[0], scale)
@@ -377,6 +379,17 @@ def adjustCorners(polylist, increment = 1.0, outerN=50, innerN=None, scale=0.05)
     peaksize1 = peaks.shape[1]
     gradScale = peaks.shape[0]/shape0
     newpolylist = polylist[1]
+    newpolyarray = np.array(newpolylist)
+    differenceArray = newpolyarray
+    differenceArray[:, 0, :] = newpolyarray[:, 0, :] - newpolyarray[:, 1, :]
+    differenceArray[:, 1, :] = newpolyarray[:, 1, :] - newpolyarray[:, 2, :]
+    differenceArray[:, 2, :] = newpolyarray[:, 2, :] - newpolyarray[:, 3, :]
+    differenceArray[:, 3, :] = newpolyarray[:, 3, :] - newpolyarray[:, 0, :]
+    differenceArray = differenceArray/np.sqrt(np.nansum((differenceArray**2),2)).reshape(len(newpolylist),4,1)
+    rectangularity = ((4-np.abs((np.nansum(differenceArray[:,0,:]*differenceArray[:,1,:],1)))-
+                      np.abs((np.nansum(differenceArray[:,1,:]*differenceArray[:,2,:],1)))-
+                      np.abs((np.nansum(differenceArray[:,2,:]*differenceArray[:,3,:],1)))-
+                      np.abs((np.nansum(differenceArray[:,3,:]*differenceArray[:,0,:],1))))/4)**rectanglePenalty
     newpolygons = []
     for i in range(len(polylist[1])):
         for j in range(4):
@@ -388,22 +401,23 @@ def adjustCorners(polylist, increment = 1.0, outerN=50, innerN=None, scale=0.05)
                 newCoord0 = coord0
                 newCoord1 = coord1
             else:
-                newCoord0 = coord0+grad0[coord0Int, coord1Int]*increment*scale*72
-                newCoord1 = coord1+grad1[coord0Int, coord1Int]*increment*scale*72
+                newCoord0 = coord0+grad0[coord0Int, coord1Int]*increment*rectangularity[i]*scale*72
+                newCoord1 = coord1+grad1[coord0Int, coord1Int]*increment*rectangularity[i]*scale*72
             newpolylist[i][j][0]= newCoord1/gradScale
             newpolylist[i][j][1]= shape0-newCoord0/gradScale
         polygoni = matplotlib.patches.Polygon(newpolylist[i], closed=True, fill = True, color = "w")
         newpolygons.append(polygoni)
     return newpolygons, newpolylist
 
-def iterateCorners(polylist, iterations, increment = 1.0, outerN=50, innerN=None, scale=0.05):
+def iterateCorners(polylist, iterations, increment = 1.0, outerN=50, innerN=None, scale=0.05, rectanglePenalty=0.0):
     currentTesserae = polylist
     for i in range(iterations):
-        currentTesserae = adjustCorners(currentTesserae, increment, outerN, innerN, scale)
+        currentTesserae = adjustCorners(currentTesserae, increment, outerN, innerN, scale, rectanglePenalty)
     return currentTesserae
 
 # Adjust corners of tiles
-adjustedTesserae = iterateCorners(tesserae, TileIterations, Increment, DilationNumber, ErosionNumber, Scale)
+adjustedTesserae = iterateCorners(tesserae, TileIterations, Increment, DilationNumber,
+                                  ErosionNumber, Scale, RectangleFactor)
 
 # Create list of colors corresponding to each tile by taking the mean in each tile region
 def colorTesserae(polylist):
