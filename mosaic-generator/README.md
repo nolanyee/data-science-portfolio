@@ -143,6 +143,10 @@ Running the process with even more tiles produces a more detailed rendering. Bel
 
 This demonstrates that the parameters allow for flexibility in the overall style of the final mosaic.
 
+Another example using a different image is shown below. On the left is the original image, followed by the diffuse color output, and the final rendered mosaic combining all the output maps.
+
+<img src="images/Michael.png" width="350"><img src="images/MichaelDiffuse.png" width="350"><img src="images/MichaelRendered.png" width="350">
+
 ### Discussion
 
 The final results of this mosaic generation process are far superior to Adobe Photoshop filters. The entire process is automated, including detection of features in the image, which is an improvement on the method described by Hausner. Additionally, the iterative gradient descent process for corner adjustment yields mosaics with less space between tiles compared with Hausner's method. The generation of depth maps, normal maps, and specular color maps also enables this program to be extended for texturing 3D graphics.
