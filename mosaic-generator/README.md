@@ -13,7 +13,7 @@ For purposes of graphic design or texturing architectural 3D models, sometimes i
 ### Usage
 The graphical user interface enables the user to set any of the parameters used in the mosaic generation.
 
-<img src="images/GUI_Screenshot2.png" width="500">
+<img src="images/GUI_Screenshot3.png" width="500">
 
 If nothing is changed the default settings will be used. The input image file path and name and output file path are mandatory. The input image should ideally be a color image, like this medieval Byzantine fresco below:
 
@@ -67,6 +67,8 @@ Next, all points with gradient less than a user-specified threshold are set to z
 <img src="images/Figure2.png" width="600">
 <img src="images/Mixed.png" width="350">
 
+The program outputs the gradient magnitude maps for optional customization. These may be combined, touched up, or further edited using image editing software. Then the custom gradient map may be optionally uploaded and used in the next steps rather than using the calculated map. If no file is uploaded, the program proceeds by using the calculated gradient map above. (Note that thresholds described above are percentiles of the distribution of values in the image if the calculated map is used. However, manually created maps often have fewer grey areas, therefore the thresholds are instead interpreted as percentiles of a uniform distribution, which is equivalent to relative intensity).
+
 Finally, using the filtered gradient, cones are calculated in separate layers for all points above a user-defined threshold, and at each pixel the height of the layer with the highest value is chosen. The height of the cones is set based on the magnitude of the gradient. An upper limit to cone height is set by the user to make all features above a certain magnitude equal. These features that are at the maximum height are the major features. Minor features may often be covered up by the larger ones, except when major features are far away.
 
 <img src="images/Figure1.png" width="900">
@@ -79,6 +81,8 @@ Due to the noisy nature of the gradient maps, sometimes features may appear as d
 The gradient of the result is taken using a Sobel filter. This results in a directional field that will orient the tiles.
 
 <img src="images/SobelCones.png" width="350">
+
+For the purposes of adjusting the gradient parameters, there is the option to stop the process here and view the results. The parameters may be adjusted and the process repeated until the directional field is satisfactory. Then the full process may be run.
 
 ### Voronoi Diagram Generation
 
@@ -143,13 +147,23 @@ Running the process with even more tiles produces a more detailed rendering. Bel
 
 This demonstrates that the parameters allow for flexibility in the overall style of the final mosaic.
 
-Another example using a different image is shown below. On the left is the original image, followed by the diffuse color output, and the final rendered mosaic combining all the output maps.
+### Discussion
+
+The final results of this mosaic generation process are far superior to Adobe Photoshop filters. The iterative gradient descent process for corner adjustment yields mosaics with less space between tiles compared with Hausner's method. The generation of depth maps, normal maps, and specular color maps also enables this program to be extended for texturing 3D graphics. These are clear improvements to the original method.
+
+In addition, the entire process is automated, including detection of features in the image, which is in some ways an improvement on the method described by Hausner. However, there is some trade-off between automation and quality.
+
+This is demonstrated with another example using a different image, which is shown below. On the left is the original image, followed by the diffuse color output, and the final rendered mosaic combining all the output maps. This process used the calculated gradient map.
 
 <img src="images/Michael.png" width="300"><img src="images/MichaelDiffuse.png" width="300"><img src="images/MichaelRendered.png" width="300">
 
-### Discussion
+The same image was processed, but this time with a manually drawn gradient map (left) overriding the calculated one. The color output (middle) and final rendered mosaic (right) are shown beside the gradient map.
 
-The final results of this mosaic generation process are far superior to Adobe Photoshop filters. The entire process is automated, including detection of features in the image, which is an improvement on the method described by Hausner. Additionally, the iterative gradient descent process for corner adjustment yields mosaics with less space between tiles compared with Hausner's method. The generation of depth maps, normal maps, and specular color maps also enables this program to be extended for texturing 3D graphics.
+<img src="images/MosaicCustom.png" width="300"><img src="images/MichaelDiffuse2.png" width="300"><img src="images/MichaelRendered2.png" width="300">
+
+The countours are slightly more uniform for the hand drawn gradient map than for the calculated one. However, this process is more labor intensive, while the calculated gradient still yields acceptable results without the extra work.
+
+
 
 
 
