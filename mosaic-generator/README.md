@@ -159,7 +159,7 @@ This is demonstrated with another example using a different image, which is show
 
 The same image was processed, but this time with a manually drawn gradient map (left) overriding the calculated one. The color output (middle) and final rendered mosaic (right) are shown beside the gradient map.
 
-<img src="images/MosaicCustom.png" width="300"><img src="images/MichaelDiffuse2.png" width="300"><img src="images/MichaelRendered2.png" width="300">
+<img src="images/MosaicMixed.png" width="300"><img src="images/MichaelDiffuse2.png" width="300"><img src="images/MichaelRendered2.png" width="300" height="307">
 
 The countours are slightly more uniform for the hand drawn gradient map than for the calculated one. However, this process is more labor intensive, while the calculated gradient still yields acceptable results without the extra work.
 
