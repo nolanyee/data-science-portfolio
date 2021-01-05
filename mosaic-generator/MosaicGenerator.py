@@ -36,7 +36,7 @@ def parameterfield(name,description,w,default,r, offset=0):
 headinglabel1 = Label(frame, text='FILE PATHS')
 headinglabel1.grid(row=1, column=0, sticky=E)
 
-parameterfield('InputFile','  Input File Name (including path)',80,'',2)
+parameterfield('InputFile','Input File Name (including path)',80,'',2)
 parameterfield('OutputPath','Output Folder Path',80,'',3)
 
 headinglabel2 = Label(frame, text='GRADIENT CALCULATION')
@@ -49,35 +49,42 @@ parameterfield('ExclusionLower','Exclusion Lower Threshold',5,0.2,8)
 parameterfield('ConeUpper','Cone Upper Percentile',5,0.95,9)
 parameterfield('ConeLower','Cone Lower Percentile',5,0.90,10)
 parameterfield('SmoothingRadius','Smoothing Radius',5,3,11)
+parameterfield('GradientOverride','  Optional Override File Name (including path)',80,'',12)
+
+DirectionOnlyentry = IntVar()
+checkLabel = Label(frame, text = 'Stop after directional field')
+check = Checkbutton(frame,variable=DirectionOnlyentry, onvalue=1, offvalue=0)
+checkLabel.grid(row=13, column=0,sticky=E)
+check.grid(row=13, column=1,sticky=W)
 
 headinglabel3 = Label(frame, text='VORONOI DIAGRAM')
-headinglabel3.grid(row=12, column=0, sticky=E)
+headinglabel3.grid(row=14, column=0, sticky=E)
 
-parameterfield('EdgePercentile','Edge Mask Percentile',5,0.90,13)
-parameterfield('EdgePenalty','Edge Penalty',5,0.5,14)
-parameterfield('Beta','Aspect Ratio Factor',5,1.5,15)
-parameterfield('TileNumber','Number of Tiles',5,1000,16)
-parameterfield('VoronoiIterations','Voronoi Iterations',5,20,17)
+parameterfield('EdgePercentile','Edge Mask Percentile',5,0.90,15)
+parameterfield('EdgePenalty','Edge Penalty',5,0.5,16)
+parameterfield('Beta','Aspect Ratio Factor',5,1.5,17)
+parameterfield('TileNumber','Number of Tiles',5,1000,18)
+parameterfield('VoronoiIterations','Voronoi Iterations',5,20,19)
 
 headinglabel4 = Label(frame, text='TILE SHAPE ADJUSTMENT')
-headinglabel4.grid(row=18, column=0, sticky=E)
+headinglabel4.grid(row=20, column=0, sticky=E)
 
-parameterfield('Delta','Tile Shrinkage Parameter',5,0.8,19)
-parameterfield('Increment','Tile Adjustment Increment',5,4,20)
-parameterfield('TileIterations','Tile Adjustment Iterations',5,5,21)
-parameterfield('DilationNumber','Dilation Radius',5,50,22)
-parameterfield('ErosionNumber','Erosion Radius',5,'',23)
-parameterfield('RectangleFactor','Rectangularity',5,0.0,24)
+parameterfield('Delta','Tile Shrinkage Parameter',5,0.8,21)
+parameterfield('Increment','Tile Adjustment Increment',5,4,22)
+parameterfield('TileIterations','Tile Adjustment Iterations',5,5,23)
+parameterfield('DilationNumber','Dilation Radius',5,50,24)
+parameterfield('ErosionNumber','Erosion Radius',5,'',25)
+parameterfield('RectangleFactor','Rectangularity',5,0.0,26)
 
 headinglabel5 = Label(frame, text='TEXTURE GENERATION')
-headinglabel5.grid(row=25, column=0, sticky=E)
+headinglabel5.grid(row=27, column=0, sticky=E)
 
-parameterfield('Scale','Output Scale Factor',5,2.0,26)
-parameterfield('TiltAngle','Maximum Tilt Angle',5,10,27)
-parameterfield('TileDepth','Maximum Tile Depth',5,0.5,28)
-parameterfield('GroutDepth','Grout Depth',5,1,29)
-parameterfield('NormalDepth','Normal Map Depth Factor',5,1,30)
-parameterfield('GroutColor','Grout Color',10,'#333333',31)
+parameterfield('Scale','Output Scale Factor',5,2.0,28)
+parameterfield('TiltAngle','Maximum Tilt Angle',5,10,29)
+parameterfield('TileDepth','Maximum Tile Depth',5,0.5,30)
+parameterfield('GroutDepth','Grout Depth',5,1,31)
+parameterfield('NormalDepth','Normal Map Depth Factor',5,1,32)
+parameterfield('GroutColor','Grout Color',10,'#333333',33)
 
 def done():
     global loopactive
@@ -87,7 +94,7 @@ def done():
 
 okbutton =Button(frame, text='OK', command=done)
 
-okbutton.grid(row=32, column = 1, sticky = W)
+okbutton.grid(row=34, column = 1, sticky = W)
 
 while loopactive:
     window.update()
@@ -103,6 +110,8 @@ ExclusionLower = float(ExclusionLowerentry.get()) # Fraction of range of gradien
 ConeUpper = float(ConeUpperentry.get()) # Upper percentile of gradient intensity, which more intense values are set to
 ConeLower = float(ConeLowerentry.get()) # Lower percentile of gradient intensity, above which cones are calculated
 SmoothingRadius = int(SmoothingRadiusentry.get()) # Gaussian filter radius in pixels
+GradientOverride = GradientOverrideentry.get()
+DirectionOnly = int(DirectionOnlyentry.get()) # 1 or 0
 EdgePercentile = float(EdgePercentileentry.get()) # Percentile of gradient intensity required for edge mask
 EdgePenalty = float(EdgePenaltyentry.get()) # Penalty used to weight edge pixels in centroid determination
 Beta = float(Betaentry.get()) # Aspect Ratio factor, amount tiles are stretched parallel to edges at edges (1 = square)
@@ -128,7 +137,7 @@ window.destroy()
 # IMAGE PROCESSING
 
 # Reading input file
-image = imageio.imread(InputFile)
+image = imageio.imread(InputFile)[:,:,:3]
 shape0 = image.shape[0]
 shape1 = image.shape[1]
 
@@ -181,14 +190,18 @@ def pixelCone(index0, index1):
     return coneMatrix[shape0-index0:2*shape0-index0, shape1-index1:2*shape1-index1]
 
 # Normalizing gradient map
-def normalize(gradient, upperLimit =1):
+def normalize(gradient, upperLimit =1.0):
     return np.minimum((gradient-np.nanmin(gradient))/(np.nanmax(gradient)-np.nanmin(gradient)),upperLimit)
 
 # Generation of orientation map by superimposing cones of edge pixels and taking maximum value
 def ridgeCalc(gradient, upperLimit =0.98, lowerLimit =0.95):
     initialNormalized = np.nan_to_num(normalize(gradient,1))
-    normGradient = normalize(gradient, np.percentile(initialNormalized,upperLimit*100))
-    ridgeMask = np.where(normGradient >= np.percentile(initialNormalized,lowerLimit*100), 1.0, np.NaN)
+    if GradientOverride == '':
+        normGradient = normalize(gradient, np.percentile(initialNormalized,upperLimit*100))
+        ridgeMask = np.where(normGradient >= np.percentile(initialNormalized,lowerLimit*100), 1.0, np.NaN)
+    else:
+        normGradient = normalize(gradient, upperLimit)
+        ridgeMask = np.where(normGradient >= lowerLimit, 1.0, np.NaN)
     Coords0 =np.repeat([np.arange(0,shape0)],shape1,0).T*ridgeMask
     Coords1 = np.repeat([np.arange(0,shape1)],shape0,0)*ridgeMask
     Coords0 = Coords0[~np.isnan(Coords0)].astype(int)
@@ -215,14 +228,22 @@ def mixedConnected(meanGradient, sobelGradient, r, sobelWt=1.0, lowerLimit =0.25
 
 # Calculating gradient map
 
-imgGradient = gradient(GradientRadius)[2]
-
-imgSobel = sobel()
-
-mixedGradient = mixedConnected(imgGradient, imgSobel, GradientRadius, SobelWt, ExclusionLower,ConnectDist)
+if GradientOverride == '':
+    imgGradient = gradient(GradientRadius)[2]
+    imgSobel = sobel()
+    mixedGradient = mixedConnected(imgGradient, imgSobel, GradientRadius, SobelWt, ExclusionLower,ConnectDist)
+else:
+    imgGradient = gradient(GradientRadius)[2]
+    imgSobel = sobel()
+    mixedGradient = imageio.imread(GradientOverride)
+    if len(mixedGradient.shape) == 3:
+        mixedGradient = np.nanmean(mixedGradient,2)
 
 # Edge mask is a binary map of edge pixels above a specified percentile
-edgeMask = np.where(mixedGradient>np.percentile(mixedGradient,EdgePercentile*100),1,0)
+if GradientOverride == '':
+    edgeMask = np.where(mixedGradient>np.percentile(mixedGradient,EdgePercentile*100),1,0)
+else:
+    edgeMask = np.where(mixedGradient > EdgePercentile, 1, 0)
 
 # Calculation of orientation map
 orientImage = ridgeCalc(mixedGradient,ConeUpper,ConeLower)
@@ -234,8 +255,9 @@ orientImageNorm = (orientImageSmoothed-np.nanmin(orientImageSmoothed))/(
 
 orient0 = scipy.ndimage.sobel(orientImageSmoothed,0)
 orient1 = scipy.ndimage.sobel(orientImageSmoothed,1)
-orient0norm = orient0/np.sqrt(orient0**2+orient1**2)
-orient1norm = orient1/np.sqrt(orient0**2+orient1**2)
+orient0norm = orient0/np.sqrt(np.where(orient0+orient1!=0, orient0**2+orient1**2,1))
+orient1norm = orient1/np.sqrt(np.where(orient0+orient1!=0, orient0**2+orient1**2,1))
+orient0norm = np.where(orient0+orient1!=0, orient0norm, 1)
 
 # Lloyd's algorithm using oriented rectangular pyramids instead of cones
 def voronoi(beta = 1.0, penalty = 0.0, n=50, inputDiagram = None):
@@ -282,10 +304,6 @@ def iterativeVoronoi(iterations = 1, beta = 1.0, penalty = 0.0, n=50):
     for i in range(iterations):
         inputDiagram = voronoi(beta, penalty, n, inputDiagram)
     return inputDiagram
-
-# Calculating Voronoi diagram
-finalVoronois = iterativeVoronoi(VoronoiIterations,Beta,EdgePenalty,TileNumber)
-finalVoronoi = finalVoronois[:,:,1]
 
 # Coloring Voronoi Diagram with mean of colors in each region
 def colorVoronoi():
@@ -337,9 +355,6 @@ def polygons(beta=1.0, delta = 0.8):
         polygons.append(polygoni)
         pointArray.append(points)
     return polygons, pointArray
-
-# Calculate polygons
-tesserae = polygons(Beta,Delta)
 
 # Render polygons using matplotlib, and convert output back into numpy matrix
 def renderPolygons(polylist, scale = 0.05, close=True):
@@ -415,10 +430,6 @@ def iterateCorners(polylist, iterations, increment = 1.0, outerN=50, innerN=None
         currentTesserae = adjustCorners(currentTesserae, increment, outerN, innerN, scale, rectanglePenalty)
     return currentTesserae
 
-# Adjust corners of tiles
-adjustedTesserae = iterateCorners(tesserae, TileIterations, Increment, DilationNumber,
-                                  ErosionNumber, Scale, RectangleFactor)
-
 # Create list of colors corresponding to each tile by taking the mean in each tile region
 def colorTesserae(polylist):
     tileCount = len(polylist[1])
@@ -431,8 +442,6 @@ def colorTesserae(polylist):
         colorMosaic = np.where(tile>0, color,colorMosaic)
         colors.append(tuple(color))
     return colorMosaic, colors
-
-colors = colorTesserae(adjustedTesserae)
 
 # Render tiles with color list
 def renderPolygonsColor(polylist, colorlist, scale = 0.05, grout = 'k', close=True):
@@ -510,43 +519,78 @@ def gradientTesserae(polylist, tilt = 10.0, position = 0.5, drop=1.0, normalstre
     depthMap = (colorMosaic-np.nanmin(colorMosaic))/(np.nanmax(colorMosaic)-np.nanmin(colorMosaic))
     return depthMap, normalMap
 
-# Generate Maps
-maps = gradientTesserae(adjustedTesserae, TiltAngle, TileDepth, GroutDepth, NormalDepth, Scale)
-diffuse =  renderPolygonsColor(adjustedTesserae[0],colors[1], Scale, GroutColor)
-specular = renderPolygons(adjustedTesserae[0], scale= Scale)
+# Export Gradient Maps
+imageio.imwrite(OutputPath + '/MosaiGradient.png', np.round(imgGradient/np.nanmax(imgGradient)*255).astype(np.uint8))
+imageio.imwrite(OutputPath + '/MosaicSobel.png', np.round(imgSobel/np.nanmax(imgSobel)*255).astype(np.uint8))
+imageio.imwrite(OutputPath + '/MosaicMixed.png', np.round(mixedGradient/np.nanmax(mixedGradient)*255).astype(np.uint8))
 
-# Export Maps
-imageio.imwrite(OutputPath +'/MosaicDiffuse.png',diffuse)
-imageio.imwrite(OutputPath +'/MosaicSpecular.png',np.round(specular*255).astype(np.uint8))
-imageio.imwrite(OutputPath +'/MosaicDepth.png',np.round(maps[0]*255).astype(np.uint8))
-imageio.imwrite(OutputPath +'/MosaicNormal.png',np.round(maps[1]*255).astype(np.uint8))
+if DirectionOnly == 0:
+    # Calculating Voronoi diagram
+    finalVoronois = iterativeVoronoi(VoronoiIterations,Beta,EdgePenalty,TileNumber)
+    finalVoronoi = finalVoronois[:,:,1]
+    # Calculate polygons
+    tesserae = polygons(Beta,Delta)
+    # Adjust corners of tiles
+    adjustedTesserae = iterateCorners(tesserae, TileIterations, Increment, DilationNumber,
+                                      ErosionNumber, Scale, RectangleFactor)
+    #Calculate Colors
+    colors = colorTesserae(adjustedTesserae)
+    # Generate Maps
+    maps = gradientTesserae(adjustedTesserae, TiltAngle, TileDepth, GroutDepth, NormalDepth, Scale)
+    diffuse =  renderPolygonsColor(adjustedTesserae[0],colors[1], Scale, GroutColor)
+    specular = renderPolygons(adjustedTesserae[0], scale= Scale)
 
-# Display results
-fig, ax = plt.subplots(3,4, figsize=(12,9))
-ax[0,0].imshow(image)
-ax[0,0].set_title('Image')
-ax[0,1].imshow(imgGradient)
-ax[0,1].set_title('Custom Gradient')
-ax[0,2].imshow(imgSobel)
-ax[0,2].set_title('Sobel Gradient')
-ax[0,3].imshow(mixedGradient)
-ax[0,3].set_title('Mixed Gradient')
-ax[1,0].imshow(edgeMask, cmap='gray')
-ax[1,0].set_title('Edge Mask')
-ax[1,1].imshow(orientImage)
-ax[1,1].set_title('Orientation Map')
-ax[1,2].imshow(orientImageSmoothed)
-ax[1,2].set_title('Smoothed Orientation')
-ax[1,3].imshow(orient0norm)
-ax[1,3].set_title('Normalized Orientation')
-ax[2,0].imshow(specular, cmap='gray')
-ax[2,0].set_title('Specular Map')
-ax[2,1].imshow(maps[0], cmap='gray')
-ax[2,1].set_title('Depth Map')
-ax[2,2].imshow(maps[1])
-ax[2,2].set_title('Normal Map')
-ax[2,3].imshow(diffuse)
-ax[2,3].set_title('Diffuse Map')
-plt.show()
+    # Export Maps
+    imageio.imwrite(OutputPath +'/MosaicDiffuse.png',diffuse)
+    imageio.imwrite(OutputPath +'/MosaicSpecular.png',np.round(specular*255).astype(np.uint8))
+    imageio.imwrite(OutputPath +'/MosaicDepth.png',np.round(maps[0]*255).astype(np.uint8))
+    imageio.imwrite(OutputPath +'/MosaicNormal.png',np.round(maps[1]*255).astype(np.uint8))
+
+    # Display results
+    fig, ax = plt.subplots(3,4, figsize=(12,9))
+    ax[0,0].imshow(image)
+    ax[0,0].set_title('Image')
+    ax[0,1].imshow(imgGradient)
+    ax[0,1].set_title('Custom Gradient')
+    ax[0,2].imshow(imgSobel)
+    ax[0,2].set_title('Sobel Gradient')
+    ax[0,3].imshow(mixedGradient)
+    ax[0,3].set_title('Mixed Gradient')
+    ax[1,0].imshow(edgeMask, cmap='gray')
+    ax[1,0].set_title('Edge Mask')
+    ax[1,1].imshow(orientImage)
+    ax[1,1].set_title('Orientation Map')
+    ax[1,2].imshow(orientImageSmoothed)
+    ax[1,2].set_title('Smoothed Orientation')
+    ax[1,3].imshow(orient0norm)
+    ax[1,3].set_title('Normalized Orientation')
+    ax[2,0].imshow(specular, cmap='gray')
+    ax[2,0].set_title('Specular Map')
+    ax[2,1].imshow(maps[0], cmap='gray')
+    ax[2,1].set_title('Depth Map')
+    ax[2,2].imshow(maps[1])
+    ax[2,2].set_title('Normal Map')
+    ax[2,3].imshow(diffuse)
+    ax[2,3].set_title('Diffuse Map')
+    plt.show()
+else:
+    fig, ax = plt.subplots(2, 4, figsize=(12, 6))
+    ax[0, 0].imshow(image)
+    ax[0, 0].set_title('Image')
+    ax[0, 1].imshow(imgGradient)
+    ax[0, 1].set_title('Custom Gradient')
+    ax[0, 2].imshow(imgSobel)
+    ax[0, 2].set_title('Sobel Gradient')
+    ax[0, 3].imshow(mixedGradient)
+    ax[0, 3].set_title('Mixed Gradient')
+    ax[1, 0].imshow(edgeMask, cmap='gray')
+    ax[1, 0].set_title('Edge Mask')
+    ax[1, 1].imshow(orientImage)
+    ax[1, 1].set_title('Orientation Map')
+    ax[1, 2].imshow(orientImageSmoothed)
+    ax[1, 2].set_title('Smoothed Orientation')
+    ax[1, 3].imshow(orient0norm)
+    ax[1, 3].set_title('Normalized Orientation')
+    plt.show()
 
 
