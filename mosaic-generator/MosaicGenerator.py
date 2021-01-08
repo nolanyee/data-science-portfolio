@@ -43,48 +43,55 @@ headinglabel2 = Label(frame, text='GRADIENT CALCULATION')
 headinglabel2.grid(row=4, column=0, sticky=E)
 
 parameterfield('GradientRadius','Gradient Measurement Distance',5,7,5)
-parameterfield('SobelWt','Sobel Weight',5,1,6)
-parameterfield('ConnectDist','Connectivity Distance',5,5,7)
-parameterfield('ExclusionLower','Exclusion Lower Threshold',5,0.2,8)
-parameterfield('ConeUpper','Cone Upper Percentile',5,0.95,9)
-parameterfield('ConeLower','Cone Lower Percentile',5,0.90,10)
-parameterfield('SmoothingRadius','Smoothing Radius',5,3,11)
-parameterfield('GradientOverride','  Optional Override File Name (including path)',80,'',12)
+Curvatureentry = IntVar()
+curvatureLabel = Label(frame, text = 'Analyze Curvature')
+check = Checkbutton(frame,variable=Curvatureentry, onvalue=1, offvalue=0)
+curvatureLabel.grid(row=6, column=0,sticky=E)
+check.grid(row=6, column=1,sticky=W)
+parameterfield('CurvatureRadius','Curvature Blur Radius',5,5,7)
+parameterfield('CurvatureFactor','Curvature Weight',5,1,8)
+parameterfield('SobelWt','Sobel Weight',5,1,9)
+parameterfield('ConnectDist','Connectivity Distance',5,5,10)
+parameterfield('ExclusionLower','Exclusion Lower Threshold',5,0.2,11)
+parameterfield('ConeUpper','Cone Upper Percentile',5,0.95,12)
+parameterfield('ConeLower','Cone Lower Percentile',5,0.90,13)
+parameterfield('SmoothingRadius','Smoothing Radius',5,3,14)
+parameterfield('GradientOverride','  Optional Override File Name (including path)',80,'',15)
 
 DirectionOnlyentry = IntVar()
 checkLabel = Label(frame, text = 'Stop after directional field')
 check = Checkbutton(frame,variable=DirectionOnlyentry, onvalue=1, offvalue=0)
-checkLabel.grid(row=13, column=0,sticky=E)
-check.grid(row=13, column=1,sticky=W)
+checkLabel.grid(row=16, column=0,sticky=E)
+check.grid(row=16, column=1,sticky=W)
 
 headinglabel3 = Label(frame, text='VORONOI DIAGRAM')
-headinglabel3.grid(row=14, column=0, sticky=E)
+headinglabel3.grid(row=17, column=0, sticky=E)
 
-parameterfield('EdgePercentile','Edge Mask Percentile',5,0.90,15)
-parameterfield('EdgePenalty','Edge Penalty',5,0.5,16)
-parameterfield('Beta','Aspect Ratio Factor',5,1.5,17)
-parameterfield('TileNumber','Number of Tiles',5,1000,18)
-parameterfield('VoronoiIterations','Voronoi Iterations',5,20,19)
+parameterfield('EdgePercentile','Edge Mask Percentile',5,0.90,18)
+parameterfield('EdgePenalty','Edge Penalty',5,0.5,19)
+parameterfield('Beta','Aspect Ratio Factor',5,1.5,20)
+parameterfield('TileNumber','Number of Tiles',5,1000,21)
+parameterfield('VoronoiIterations','Voronoi Iterations',5,20,22)
 
 headinglabel4 = Label(frame, text='TILE SHAPE ADJUSTMENT')
-headinglabel4.grid(row=20, column=0, sticky=E)
+headinglabel4.grid(row=23, column=0, sticky=E)
 
-parameterfield('Delta','Tile Shrinkage Parameter',5,0.8,21)
-parameterfield('Increment','Tile Adjustment Increment',5,4,22)
-parameterfield('TileIterations','Tile Adjustment Iterations',5,5,23)
-parameterfield('DilationNumber','Dilation Radius',5,50,24)
-parameterfield('ErosionNumber','Erosion Radius',5,'',25)
-parameterfield('RectangleFactor','Rectangularity',5,0.0,26)
+parameterfield('Delta','Tile Shrinkage Parameter',5,0.8,24)
+parameterfield('Increment','Tile Adjustment Increment',5,4,25)
+parameterfield('TileIterations','Tile Adjustment Iterations',5,5,26)
+parameterfield('DilationNumber','Dilation Radius',5,50,27)
+parameterfield('ErosionNumber','Erosion Radius',5,'',28)
+parameterfield('RectangleFactor','Rectangularity',5,0.0,29)
 
 headinglabel5 = Label(frame, text='TEXTURE GENERATION')
-headinglabel5.grid(row=27, column=0, sticky=E)
+headinglabel5.grid(row=30, column=0, sticky=E)
 
-parameterfield('Scale','Output Scale Factor',5,2.0,28)
-parameterfield('TiltAngle','Maximum Tilt Angle',5,10,29)
-parameterfield('TileDepth','Maximum Tile Depth',5,0.5,30)
-parameterfield('GroutDepth','Grout Depth',5,1,31)
-parameterfield('NormalDepth','Normal Map Depth Factor',5,1,32)
-parameterfield('GroutColor','Grout Color',10,'#333333',33)
+parameterfield('Scale','Output Scale Factor',5,2.0,31)
+parameterfield('TiltAngle','Maximum Tilt Angle',5,10,32)
+parameterfield('TileDepth','Maximum Tile Depth',5,0.5,33)
+parameterfield('GroutDepth','Grout Depth',5,1,34)
+parameterfield('NormalDepth','Normal Map Depth Factor',5,1,35)
+parameterfield('GroutColor','Grout Color',10,'#333333',36)
 
 def done():
     global loopactive
@@ -94,7 +101,7 @@ def done():
 
 okbutton =Button(frame, text='OK', command=done)
 
-okbutton.grid(row=34, column = 1, sticky = W)
+okbutton.grid(row=37, column = 1, sticky = W)
 
 while loopactive:
     window.update()
@@ -105,6 +112,9 @@ InputFile = InputFileentry.get()
 OutputPath = OutputPathentry.get()
 GradientRadius = int(GradientRadiusentry.get()) # Number of pixels on each side for measuring gradient
 SobelWt = float(SobelWtentry.get()) # Weight of Sobel Filter relative to custom gradient calculation
+Curvature = int(Curvatureentry.get()) # 1 or 0, whether or not to analyze curvature
+CurvatureRadius = int(CurvatureRadiusentry.get()) # Radius of blur for curvature analysis in pixels
+CurvatureFactor = float(CurvatureFactorentry.get()) # Weight of curvature map in combined gradient map
 ConnectDist = int(ConnectDistentry.get()) # Number of pixels used to average neighbors for noise reduction
 ExclusionLower = float(ExclusionLowerentry.get()) # Fraction of range of gradient, below which gradient is set to 0
 ConeUpper = float(ConeUpperentry.get()) # Upper percentile of gradient intensity, which more intense values are set to
@@ -213,8 +223,10 @@ def ridgeCalc(gradient, upperLimit =0.98, lowerLimit =0.95):
     return individualCones
 
 # Sobel magnitude
+sobelx =scipy.ndimage.sobel(np.sum(image,2),1)
+sobely=scipy.ndimage.sobel(np.sum(image,2),0)
 def sobel():
-    return np.sqrt(scipy.ndimage.sobel(np.sum(image,2),0)**2+scipy.ndimage.sobel(np.sum(image,2),1)**2)
+    return np.sqrt(sobelx**2+sobely**2)
 
 # Uniform filter is applied to penalize edge pixels that aren't connected to others
 def connected(gradient, lowerLimit =0.25, n=10):
@@ -226,22 +238,46 @@ def connected(gradient, lowerLimit =0.25, n=10):
 def mixedConnected(meanGradient, sobelGradient, r, sobelWt=1.0, lowerLimit =0.25, n=10):
     return connected(meanGradient/sobelWt + sobelGradient*sobelWt/r, lowerLimit, n)
 
-# Calculating gradient map
+# Optional strong gradient detection
+def findField(xMap, yMap, radius):
+    xMap = np.where(xMap>4000, 0,xMap)
+    yMap = np.where(yMap > 4000, 0, yMap)
+    NormMap = np.where((xMap!=0)|(yMap!=0), np.sqrt(xMap**2+yMap**2), np.NaN)
+    xNormMap = np.clip(xMap/np.where((xMap!=0)|(yMap!=0), NormMap, np.NaN),-1,1)
+    yNormMap = np.clip(yMap/np.where((xMap!=0)|(yMap!=0), NormMap, np.NaN),-1,1)
+    xdoubleNormMap = xNormMap**2 - yNormMap**2
+    ydoubleNormMap = 2*xNormMap*yNormMap
+    xdoubleNormMap = np.where(xdoubleNormMap==xdoubleNormMap,xdoubleNormMap,0)
+    ydoubleNormMap = np.where(ydoubleNormMap == ydoubleNormMap, ydoubleNormMap, 0)
+    xBlurMap = scipy.ndimage.gaussian_filter(xdoubleNormMap*imgSobel,radius)
+    yBlurMap = scipy.ndimage.gaussian_filter(ydoubleNormMap*imgSobel,radius)
+    RegionMap = np.sqrt(scipy.ndimage.sobel(xBlurMap,0)**2+scipy.ndimage.sobel(xBlurMap,1)**2
+                        +scipy.ndimage.sobel(yBlurMap,0)**2+scipy.ndimage.sobel(yBlurMap,1)**2)
+    return RegionMap
 
+# Calculating gradient map
 if GradientOverride == '':
     imgGradient = gradient(GradientRadius)[2]
     imgSobel = sobel()
+    if Curvature ==1:
+        mixedGradientMask = mixedConnected(imgGradient, imgSobel, GradientRadius, SobelWt, ExclusionLower,ConnectDist)
+        imgGradient += CurvatureFactor*findField(sobelx, sobely, CurvatureRadius)
     mixedGradient = mixedConnected(imgGradient, imgSobel, GradientRadius, SobelWt, ExclusionLower,ConnectDist)
 else:
     imgGradient = gradient(GradientRadius)[2]
     imgSobel = sobel()
+    if Curvature ==1:
+        imgGradient += CurvatureFactor*findField(sobelx, sobely, CurvatureRadius)
     mixedGradient = imageio.imread(GradientOverride)
     if len(mixedGradient.shape) == 3:
         mixedGradient = np.nanmean(mixedGradient,2)
 
 # Edge mask is a binary map of edge pixels above a specified percentile
 if GradientOverride == '':
-    edgeMask = np.where(mixedGradient>np.percentile(mixedGradient,EdgePercentile*100),1,0)
+    if Curvature ==1:
+        edgeMask = np.where(mixedGradientMask > np.percentile(mixedGradientMask, EdgePercentile * 100), 1, 0)
+    else:
+        edgeMask = np.where(mixedGradient>np.percentile(mixedGradient,EdgePercentile*100),1,0)
 else:
     edgeMask = np.where(mixedGradient > EdgePercentile, 1, 0)
 
@@ -255,9 +291,9 @@ orientImageNorm = (orientImageSmoothed-np.nanmin(orientImageSmoothed))/(
 
 orient0 = scipy.ndimage.sobel(orientImageSmoothed,0)
 orient1 = scipy.ndimage.sobel(orientImageSmoothed,1)
-orient0norm = orient0/np.sqrt(np.where(orient0+orient1!=0, orient0**2+orient1**2,1))
-orient1norm = orient1/np.sqrt(np.where(orient0+orient1!=0, orient0**2+orient1**2,1))
-orient0norm = np.where(orient0+orient1!=0, orient0norm, 1)
+orient0norm = orient0/np.sqrt(np.where((orient0!=0)|(orient1!=0), orient0**2+orient1**2,1))
+orient1norm = orient1/np.sqrt(np.where((orient0!=0)|(orient1!=0), orient0**2+orient1**2,1))
+orient0norm = np.where((orient0!=0)|(orient1!=0), orient0norm, 1)
 
 # Lloyd's algorithm using oriented rectangular pyramids instead of cones
 def voronoi(beta = 1.0, penalty = 0.0, n=50, inputDiagram = None):
@@ -520,7 +556,7 @@ def gradientTesserae(polylist, tilt = 10.0, position = 0.5, drop=1.0, normalstre
     return depthMap, normalMap
 
 # Export Gradient Maps
-imageio.imwrite(OutputPath + '/MosaiGradient.png', np.round(imgGradient/np.nanmax(imgGradient)*255).astype(np.uint8))
+imageio.imwrite(OutputPath + '/MosaicGradient.png', np.round(imgGradient/np.nanmax(imgGradient)*255).astype(np.uint8))
 imageio.imwrite(OutputPath + '/MosaicSobel.png', np.round(imgSobel/np.nanmax(imgSobel)*255).astype(np.uint8))
 imageio.imwrite(OutputPath + '/MosaicMixed.png', np.round(mixedGradient/np.nanmax(mixedGradient)*255).astype(np.uint8))
 
