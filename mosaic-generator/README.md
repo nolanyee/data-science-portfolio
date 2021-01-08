@@ -156,7 +156,9 @@ The final results of this mosaic generation process are far superior to Adobe Ph
 In addition, the entire process is automated, including detection of features in the image, which is in some ways an improvement on the method described by Hausner. However, there is some trade-off between automation and quality.
 
 This is demonstrated with another example using a different image, which is shown below. 
-<img src="images/Michael.png" width="500">
+
+<img src="images/Michael.png" width="400">
+
 This image is particularly challenging because of the fine lines within the hair.
 
 On the left is the final calculated combined gradient map without curvature map generation, followed by the diffuse color output, and the final rendered mosaic combining all the output maps.
