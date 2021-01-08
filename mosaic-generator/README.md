@@ -13,7 +13,7 @@ For purposes of graphic design or texturing architectural 3D models, sometimes i
 ### Usage
 The graphical user interface enables the user to set any of the parameters used in the mosaic generation.
 
-<img src="images/GUI_Screenshot3.png" width="500">
+<img src="images/GUI_Screenshot4.png" width="500">
 
 If nothing is changed the default settings will be used. The input image file path and name and output file path are mandatory. The input image should ideally be a color image, like this medieval Byzantine fresco below:
 
@@ -60,7 +60,9 @@ The resulting gradient map is shown below on the left, and compared with the Sob
 
 Note how the thick black lines in the original image show up in the custom gradient magnitude map. The Sobel filter has slightly more fine detail. Therefore, a user-defined linear combination of the two maps is used in the next steps.
 
-Since both maps contain noise, a reduction in noise is achieved by using a uniform filter with a user-specified number of pixels. This penalizes high gradient points in the map that are isolated. 
+However, before combining with the Sobel filter, there is an optional step to combine with a curvature map. Rather than areas of high gradient, this map brings out areas of high curvature, where the gradient orientation changes suddenly. This map is a modified second derivative magnitude. It is calculated from the x and y Sobel maps, which are normalized to convert them to the equivalent of cosine and sine of gradient orientation angles. Then the double angle formula is used to return the sine and cosine of double the angle. This step eliminates the distinction between orientations that are equal and opposite in direction, which prevents them from cancelling out in the next step, which is a Gaussian blur filter. This causes the final map to exclude sudden changes of gradient from the positive to negative direction when in fact they are still parallel. Therefore features like parallel lines or curves (such as hatching) will be ignored. Finally, the map is multiplied by the Sobel magnitude in order to avoid exaggerating noisy areas where the gradient itself is weak, then the Gaussian filter is applied, the Sobel filter is used again, and the root of the sum of squared magnitudes is taken to yield the final map to be combined with the Sobel map.
+
+Since all maps contain noise, a reduction in noise is achieved by using a uniform filter with a user-specified number of pixels. This penalizes high gradient points in the map that are isolated. 
 
 Next, all points with gradient less than a user-specified threshold are set to zero to reduce noise further.
 
@@ -153,15 +155,23 @@ The final results of this mosaic generation process are far superior to Adobe Ph
 
 In addition, the entire process is automated, including detection of features in the image, which is in some ways an improvement on the method described by Hausner. However, there is some trade-off between automation and quality.
 
-This is demonstrated with another example using a different image, which is shown below. On the left is the original image, followed by the diffuse color output, and the final rendered mosaic combining all the output maps. This process used the calculated gradient map.
+This is demonstrated with another example using a different image, which is shown below. 
+<img src="images/Michael.png" width="500">
+This image is particularly challenging because of the fine lines within the hair.
 
-<img src="images/Michael.png" width="300"><img src="images/MichaelDiffuse.png" width="300"><img src="images/MichaelRendered.png" width="300">
+On the left is the final calculated combined gradient map without curvature map generation, followed by the diffuse color output, and the final rendered mosaic combining all the output maps.
 
-The same image was processed, but this time with a manually drawn gradient map (left) overriding the calculated one. The color output (middle) and final rendered mosaic (right) are shown beside the gradient map.
+<img src="images/MichaelMixed1.png" width="300"><img src="images/MichaelDiffuse.png" width="300"><img src="images/MichaelRendered.png" width="300">
+
+Next, the process was repeated with curvature map generation. Note the improvement of tile uniformity both in the background and in the hair region.
+
+<img src="images/MichaelMixed3.png" width="300"><img src="images/MichaelDiffuse3.png" width="300"><img src="images/MichaelRendered3.png" width="300">
+
+Finally, the same image was processed, but this time with a manually drawn gradient map overriding the calculated one. The color output and final rendered mosaic are shown beside the gradient map.
 
 <img src="images/MosaicMixed.png" width="300"><img src="images/MichaelDiffuse2.png" width="300"><img src="images/MichaelRendered2.png" width="300" height="307">
 
-The contours are slightly more uniform for the hand drawn gradient map than for the calculated one. Note the increased smoothness of the face and especially the locks of hair. However, this process is more labor intensive, while the calculated gradient still yields acceptable results without the extra work.
+Although the curvature map improved the results, the contours are still slightly more uniform for the hand drawn gradient map than for the calculated ones. Note the increased smoothness of the face and especially the locks of hair. However, the manual process is more labor intensive, while the calculated gradients still yield acceptable results without the extra work.
 
 
 
